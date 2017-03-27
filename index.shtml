@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RIT eSports Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/rogue6_project1_styles.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-left" href="https://people.rit.edu/~bjm4054/646/rogue6_project1/index.shtml">
+					<img id="header_logo" src="media/esports_assets/esports_logo_mini.png" 
+					alt="RIT eSports Logo" title="RIT eSports Logo">
+				</a>		
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#esports_navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>		
+			<div class="collapse navbar-collapse" id="esports_navbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">MATCHES<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">PAST</a></li>
+							<li><a href="#">CURRENT</a></li>
+							<li><a href="#">FUTURE</a></li>
+						</ul>
+					</li>
+					<!-- li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">TEAMS<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Call of Duty 1</a></li>
+							<li><a href="#">Call of Duty 2</a></li>
+							<li><a href="#">Heroes of the Storm</a></li>
+							<li><a href="#">League of Legends 1</a></li>
+							<li><a href="#">League of Legends 2</a></li>
+						</ul>	  
+					</li -->
+					<li>
+					    <a href="https://people.rit.edu/~bjm4054/646/rogue6_project1/teams_page/teams.shtml">TEAMS</a>
+					</li>
+					<li>
+						<a href="https://people.rit.edu/~bjm4054/646/rogue6_project1/contact_page/contact.shtml">CONTACT</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div id="main_home_image">
+		<figure>
+			<img class="img-responsive" src="media/esports_assets/logo_black_notext.png">
+		</figure>
+	</div>	
+	
+    <main>
+		<h2 class="page_title">ABOUT</h2>	
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
+			Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis 
+			sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. 
+			Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per 
+			conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim 
+			lacinia nunc. 
+		</p>
+		<p>
+			Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. 
+			Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, 
+			iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. 
+			Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque 
+			volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
+			per inceptos himenaeos. 
+		</p>   
+	</main>
+		
+	<section id="news_and_events"  class="row container">
+		<div class="container center-all">
+			<h2 class="page_title">NEWS AND EVENTS</h2>
+			<div class="col-md-6 col-lg-6 container">
+				<figure class="figure">
+					<a href="media/news_events/gaming_background.jpg">
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture">					
+						<figcaption class="figure-caption">
+							Welcome to RIT eSports<br>
+							by John Cena | Feb 27, 2015<br>
+							Welcome to esportsrit.com!  This is the<br> 
+							official website for RIT eSports, one of the<br>
+							fastest growing collegiate eSports...<br><br>
+						</figcaption>
+					</a>
+				</figure>
+			</div>
+			<div class="col-md-6 col-lg-6 container">
+				<figure class="figure">
+					<a href="media/news_events/gaming_background.jpg">
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture">					
+						<figcaption class="figure-caption">
+							Welcome to RIT eSports<br>
+							by John Cena | Feb 27, 2015<br>
+							Welcome to esportsrit.com!  This is the<br> 
+							official website for RIT eSports, one of the<br>
+							fastest growing collegiate eSports...<br><br>
+						</figcaption>
+					</a>
+				</figure>
+			</div>
+			<div class="col-md-6 col-lg-6 container">
+				<figure class="figure">
+					<a href="media/news_events/gaming_background.jpg">
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture">					
+						<figcaption class="figure-caption">
+							Welcome to RIT eSports<br>
+							by John Cena | Feb 27, 2015<br>
+							Welcome to esportsrit.com!  This is the<br> 
+							official website for RIT eSports, one of the<br>
+							fastest growing collegiate eSports...
+						</figcaption>
+					</a>
+				</figure>
+			</div>
+			<div class="col-md-6 col-lg-6 container">
+				<figure class="figure">
+					<a href="media/news_events/gaming_background.jpg">
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture">					
+						<figcaption class="figure-caption">
+							Welcome to RIT eSports<br>
+							by John Cena | Feb 27, 2015<br>
+							Welcome to esportsrit.com!  This is the<br> 
+							official website for RIT eSports, one of the<br>
+							fastest growing collegiate eSports...
+						</figcaption>
+					</a>
+				</figure>
+			</div>				
+		</div>
+		
+		<button type="button" class="btn btn-warning btn-lg" id="load_more_button">
+			<a href="[TO BE DETERMINED]">Load More</a> 
+		</button>
+	</section> 
+
+    <hr id="footer_line">	
+    <footer>
+	    <p>
+            <span id="copyright">
+			    Copyright RITeSports 2017
+			</span>
+			
+		    <button type="button" class="btn btn-default btn-lg" id="admin_login_button">
+			    <a href="https://people.rit.edu/~bjm4054/646/rogue6_project1/admin_page/admin_login.shtml">Admin Login</a> 
+		    </button>			
+        </p>
+		
+		<img class="img-circle img-responsive footer_image" src="media/footer_images/facebook_round_mini.png">
+		<img class="img-circle img-responsive footer_image" src="media/footer_images/google_round_mini.png">
+		<img class="img-circle img-responsive footer_image" src="media/footer_images/pinterest_blacksquare_mini.jpg">
+		<img class="img-circle img-responsive footer_image" src="media/footer_images/twitter_bluecircle_mini.png">
+		<img class="img-circle img-responsive footer_image" src="media/footer_images/instagram_bluecircle_mini.png">
+    </footer>
+</body>
+</html>
