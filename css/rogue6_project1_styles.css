@@ -4,6 +4,15 @@
     padding: 0px;
 }
 
+.center-all {
+    margin: auto;
+    text-align: center;
+}
+
+.center-div {
+    margin: auto;
+}
+
 .navbar
 {
     background-color: #e8eaed;	
