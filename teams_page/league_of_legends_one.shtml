@@ -10,13 +10,45 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!--#include virtual="../includes/navmenu.html" -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-left" href="https://people.rit.edu/~bjm4054/646/rogue6_project1/index.shtml">
+					<img id="header_logo" src="../media/esports_assets/esports_logo_mini
+					.png" alt="RIT eSports Logo" title="RIT eSports Logo">
+				</a>		
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#esports_navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>		
+			<div class="collapse navbar-collapse" id="esports_navbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">MATCHES<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">PAST</a></li>
+							<li><a href="#">CURRENT</a></li>
+							<li><a href="#">FUTURE</a></li>
+						</ul>
+					</li>
+					<li>
+					    <a href="https://people.rit.edu/~bjm4054/646/rogue6_project1/teams_page/teams.shtml">TEAMS</a>
+					</li>
+					<li>
+						<a href="https://people.rit.edu/~bjm4054/646/rogue6_project1/contact_page/contact.shtml">CONTACT</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<main>
-            
+
         <figure>
             <img class="img-circle img-responsive center-all" src="../media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
             <figcaption id="single_team_name" class="figure-caption team_name">League of Legends 1</figcaption>
-        </figure>	
+        </figure>
 		
 		<p class="category_header">Captain</p>
 		
