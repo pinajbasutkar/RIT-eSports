@@ -1,6 +1,16 @@
 * {
     margin: 0px;
+    max-width: 100% !important;
     padding: 0px;
+}
+
+.center-all {
+    margin: auto;
+    text-align: center;
+}
+
+.center-div {
+    margin: auto;
 }
 
 .navbar
@@ -31,16 +41,17 @@ body
 
 main
 {	
-    width: 60%;
-	margin-top: 0;
-    margin-right: 10%;
-	margin-bottom: 10%;
-	margin-left: 10%;
+	margin: auto;
+    padding: 2em 0 4em;
+    width: 80%;
 }
 
 .row
 {
     margin-bottom: 60px;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
 }
 
 .team_name
