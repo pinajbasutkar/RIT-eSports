@@ -12,10 +12,11 @@
 <body>
 	<!--#include virtual="../includes/navmenu.html" -->
 	<main>
-		<figure>
-			<img class="img-circle" id="team_logo" src="../media/esports_assets/tigerhead_small.png" alt="League of Legends Logo" title="League of Legends Logo">
-			<figcaption id="single_team_name" class="figure-caption team_name">League of Legends 1</figcaption>
-		</figure>	
+            
+        <figure>
+            <img class="img-circle img-responsive center-all" src="../media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
+            <figcaption id="single_team_name" class="figure-caption team_name">League of Legends 1</figcaption>
+        </figure>	
 		
 		<p class="category_header">Captain</p>
 		
