@@ -119,13 +119,13 @@ main
     color: #fff;	
 }
 
-.tab_active
+.tab_inactive
 {
     background-color: #343435;
     color: #f9973b;
 }
 
-.tab_inactive
+.tab_active
 {
 	background-color: #b0b4ba;
     color: #fff;
