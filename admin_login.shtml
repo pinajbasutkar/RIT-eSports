@@ -13,6 +13,9 @@
 	<!--#include virtual="includes/navmenu.html" -->
 	<main>
 		<h2 class="page_title">LOG IN</h2>
+		
+		<div class="row">
+		
 		<form>	  
 			<div class="form-group">
 				<label for="username">Username</label>
@@ -29,6 +32,9 @@
 			    <a href="admin_page/admin_pills.shtml">Log In</a>
 			</button>
 		</form>
+		
+		</div>
+		
     </main>			
     <hr id="footer_line">	
 	<!--#include virtual="includes/footer.html" -->	
