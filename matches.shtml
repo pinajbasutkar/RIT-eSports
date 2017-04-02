@@ -15,14 +15,21 @@
 	<main id="past">
 		<h2 class="page_title">MATCHES</h2>
 		
-		<div class="container-fluid">
-			<ul class="nav nav-tabs">
-				<li><a href="#past" class="tab_active">Past</a></li>
-				<li><a href="#current">Current</a></li>
-				<li><a href="#future">Future</a></li>
-			</ul>	
-		</div>
-		
+		<nav class="nav navbar-default">
+		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+		<span class="icon-bar top-bar"></span>
+		<span class="icon-bar middle-bar"></span>
+		<span class="icon-bar bottom-bar"></span>
+		</button>
+			<div class="collapse navbar-collapse navHeaderCollapse">
+			<ul class="nav nav-pills nav-justified">
+			<li><a href="#past" class="tab_active"> Past </a></li>
+			<li><a href="#current"> Current </a></li>
+			<li><a href="#future"> Future </a></li>
+			</ul>
+			</div>
+		</nav>
+
 		<div class="container">
 		    <table class="table table-striped">
 			    <thead>
@@ -121,13 +128,21 @@
         <main id="current">
 		<h2 class="page_title">MATCHES</h2>
 		
-		<div class="container-fluid">
-			<ul class="nav nav-tabs">
-				<li><a href="#past">Past</a></li>
-				<li><a href="#current" class="tab_active">Current</a></li>
-				<li><a href="#future">Future</a></li>
-			</ul>	
-		</div>
+		<nav class="nav navbar-default">
+		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+		<span class="icon-bar top-bar"></span>
+		<span class="icon-bar middle-bar"></span>
+		<span class="icon-bar bottom-bar"></span>
+		</button>
+			<div class="collapse navbar-collapse navHeaderCollapse">
+			<ul class="nav nav-pills nav-justified">
+			<li><a href="#past"> Past </a></li>
+			<li><a href="#current" class="tab_active"> Current </a></li>
+			<li><a href="#future"> Future </a></li>
+			</ul>
+			</div>
+		</nav>
+
 		
 		<div class="container">
 		    <table class="table table-striped">
@@ -226,13 +241,21 @@
         <main id="future">
 		<h2 class="page_title">MATCHES</h2>
 		
-		<div class="container-fluid">
-			<ul class="nav nav-tabs">
-				<li><a href="#past">Past</a></li>
-				<li><a href="#current">Current</a></li>
-				<li><a href="#future" class="tab_active">Future</a></li>
-			</ul>	
-		</div>
+		<nav class="nav navbar-default">
+		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+		<span class="icon-bar top-bar"></span>
+		<span class="icon-bar middle-bar"></span>
+		<span class="icon-bar bottom-bar"></span>
+		</button>
+			<div class="collapse navbar-collapse navHeaderCollapse">
+			<ul class="nav nav-pills nav-justified">
+			<li><a href="#past"> Past </a></li>
+			<li><a href="#current"> Current </a></li>
+			<li><a href="#future"  class="tab_active"> Future </a></li>
+			</ul>
+			</div>
+		</nav>
+
 		
 		<div class="container">
 		    <table class="table table-striped">
