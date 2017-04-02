@@ -180,6 +180,15 @@ ul.nav a:hover {
     background-color: #f9973b;
 }
 
+.contact_page_button
+{
+	float: right;
+    padding: 10px 30px;
+    margin-left: 10px;
+    font-size: 1.3em;
+    background-color: #f9973b;
+}
+
 #copyright
 {
     margin-left: 20px;
