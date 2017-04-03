@@ -130,28 +130,9 @@ nav{
 	margin-top: 20px;
 }
 
-.navbar-default {
-	background-color: #19191a;
-	border: 1px solid #fffdeb;
-	border-radius: 10px;
-}
-
-.nav ul li:last-child{
-	border-right: none;
-}
-
-.nav-pills>li{
-	border-right: 1px solid #fffdeb;
-}
-
-.nav-pills>li.active>a{
-	color: #fffdeb;
-	background-color: #f9973b;
-}
-
 .nav-pills>li>a {
 	border-radius: 0px;
-	color: #ffffff;
+	color: #000000;
 }
 
 ul.nav a:hover {
@@ -159,11 +140,6 @@ ul.nav a:hover {
 	background-color: #f9973b;
 }
 
-.tab_inactive
-{
-    background-color: #343435;
-    color: #f9973b;
-}
 
 .tab_active
 {
