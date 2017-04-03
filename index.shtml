@@ -10,6 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<!--#include virtual="includes/navmenu.html" -->
     
     <div style="position:relative" id="main_home_image">
     <img class="img-responsive center-all" id="bg-gif" src="media/home-bg.gif" style="position:absolute;"/>
