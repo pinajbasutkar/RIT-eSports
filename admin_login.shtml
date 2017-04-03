@@ -29,7 +29,7 @@
 			</div>
 		  
 			<button type="button" class="btn btn-warning main_action_button">
-			    <a href="admin_page/admin_pills.shtml">Log In</a>
+			    <a href="admin.shtml">Log In</a>
 			</button>
 		</form>
 		
