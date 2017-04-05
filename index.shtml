@@ -44,63 +44,61 @@
 	<section id="news_and_events"  class="row container">
 		<div class="container center-all">
 			<h2 class="page_title">NEWS AND EVENTS</h2>
-			<div class="col-md-6 col-lg-6 container">
-				<figure class="figure">
+            
+            
+            
+            <div class="col-md-6 col-lg-6 container">
+				<div class="news-item">
 					<a href="media/news_events/gaming_background.jpg">
-						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-all">					
-						<figcaption class="figure-caption">
-							Welcome to RIT eSports<br>
-							by John Cena | Feb 27, 2015<br>
-							Welcome to esportsrit.com!  This is the<br> 
-							official website for RIT eSports, one of the<br>
-							fastest growing collegiate eSports...<br><br>
-						</figcaption>
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-div">	
+                        <h3 class="news-item-title">Welcome to RIT eSports</h3>
 					</a>
-				</figure>
+                    <p class="news-item-info">by John Cena | Feb 27, 2015</p>
+                    <p class="news-item-text">
+                        Welcome to esportsrit.com! This is the official website for RIT eSports, one of the fastest growing collegiate eSports...
+                    </p>
+				</div>
 			</div>
+            
 			<div class="col-md-6 col-lg-6 container">
-				<figure class="figure">
+				<div class="news-item">
 					<a href="media/news_events/gaming_background.jpg">
-						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-all">					
-						<figcaption class="figure-caption">
-							Welcome to RIT eSports<br>
-							by John Cena | Feb 27, 2015<br>
-							Welcome to esportsrit.com!  This is the<br> 
-							official website for RIT eSports, one of the<br>
-							fastest growing collegiate eSports...<br><br>
-						</figcaption>
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-div">	
+                        <h3 class="news-item-title">Welcome to RIT eSports</h3>
 					</a>
-				</figure>
+                    <p class="news-item-info">by John Cena | Feb 27, 2015</p>
+                    <p class="news-item-text">
+                        Welcome to esportsrit.com! This is the official website for RIT eSports, one of the fastest growing collegiate eSports...
+                    </p>
+				</div>
 			</div>
+            
 			<div class="col-md-6 col-lg-6 container">
-				<figure class="figure">
+				<div class="news-item">
 					<a href="media/news_events/gaming_background.jpg">
-						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-all">					
-						<figcaption class="figure-caption">
-							Welcome to RIT eSports<br>
-							by John Cena | Feb 27, 2015<br>
-							Welcome to esportsrit.com!  This is the<br> 
-							official website for RIT eSports, one of the<br>
-							fastest growing collegiate eSports...
-						</figcaption>
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-div">	
+                        <h3 class="news-item-title">Welcome to RIT eSports</h3>
 					</a>
-				</figure>
+                    <p class="news-item-info">by John Cena | Feb 27, 2015</p>
+                    <p class="news-item-text">
+                        Welcome to esportsrit.com! This is the official website for RIT eSports, one of the fastest growing collegiate eSports...
+                    </p>
+				</div>
 			</div>
+            
 			<div class="col-md-6 col-lg-6 container">
-				<figure class="figure">
+				<div class="news-item">
 					<a href="media/news_events/gaming_background.jpg">
-						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-all">					
-						<figcaption class="figure-caption">
-							Welcome to RIT eSports<br>
-							by John Cena | Feb 27, 2015<br>
-							Welcome to esportsrit.com!  This is the<br> 
-							official website for RIT eSports, one of the<br>
-							fastest growing collegiate eSports...
-						</figcaption>
+						<img src="media/news_events/gaming_background.jpg" alt="News Item Picture" title="News Item Picture" class="img-responsive center-div">	
+                        <h3 class="news-item-title">Welcome to RIT eSports</h3>
 					</a>
-				</figure>
-			</div>				
-		</div>
+                    <p class="news-item-info">by John Cena | Feb 27, 2015</p>
+                    <p class="news-item-text">
+                        Welcome to esportsrit.com! This is the official website for RIT eSports, one of the fastest growing collegiate eSports...
+                    </p>
+				</div>
+			</div>
+
 		
         <div class="center-all">
         

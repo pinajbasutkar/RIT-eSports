@@ -1,6 +1,6 @@
 * {
     margin: 0px;
-    max-width: 100% !important;
+    max-width: 100%;
     padding: 0px;
 }
 
@@ -19,6 +19,29 @@
     padding-right: 10px;
     border-bottom: 6px solid #f9973b;
     border-radius: 0;	
+}
+
+/* News Item Styles */
+.news-item {
+    background-color: whitesmoke;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    color: black;
+    margin: 1em auto 2em;
+    max-width: 360px;
+    padding: 1em;
+    text-align: left;
+}
+
+.news-item-info {
+    color: darkgray;
+}
+
+.news-item-text {
+    margin-top: 1.5em;
+}
+
+.news-item-title {
+    margin-top: 0.4em;
 }
 
 #header_logo
@@ -193,7 +216,7 @@ ul.nav a:hover {
 .footer_image
 {
     display: inline;
-    margin-left: 10px;	
+    margin-left: 10px;
 }
 
 footer
