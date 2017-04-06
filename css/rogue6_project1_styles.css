@@ -11,6 +11,7 @@
 
 .center-div {
     margin: auto;
+    z-index: 100;
 }
 
 .navbar
@@ -103,15 +104,27 @@ main
 }
 
 #main_home_image
-{
-	margin-top: 0px;
+{   
+    position: relative;
+	margin-top: -20px;
+    padding: 0px;
     width: 100%;
     height: 620px;
-	padding: 0px;
+	
 }
 
 #bg-gif{
-    height: 645px;
+    position:absolute;
+    padding: 0px;
+    margin-top: 0px;
+    width: 100%;
+    
+}
+
+#bg-overlay{
+     position:absolute;
+    margin-top: 0px;
+    padding: 0px;
     width: 100%;
     
 }
@@ -150,7 +163,7 @@ main
 }
 
 nav{
-	margin-top: 20px;
+	
 }
 
 .nav-pills>li>a {

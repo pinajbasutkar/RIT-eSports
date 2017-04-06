@@ -31,9 +31,9 @@
 		}
 	?>
 	
-    <div style="position:relative" id="main_home_image">
-    <img class="img-responsive center-all" id="bg-gif" src="media/home-bg.gif" style="position:absolute;"/>
-    <img class="img-responsive center-all" src="media/home-bg-overlay.png" style="position:absolute;"/>
+    <div id="main_home_image">
+    <img class="img-responsive center-all" id="bg-gif" src="media/home-bg.gif"/>
+    <img class="img-responsive center-all" id="bg-overlay" src="media/home-bg-overlay.png"/>
 </div>
 	
     <main class="center-div">
