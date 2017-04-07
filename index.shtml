@@ -12,7 +12,7 @@
   <script src="js/main.js"></script>
 </head>
 <body>
-	<!--#include virtual="includes/navmenu.html" -->
+	<!--#include virtual="includes/navmenu.php" -->
     
     <div style="position:relative" id="main_home_image">
     <img class="img-responsive center-all" id="bg-gif" src="media/home-bg.gif" style="position:absolute;"/>
@@ -112,6 +112,6 @@
 		
 	</section> 
 
-	<!--#include virtual="includes/footer.html" -->
+	<!--#include virtual="includes/footer.php" -->
 </body>
 </html>

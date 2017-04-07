@@ -6,7 +6,7 @@
 </head>
 <body>
 	
-    <?php include 'includes/navmenu.html';?>
+    <?php include 'includes/navmenu.php';?>
     
 	<main>
        
@@ -24,7 +24,7 @@
         
     </main>			
     
-    <?php include 'includes/footer.html';?>
+    <?php include 'includes/footer.php';?>
     
 </body>
 </html>				

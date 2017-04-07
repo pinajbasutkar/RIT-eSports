@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php
-	    include 'includes/navmenu.html';
+	    include 'includes/navmenu.php';
 	    
 	    class ESportsDB extends SQLite3
 		{
@@ -125,7 +125,7 @@
     <hr id="footer_line">	
 	
 	<?php
-	    include 'includes/footer.html';
+	    include 'includes/footer.php';
 	?>
 </body>
 </html>

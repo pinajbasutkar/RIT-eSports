@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <?php include 'includes/navmenu.html';?>
+    <?php include 'includes/navmenu.php';?>
     
 	<main id="past">
 		<h2 class="page_title">MATCHES</h2>
@@ -351,7 +351,7 @@
     </main>	
     
     <hr id="footer_line">
-    <?php include 'includes/footer.html';?>
+    <?php include 'includes/footer.php';?>
     
 </body>
 </html>				

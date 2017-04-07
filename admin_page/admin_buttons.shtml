@@ -91,7 +91,7 @@
 		</section>
     </main>			
 	<!-- div class="footer screenonly" -->
-		<!--<REMOVE SPACE FOR SSI>#include virtual="../includes/footer.html" -->
+		<!--<REMOVE SPACE FOR SSI>#include virtual="../includes/footer.php" -->
 	<!-- /div -->	
 
     <hr>

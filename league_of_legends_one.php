@@ -6,7 +6,7 @@
 </head>
 <body>
 
-	<?php include 'includes/navmenu.html';?>
+	<?php include 'includes/navmenu.php';?>
 	
 	<main>
 
@@ -130,7 +130,7 @@
 	</main>
 	
     <hr id="footer_line">
-    <?php include 'includes/footer.html';?>
+    <?php include 'includes/footer.php';?>
     
 </body>
 </html>
