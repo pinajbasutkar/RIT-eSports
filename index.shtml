@@ -107,10 +107,11 @@
             </a> 
             
         </div>
+        
+    </div>
 		
 	</section> 
 
-    <hr id="footer_line">	
 	<!--#include virtual="includes/footer.html" -->
 </body>
 </html>

@@ -117,15 +117,17 @@
 			</div>
 
 		
-        <div class="center-all">
-        
-            <a href="[TO BE DETERMINED]" class="center-all">
-                <button type="button" class="btn btn-warning btn-lg" id="load_more_button">Load More</button>
-            </a> 
-            
+            <div class="center-all">
+
+                <a href="[TO BE DETERMINED]" class="center-all">
+                    <button type="button" class="btn btn-warning btn-lg" id="load_more_button">Load More</button>
+                </a> 
+
+            </div>
+
         </div>
 		
-	</section> 
+    </section> 
 
     <hr id="footer_line">	
 	
