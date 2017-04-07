@@ -1,28 +1,30 @@
     <footer>
-	    <p>
-            <span id="copyright">
+    
+        <div class="row">
+        
+            <a href="http://www.facebook.com/esportsrit"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a href="http://www.instagram.com/ritesports"><i class="fa fa-instagram fa-2x"></i></a>
+            <a href="https://discord.gg/XvcyYgQ"><img class="discord-logo" src="media/discord_logo.png" alt="Discord logo" /></a>
+            <a href="http://www.twitter.com/ritesports"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="http://www.twitch.tv/ritesports"><i class="fa fa-twitch fa-2x"></i></a>
+            
+        </div>
+            
+            
+        <div class="row">
+        
+            <p id="copyright">
 			    &copy; <?php echo date("Y"); ?> RITeSports 
-			</span>
-			
+			</p>
+        
+        </div> 
+        
+        <div class="row">
+        
             <a href="admin_login.php">
                 <button type="button" class="btn btn-default" id="admin_login_button">Admin Login</button>
             </a> 
-		    			
-        </p>
-
-<!--
-		 <a href="https://www.facebook.com/esportsrit/" target="_blank">
-			<img class="img-circle img-responsive footer_image" src="media/footer_images/facebook_round_mini.png" alt="Link to RIT eSports Facebook page" title="Link to RIT eSports Facebook page">
-		</a>		
-		
-		<img class="img-circle img-responsive footer_image" src="media/footer_images/google_round_mini.png">
-		<img class="img-circle img-responsive footer_image" src="media/footer_images/pinterest_blacksquare_mini.jpg">
-		
-		<a href="https://twitter.com/ritesports?lang=en" target="_blank">
-			<img class="img-circle img-responsive footer_image" src="media/footer_images/twitter_bluecircle_mini.png" alt="Link to RIT eSports Twitter feed" title="Link to RIT eSports Twitter feed">
-		</a>		
-		
-		<img class="img-circle img-responsive footer_image" src="media/footer_images/instagram_bluecircle_mini.png">
--->
+        
+        </div>
         
     </footer>

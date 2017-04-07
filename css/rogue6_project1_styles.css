@@ -186,12 +186,6 @@ main
     background-color: #f9973b;
 }
 
-#copyright
-{
-    margin-left: 20px;
-	font-size: 1.6em;
-}
-
 #admin_login_button
 {
     float: right;
@@ -199,7 +193,34 @@ main
 	margin-right: 20px;
 }
 
-/* NAVIGATION STYLES */
+/* SOCIAL MEDIA ICONS */
+.discord-logo {
+    margin: 0.25em;
+    padding-bottom: 0.5em;
+}
+
+.fa {
+    margin: 0.25em;
+    text-shadow: 1px 1px black;
+}
+
+.fa-facebook-square {
+    color: #3b5998;
+}
+
+.fa-instagram {
+    color: #fbad50;
+}
+
+.fa-twitch {
+	color: #9D57C4;
+}
+
+.fa-twitter-square {
+	color: #00B6F1;
+}
+
+/* NAVIGATION */
 nav{
 	
 }
@@ -220,7 +241,7 @@ ul.nav a:hover {
 	background-color: #f9973b;
 }
 
-/* FOOTER STYLES */
+/* FOOTER */
 #footer_line
 {
     margin-top: 0;
