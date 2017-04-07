@@ -8,27 +8,21 @@
 	
     <?php include 'includes/navmenu.php';?>
     
-	<main id="add_news">
+	<main>
 
-		<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#add_news" class="tab_active">Add News</a></li>
-				<li><a href="#edit_news">Edit News</a></li>
-				<li><a href="#add_team">Add Team</a></li>
-				<li><a href="#edit_team">Edit Team</a></li>
-				<li><a href="#add_match">Add Match</a></li>
-				<li><a href="#edit_match">Edit Match</a></li>
-			</ul>
-			</div>
-		</nav>
-		
-        <div class="row">
+<div class="tab_admin">
+  <button class="tablinks" onclick="change(event, 'AddNews')" id="defaultOpen">Add News</button>
+  <button class="tablinks" onclick="change(event, 'EditNews')">Edit News</button>
+  <button class="tablinks" onclick="change(event, 'AddTeam')">Add Team</button>
+  <button class="tablinks" onclick="change(event, 'EditTeam')">Edit Team</button>
+  <button class="tablinks" onclick="change(event, 'AddMatch')">Add Match</button>
+  <button class="tablinks" onclick="change(event, 'EditMatch')">Edit Match</button>
+
+</div>
+
+<br>
+
+<div id="AddNews" class="tabcontent">
 		    <h2 class="page_title">ADD NEWS</h2>
 			<form>	  
 				<div class="form-group">
@@ -49,29 +43,10 @@
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>
 			</div>			
 			</form>
-    </main>
+</div>   
     
-    
-    <main id="edit_news">
-		<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#add_news">Add News</a></li>
-				<li><a href="#edit_news" class="tab_active">Edit News</a></li>
-				<li><a href="#add_team">Add Team</a></li>
-				<li><a href="#edit_team">Edit Team</a></li>
-				<li><a href="#add_match">Add Match</a></li>
-				<li><a href="#edit_match">Edit Match</a></li>
-			</ul>
-			</div>
-		</nav>
-		
-        <div class="row">
+
+		<div id="EditNews" class="tabcontent">
 		    <h2 class="page_title">EDIT NEWS</h2>
 			<form>	  
 				<div class="form-group">
@@ -92,29 +67,10 @@
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>
 			</div>			
 			</form>
-    </main>	
-    
-    
-    <main id="add_team">
-			<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#add_news">Add News</a></li>
-				<li><a href="#edit_news">Edit News</a></li>
-				<li><a href="#add_team" class="tab_active">Add Team</a></li>
-				<li><a href="#edit_team">Edit Team</a></li>
-				<li><a href="#add_match">Add Match</a></li>
-				<li><a href="#edit_match">Edit Match</a></li>
-			</ul>
-			</div>
-		</nav>
+		</div>
+        
 		
-        <div class="row">
+        <div id="AddTeam" class="tabcontent">
 		    <h2 class="page_title">ADD TEAM</h2>
 			<form>	  
 				<div class="form-group">
@@ -140,29 +96,10 @@
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>
 			</div>			
 			</form>
-    </main>		
+    </div>		
     
-    
-    <main id="edit_team">
-		<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#add_news">Add News</a></li>
-				<li><a href="#edit_news">Edit News</a></li>
-				<li><a href="#add_team">Add Team</a></li>
-				<li><a href="#edit_team" class="tab_active">Edit Team</a></li>
-				<li><a href="#add_match">Add Match</a></li>
-				<li><a href="#edit_match">Edit Match</a></li>
-			</ul>
-			</div>
-		</nav>
-				
-        <div class="row">
+			
+        <div id="EditTeam" class="tabcontent">
 		    <h2 class="page_title">EDIT TEAM</h2>
 			<form>	  
 				<div class="form-group">
@@ -188,29 +125,11 @@
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>
 			</div>			
 			</form>
-    </main>	
+    </div>	
     
     
-    <main id="add_match">
-		<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#add_news">Add News</a></li>
-				<li><a href="#edit_news">Edit News</a></li>
-				<li><a href="#add_team">Add Team</a></li>
-				<li><a href="#edit_team">Edit Team</a></li>
-				<li><a href="#add_match" class="tab_active">Add Match</a></li>
-				<li><a href="#edit_match">Edit Match</a></li>
-			</ul>
-			</div>
-		</nav>
-		
-        <div class="row">
+
+        <div id="AddMatch" class="tabcontent">
 		    <h2 class="page_title">ADD MATCH</h2>
 			<form>	  
 				<div class="form-group">
@@ -241,31 +160,12 @@
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>
 			</div>			
 			</form>
-    </main>		
+    </div>		
     
     
-    <main id="edit_match">
-
-	<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#add_news">Add News</a></li>
-				<li><a href="#edit_news">Edit News</a></li>
-				<li><a href="#add_team">Add Team</a></li>
-				<li><a href="#edit_team">Edit Team</a></li>
-				<li><a href="#add_match">Add Match</a></li>
-				<li><a href="#edit_match" class="tab_active">Edit Match</a></li>
-			</ul>
-			</div>
-		</nav>
 		
 		
-        <div class="row">
+     <div id="EditMatch" class="tabcontent">
 		    <h2 class="page_title">EDIT MATCH</h2>
 			<form>	  
 				<div class="form-group">
@@ -292,12 +192,13 @@
 					<label for="video">Video Link</label>
 					<text class="form-control" rows="1" id="video"></text>
 				</div>
+				<button type="button" class="btn btn-warning main_action_button">Publish</button>
+			</div>			
+			</form>
+    </div>	
+</main>
 
-                <button type="button" class="btn btn-warning main_action_button">Publish</button>
-            </form>
-        </div>
-        
-    </main>	
+<br><br><br>
 
     <hr id="footer_line">
     <?php include 'includes/footer.php';?>

@@ -29,7 +29,7 @@
                     </div>
 
 
-                    <a href="admin.shtml">
+                    <a href="admin.php">
                         <button type="button" class="btn btn-warning main_action_button">Log In</button>
                     </a>
 

@@ -9,26 +9,19 @@
 
     <?php include 'includes/navmenu.php';?>
     
-	<main id="past">
+	<main>
 		<h2 class="page_title">MATCHES</h2>
-		
-		<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#past" class="tab_active"> Past </a></li>
-			<li><a href="#current"> Current </a></li>
-			<li><a href="#future"> Future </a></li>
-			</ul>
-			</div>
-		</nav>
 
-		<div class="container">
-		    <table class="table table-striped">
+<div class="tab_matches">
+  <button class="tablinks" onclick="change(event, 'Past')">Past</button>
+  <button class="tablinks" onclick="change(event, 'Current')" id="defaultOpen">Current</button>
+  <button class="tablinks" onclick="change(event, 'Future')">Future</button>
+</div>
+
+<br><br><br>
+
+<div id="Past" class="tabcontent">
+  <table class="table table-striped">
 			    <thead>
 				    <tr>
 					    <th>Game</th>
@@ -118,31 +111,11 @@
                     </tr>
 				</tbody>
             </table>
-            <hr>
-             </main>	
-            
-            
-        <main id="current">
-		<h2 class="page_title">MATCHES</h2>
-		
-		<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#past"> Past </a></li>
-			<li><a href="#current" class="tab_active"> Current </a></li>
-			<li><a href="#future"> Future </a></li>
-			</ul>
-			</div>
-		</nav>
 
-		
-		<div class="container">
-		    <table class="table table-striped">
+</div>
+
+<div id="Current" class="tabcontent">
+  <table class="table table-striped">
 			    <thead>
 				    <tr>
 					    <th>Game</th>
@@ -232,30 +205,10 @@
                     </tr>
 				</tbody>
             </table>
-            <hr>
-             </main>	
-            
-        <main id="future">
-		<h2 class="page_title">MATCHES</h2>
-		
-		<nav class="nav navbar-default">
-		<button id="ChangeToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-		<span class="icon-bar top-bar"></span>
-		<span class="icon-bar middle-bar"></span>
-		<span class="icon-bar bottom-bar"></span>
-		</button>
-			<div class="collapse navbar-collapse navHeaderCollapse">
-			<ul class="nav nav-pills nav-justified">
-			<li><a href="#past"> Past </a></li>
-			<li><a href="#current"> Current </a></li>
-			<li><a href="#future"  class="tab_active"> Future </a></li>
-			</ul>
-			</div>
-		</nav>
+</div>
 
-		
-		<div class="container">
-		    <table class="table table-striped">
+<div id="Future" class="tabcontent">
+  <table class="table table-striped">
 			    <thead>
 				    <tr>
 					    <th>Game</th>
@@ -345,10 +298,9 @@
                     </tr>
 				</tbody>
             </table>
-            <hr>
-            
-        </div>			
-    </main>	
+</div>
+
+</main>
     
     <hr id="footer_line">
     <?php include 'includes/footer.php';?>

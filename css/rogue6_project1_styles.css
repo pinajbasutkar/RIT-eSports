@@ -220,26 +220,80 @@ main
 	color: #00B6F1;
 }
 
-/* NAVIGATION */
-nav{
-	
+/* MATCHES TABS */
+div.tab_matches {
+    overflow: hidden;
+    background-color: #e8eaed;
+    color: #000000;
+    border-radius: 3px;
 }
 
-.nav-pills>li>a {
-	border-radius: 0px;
-	color: #000000;
+div.tab_matches button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: 17px;
+    width: 33.33%;
+    border-right: 1px solid #343435;
 }
 
-ul.nav a:hover {
-	color: #fffdeb;
-	background-color: #f9973b;
+div.tab_matches button:hover {
+    background-color: #cccccc;
 }
 
-.tab_active
-{
-	color: #fffdeb;
-	background-color: #f9973b;
+div.tab_matches button.active {
+    background-color: #f9973b;
+    color: #ffffff;
 }
+
+/* MATCHES TABLE */
+table, th{
+text-align: center;
+}
+
+.light_table_row{
+color: #000000;
+}
+
+/* ADMIN TABS */
+div.tab_admin {
+    overflow: hidden;
+    background-color: #e8eaed;
+    color: #000000;
+    border-radius: 3px;
+}
+
+div.tab_admin button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: 17px;
+    width: 16.66%;
+    border-right: 1px solid #343435;
+}
+
+div.tab_admin button:hover {
+    background-color: #cccccc;
+}
+
+div.tab_admin button.active {
+    background-color: #f9973b;
+    color: #ffffff;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+}
+
 
 /* FOOTER */
 #footer_line
