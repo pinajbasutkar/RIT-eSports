@@ -250,6 +250,10 @@ div.tab_matches button.active {
     color: #ffffff;
 }
 
+div.tab_matches button:last-child{
+border-right:none;
+}
+
 /* MATCHES TABLE */
 table, th{
 text-align: center;
@@ -288,6 +292,9 @@ div.tab_admin button.active {
     background-color: #f9973b;
     color: #ffffff;
 }
+
+div.tab_admin button:last-child{
+border-right:none;
 
 .tabcontent {
     display: none;
