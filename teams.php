@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
   <title>RIT eSports Teams Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/rogue6_project1_styles.css">  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/jquery.smooth-scroll.min.js"></script>
-  <script src="js/main.js"></script>
+  <?php include 'includes/head.php';?>
 </head>
 <body>
-	<!--#include virtual="includes/navmenu.html" -->
+	
+    <?php include 'includes/navmenu.html';?>
+    
 	<main>
 		<div class="container-fluid">
 			<h2 class="page_title">TEAMS</h2>
@@ -20,7 +15,7 @@
 			<div class="row">
 				<div class="col-sm-4 col-md-4">
 					<figure>
-                        <a href="league_of_legends_one.shtml">
+                        <a href="league_of_legends_one.php">
 							<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
 							<figcaption id="single_team_name" class="figure-caption team_name">League of Legends One</figcaption>
 						</a>
@@ -62,7 +57,8 @@
 		</div>
 	</main>
 	
-    <hr id="footer_line">	
-	<!--#include virtual="includes/footer.html" -->
+    <hr id="footer_line">
+    <?php include 'includes/footer.html';?>
+    
 </body>
 </html>

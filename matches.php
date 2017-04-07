@@ -3,17 +3,12 @@
 <html lang="en">
 <head>
   <title>RIT eSports Matches Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/rogue6_project1_styles.css">  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/jquery.smooth-scroll.min.js"></script>
-  <script src="js/main.js"></script>
+  <?php include 'includes/head.php';?>
 </head>
 <body>
-	<!--#include virtual="includes/navmenu.html" -->
+
+    <?php include 'includes/navmenu.html';?>
+    
 	<main id="past">
 		<h2 class="page_title">MATCHES</h2>
 		
@@ -354,7 +349,9 @@
             
         </div>			
     </main>	
-    <hr id="footer_line">	
-	<!--#include virtual="includes/footer.html" -->		
+    
+    <hr id="footer_line">
+    <?php include 'includes/footer.html';?>
+    
 </body>
 </html>				
