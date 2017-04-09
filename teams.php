@@ -17,20 +17,21 @@
 					<figure>
                         <a href="league_of_legends_one.php">
 							<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
-							<figcaption id="single_team_name" class="figure-caption team_name">League of Legends One</figcaption>
+							<!--<figcaption id="single_team_name" class="figure-caption team_name">League of Legends One</figcaption> -->
+							<figcaption id="single_team_name" class="figure-caption text-center team_name">League of Legends One</figcaption>
 						</a>
 					</figure>
 				</div>
 				<div class="col-sm-4 col-md-4">
 					<figure>
 						<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
-						<figcaption class="figure-caption team_name">Team Name</figcaption>
+						<figcaption class="figure-caption text-center team_name">Team Name</figcaption>
 					</figure>
 				</div>
 				<div class="col-sm-4 col-md-4">
 					<figure>
 						<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
-						<figcaption class="figure-caption team_name">Team Name</figcaption>
+						<figcaption class="figure-caption text-center team_name">Team Name</figcaption>
 					</figure>
 				</div>			
 			</div>
@@ -38,19 +39,19 @@
 				<div class="col-sm-4 col-md-4">
 					<figure>
 						<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
-						<figcaption class="figure-caption team_name">Team Name</figcaption>					
+						<figcaption class="figure-caption text-center team_name">Team Name</figcaption>					
 					</figure>
 				</div>
 				<div class="col-sm-4 col-md-4">
 					<figure>
 						<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
-						<figcaption class="figure-caption team_name">Team Name</figcaption>					
+						<figcaption class="figure-caption text-center team_name">Team Name</figcaption>					
 					</figure>
 				</div>
 				<div class="col-sm-4 col-md-4">
 					<figure>
 						<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
-						<figcaption class="figure-caption team_name">Team Name</figcaption>
+						<figcaption class="figure-caption text-center team_name">Team Name</figcaption>
 					</figure>
 				</div>			
 			</div>		
