@@ -28,6 +28,22 @@
     border-radius: 0;	
 }
 
+.navbar-toggle{
+    
+    background-color: transparent;
+    border: none;
+    margin-right: 0px;
+    padding-right: 0px;
+    
+}
+
+.navbar-toggle:hover{
+    
+    background-color: transparent;
+}
+
+
+
 /* News Item Styles */
 .news-item {
     background-color: whitesmoke;
@@ -299,6 +315,7 @@ div.tab_admin button.active {
 
 div.tab_admin button:last-child{
 border-right:none;
+}
 
 .tabcontent {
     display: none;
@@ -323,3 +340,36 @@ footer
 	margin-bottom: 20px;
 	margin-left: 20px;
 }
+
+
+
+
+
+/* ---------Media Queries --------------------------------------------------------------- */
+
+@media screen and (max-width : 766px) {
+    
+    
+    
+    
+}
+
+
+@media screen and (max-width : 900px) {
+    
+    #main_home_image{
+        margin-top: 4em;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+  
