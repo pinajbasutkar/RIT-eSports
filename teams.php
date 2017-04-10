@@ -41,6 +41,7 @@
 		<div class="container-fluid">
 			<h2 class="page_title">TEAMS</h2>
 			
+            <div class="team-list">
 			<div class="row">
 				<div class="col-sm-4 col-md-4">
 					<figure>
@@ -82,7 +83,8 @@
 						<img class="img-circle img-responsive center-all" src="media/esports_assets/tigerhead_small.png" alt="Link to TBD Team Page" title="Link to TBD Team Page">
 						<figcaption class="figure-caption text-center team_name">Team Name</figcaption>
 					</figure>
-				</div>			
+				</div>
+                </div>
 			</div>		
 		</div>
 	</main>

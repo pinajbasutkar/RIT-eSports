@@ -212,6 +212,37 @@ main
 	margin-right: 20px;
 }
 
+
+
+/*  TEAMS PAGE   */
+
+.img-circle{
+    background-color: #625E5E;
+    
+}
+
+
+.img-circle{
+	background: #625E5E;
+}
+
+.img-circle:hover {
+	opacity: .5;
+     -webkit-box-shadow:inset 0px 0px 0px 2px #F7931E;
+    -moz-box-shadow:inset 0px 0px 0px 2px #F7931E;
+    box-shadow:inset 0px 0px 0px 2px #F7931E;
+}
+
+
+
+.team-list figcaption{
+    color:#BFBFBF;
+}
+
+.team-list figcaption:hover{
+    color:#F7931E;
+}
+
 /* SOCIAL MEDIA ICONS */
 .discord-logo {
     margin: 0.25em;
