@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-left" href="index.php">
-			    <img id="header_logo" src="media/esports_assets/esports_logo_mini2.png" alt="RIT eSports Logo" title="RIT eSports Logo">
+			    <img id="header_logo" src="media/esports_assets/Logo1.png" alt="RIT eSports Logo" title="RIT eSports Logo">
 			</a>		
 		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#esports_navbar">
 			    <span class="icon-bar"></span>
