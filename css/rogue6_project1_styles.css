@@ -205,18 +205,27 @@ main
     background-color: #f9973b;
 }
 
+
+/* ADMIN LOGIN BUTTON */
+
 #admin_login_button
 {
+    background-color: black;
+    color: gray;
     float: right;
 	clear: none;
 	margin-right: 20px;
+}
+
+#admin_login_button:hover {
+    color: white;
 }
 
 
 
 /*  TEAMS PAGE   */
 
-.img-circle{
+.img-circle {
     background-color: #625E5E;
     
 }
@@ -243,10 +252,12 @@ main
     color:#F7931E;
 }
 
+
 /* SOCIAL MEDIA ICONS */
+
 .discord-logo {
     margin: 0.25em;
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
 }
 
 .fa {
