@@ -33,20 +33,7 @@
         
         <h2 class="page_title">ABOUT</h2>	
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
-            Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis 
-            sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. 
-            Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per 
-            conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim 
-            lacinia nunc. 
-        </p>
-        <p>
-            Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. 
-            Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, 
-            iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. 
-            Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque 
-            volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
-            per inceptos himenaeos. 
+           RIT eSports is a student run organization within the Rochester Institute of Technology, with the goal to facilitate the development and growth of gaming talent on campus. We are one of the fastest growing organizations on campus, with over 70 active players across our teams. Teams currently include games such as, League of Legends, Overwatch, Heroes of the Storm, Counter Strike, Starcraft, Rocket League, and Dota, with even more on the way soon. Whether a team wins or loses, we pride ourselves on our constant state of self-improvement, whether it be as players, students, or local citizens. We pride ourselves on teamwork, leadership, and determination, modeling ourselves after both professional eSport teams and traditional collegiate athletics programs. Because of our traditional inspiration, as well as our unique campus composition, we believe that RIT can become the #1 college in the world for competitive gaming within the next few years.
         </p>  
             
 	</main>
