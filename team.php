@@ -29,13 +29,11 @@
             $team_name = $team_result->fetchArray(SQLITE3_ASSOC)['TEAM_NAME'];	
             $captains = $esports_db->query("SELECT * FROM PLAYERS WHERE TEAM_ID = " . $team_id . " AND IS_CAPTAIN = 1");			
 			$non_captains = $esports_db->query("SELECT * FROM PLAYERS WHERE TEAM_ID = " . $team_id . " AND IS_CAPTAIN != 1");
-			
-			/*
+						
 			echo "<figure>";
 			echo "<img class=\"img-circle img-responsive center-all\" src=\"media/esports_assets/tigerhead_small.png\" alt=\"Link to " . $team_name . " Team_page\">";
 			echo "<figcaption id=\"single_team_name\" class=\"figure-caption team_name\">" . $team_name . "</figcaption>";
-			echo "</figure>";
-			*/
+			echo "</figure>";			
 
 			while($captain = $captains->fetchArray(SQLITE3_ASSOC))
 			{
