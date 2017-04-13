@@ -33,7 +33,12 @@
         
         <h2 class="page_title">ABOUT</h2>	
         <p>
-           RIT eSports is a student run organization within the Rochester Institute of Technology, with the goal to facilitate the development and growth of gaming talent on campus. We are one of the fastest growing organizations on campus, with over 70 active players across our teams. Teams currently include games such as, League of Legends, Overwatch, Heroes of the Storm, Counter Strike, Starcraft, Rocket League, and Dota, with even more on the way soon. Whether a team wins or loses, we pride ourselves on our constant state of self-improvement, whether it be as players, students, or local citizens. We pride ourselves on teamwork, leadership, and determination, modeling ourselves after both professional eSport teams and traditional collegiate athletics programs. Because of our traditional inspiration, as well as our unique campus composition, we believe that RIT can become the #1 college in the world for competitive gaming within the next few years.
+           RIT eSports is a student run organization within the Rochester Institute of Technology, with the goal of facilitating the development and growth of gaming talent on campus. 
+		   We are one of the fastest growing organizations at RIT, with over 70 players currently active. Teams include games such as League of Legends, Overwatch, Heroes of the Storm, 
+		   Counter Strike, Starcraft, Rocket League, and Dota, with even more on the way soon. Whether a team wins or loses, we are constantly striving for self-improvement, 
+		   whether it be as players, students, or local citizens. We pride ourselves on teamwork, leadership, and determination, modeling ourselves after both professional eSport teams 
+		   and traditional collegiate athletics programs. Due to our traditional inspiration, as well as our unique campus composition, we believe that RIT can become the #1 college 
+		   in the world for competitive gaming within the next few years.
         </p>  
             
 	</main>
