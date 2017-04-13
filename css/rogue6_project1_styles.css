@@ -25,7 +25,8 @@
     background-color: #e8eaed;	
     padding-right: 10px;
     border-bottom: 6px solid #f9973b;
-    border-radius: 0;	
+    border-radius: 0;
+    font-size: 14px;
 }
 
 .navbar-toggle{
@@ -80,6 +81,10 @@ h2{
     src: url("../fonts/good-times.ttf");
 }
 
+.btn-group-lg>.btn, .btn-lg {
+        border-radius: 2px;
+        width: 150px;
+}
 
 /* News Item Styles */
 .news-item {
