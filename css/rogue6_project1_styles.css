@@ -41,7 +41,30 @@
     background-color: transparent;
 }
 
+/*.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+   color: #777777;
+    background-color: transparent;
+}*/
 
+.navbar-default .navbar-nav>.active>a{
+   color: #777777;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    
+    background-color: transparent;
+}
+
+.dropdown-menu{
+   background-color: #e8eaed; 
+
+}
+
+.dropdown-menu>li>a {
+color: #777777;
+    
+}
 
 /* News Item Styles */
 .news-item {
@@ -403,6 +426,8 @@ footer
     }
     
 }
+
+
 
 
 
