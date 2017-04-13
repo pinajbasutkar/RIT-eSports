@@ -66,6 +66,21 @@ color: #777777;
     
 }
 
+h2{
+    font-family: heading-font;
+}
+
+@font-face {
+    font-family: body-font;
+    src: url("../fonts/HelveticaNeueLt.ttf");
+}
+
+@font-face {
+    font-family: heading-font;
+    src: url("../fonts/good-times.ttf");
+}
+
+
 /* News Item Styles */
 .news-item {
     background-color: whitesmoke;
@@ -102,9 +117,11 @@ li a
 
 body 
 { 
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background-color: #343435;
+    font-family: body-font;
+    color: #afafae;
+    background-color: #1C1B1B;
+    font-size: 16px;
+    line-height: 180%;
 }
 
 main
