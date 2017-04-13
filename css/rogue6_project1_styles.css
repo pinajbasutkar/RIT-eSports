@@ -427,6 +427,20 @@ footer
 	margin-left: 20px;
 }
 
+#social-icons{
+    margin-top: 4em;
+    
+}
+
+#social-icons a{
+    opacity: 0.8;
+}
+
+#social-icons a:hover{
+    opacity: 1;
+    
+}
+
 
 
 

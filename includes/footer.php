@@ -1,6 +1,6 @@
     <footer>
     
-        <div class="row center-all">
+        <div class="row center-all" id="social-icons">
         
             <a href="http://www.facebook.com/esportsrit" target="_blank"><i class="fa fa-facebook-square fa-3x"></i></a>
             <a href="http://www.instagram.com/ritesports" target="_blank"><i class="fa fa-instagram fa-3x"></i></a>
