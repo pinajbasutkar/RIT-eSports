@@ -18,9 +18,9 @@
 				<li class="active dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">MATCHES<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="matches.php">Past</a></li>
-						<li><a href="matches.php">Current</a></li>
-						<li><a href="matches.php">Future</a></li>
+						<li><a href="matches.php?type=past">Past</a></li>
+						<li><a href="matches.php?type=current">Current</a></li>
+						<li><a href="matches.php?type=future">Future</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
