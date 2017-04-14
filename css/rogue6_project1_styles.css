@@ -332,6 +332,11 @@ div.tab_matches {
     background-color: #e8eaed;
     color: #000000;
     border-radius: 3px;
+    margin-bottom: 2em;
+}
+
+div.tab_matches a {
+    color: #000000;
 }
 
 div.tab_matches button {
@@ -357,16 +362,16 @@ div.tab_matches button.active {
 }
 
 div.tab_matches button:last-child{
-border-right:none;
+    border-right:none;
 }
 
 /* MATCHES TABLE */
 table, th{
-text-align: center;
+    text-align: center;
 }
 
 .light_table_row{
-color: #000000;
+    color: #000000;
 }
 
 /* ADMIN TABS */
@@ -404,7 +409,6 @@ border-right:none;
 }
 
 .tabcontent {
-    display: none;
     padding: 6px 12px;
 }
 
