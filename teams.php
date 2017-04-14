@@ -29,17 +29,10 @@
 					}
 					
 					$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
-					$team_list_result = $esports_db->query("SELECT * FROM TEAMS");	
-					
-					$index = 0;
+					$team_list_result = $esports_db->query("SELECT * FROM TEAMS");
 					
 					while($team = $team_list_result->fetchArray(SQLITE3_ASSOC))
-					{
-						if($index % 3 === 0)
-						{
-							echo '<div class="row">';
-						}
-						
+					{	
 						echo '<div class="col-sm-4 col-md-4">';
 						echo "<figure>";
 						$team_id = $team['TEAM_ID'];
@@ -51,13 +44,6 @@
                         echo "</a>";						
                         echo "</figure>";
 						echo "</div>";
-
-                        if($index > 0 && $index % 3 === 0)
-						{
-							echo "</div>";							
-                        }							
-						
-						$index++;
 					}			
 				?>	
 			</div>				
