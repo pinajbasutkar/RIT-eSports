@@ -266,7 +266,45 @@ main
     color: white;
 }
 
+/* TEAM ADMIN */
 
+.admin_table_row:hover td {
+	background-color: gray;
+	cursor: pointer;
+}
+
+.admin_team_logo {
+	height: 40px;
+	width: 40px;
+}
+
+.admin_team_text
+{
+	font-size: 1.1em;
+	vertical-align: middle;
+	color: #f9973b;
+}
+
+.admin_input_text
+{
+	font-size: 1.1em;
+}
+
+.add_player_button
+{
+	float: left;
+    font-size: 1.1em;
+    background-color: #f9973b;
+}
+
+.admin_page_button
+{
+	float: right;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 1.2em;
+    background-color: #f9973b;
+}
 
 /*  TEAMS PAGE   */
 
