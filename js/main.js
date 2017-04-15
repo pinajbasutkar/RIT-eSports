@@ -28,6 +28,8 @@ $(document).ready(function(){
     // for current page, just call smoothScroll method on links
     $('a').smoothScroll();
 	
+	document.getElementById("defaultOpen").click();
+  
 });
 
 function change(evt, tab) {
