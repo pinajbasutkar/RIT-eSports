@@ -158,8 +158,7 @@ main
 
 #team_logo
 {
-    margin-left: 40%;
-	margin-right: 40%;
+	margin: 80px 40%;
 }
 
 .category_header
