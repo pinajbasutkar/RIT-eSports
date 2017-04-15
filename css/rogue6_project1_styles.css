@@ -250,6 +250,10 @@ main
     background-color: #f9973b;
 }
 
+.admin_logo {
+	height: 70px;
+	width: 70px;
+}
 
 /* ADMIN LOGIN BUTTON */
 
@@ -278,7 +282,7 @@ main
 	width: 40px;
 }
 
-.admin_team_text
+.admin_text
 {
 	font-size: 1.1em;
 	vertical-align: middle;

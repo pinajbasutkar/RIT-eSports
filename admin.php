@@ -83,15 +83,25 @@
         <div id="AddNews" class="tabcontent">
             <form>	  
                 <div class="form-group">
-                    <label for="news_heading">News Heading</label>
+                    <label for="news_heading">Headline</label>
                     <text class="form-control" rows="1" id="newsheading"></text>
                 </div>
 
                 <div class="form-group">
-                    <label for="published_on">Published On</label>
+                    <label for="published_on">Date</label>
                     <text class="form-control" rows="1" id="published_on"></text>
                 </div>
-
+				
+				<div class="form-group">
+                    <label for="news_heading">Author</label>
+                    <text class="form-control" rows="1" id="newsheading"></text>
+                </div>
+                
+                <div class="form-group">
+                    <label for="news_heading">Image URL</label>
+                    <text class="form-control" rows="1" id="newsheading"></text>
+                </div>
+                
                 <div class="form-group">
                     <label for="description">Description</label>
                     <textarea class="form-control" rows="8" id="description"></textarea>
@@ -104,21 +114,88 @@
     
 
 		<div id="EditNews" class="tabcontent">
+		<div id ="NewsList">
+			
+			Select a news item to edit:
+			
+		<?php			   
+			class ESportsDB extends SQLite3
+				{
+					function __construct()
+					{
+						$this->open('db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
+					}
+				}
+					
+				$esports_db = new ESportsDB();
+					
+				if(!$esports_db)
+				{
+					echo $esports_db->lastErrorMsg();
+				}
+					
+				$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
+				
+				$news_list = $esports_db->query("SELECT * FROM NEWS_ITEMS");	
+				
+				$index = 0;
+
+				echo "<table class='table'>";
+				echo "<tbody>";
+				while($news = $news_list->fetchArray(SQLITE3_ASSOC))
+				{
+					echo "<tr class='clickable-row admin_table_row'>";
+					$news_id = $news['NEWS_ID'];
+					$headline = $news['HEADLINE'];
+					$date = $news['DATE'];
+					$image = $news['IMAGE_URL'];
+							
+					echo "<td>";
+					echo "<img class='img-responsive admin_logo' src='$image' alt='news image' title='news image'>";
+					echo "</td>";
+								
+					echo "<td class='admin_team_text'>";							
+					echo "$date";
+					echo "</td>";
+							
+					echo "<td class='admin_team_text'>";							
+					echo "$headline";
+					echo "</td>";
+	
+					echo "</tr>";							
+							
+					$index++;
+				}
+				echo "</tbody>";
+				echo "</table>";
+		?>
+		</div>	
+			
 			<form>	  
 				<div class="form-group">
-					<label for="news_heading">News Heading</label>
-					<text class="form-control" rows="1" id="newsheading"></text>
-				</div>
+                    <label for="news_heading">Headline</label>
+                    <text class="form-control" rows="1" id="newsheading"></text>
+                </div>
+
+                <div class="form-group">
+                    <label for="published_on">Date</label>
+                    <text class="form-control" rows="1" id="published_on"></text>
+                </div>
 				
 				<div class="form-group">
-					<label for="published_on">Published On</label>
-					<text class="form-control" rows="1" id="published_on"></text>
-				</div>
-
-				<div class="form-group">
-					<label for="description">Description</label>
-					<textarea class="form-control" rows="8" id="description"></textarea>
-				</div>
+                    <label for="news_heading">Author</label>
+                    <text class="form-control" rows="1" id="newsheading"></text>
+                </div>
+                
+                <div class="form-group">
+                    <label for="news_heading">Image URL</label>
+                    <text class="form-control" rows="1" id="newsheading"></text>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" rows="8" id="description"></textarea>
+                </div>
 			  
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>		
 			</form>
@@ -140,22 +217,6 @@
         <div id="EditTeam" class="tabcontent">
 			<div id ="TeamList">
 				<?php			   
-					class ESportsDB extends SQLite3
-					{
-						function __construct()
-						{
-							$this->open('db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
-						}
-					}
-					
-					$esports_db = new ESportsDB();
-					
-					if(!$esports_db)
-					{
-						echo $esports_db->lastErrorMsg();
-					}
-					
-					$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
 					$team_list_result = $esports_db->query("SELECT * FROM TEAMS");	
 				
 					$index = 0;
