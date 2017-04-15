@@ -163,7 +163,7 @@
                             <td>0-0</td>
                             <td>Live</td>
                             <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
+                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
                             </td>							
                         </tr>
                         <tr>
@@ -174,7 +174,7 @@
                             <td>0-0</td>
                             <td>Live</td>
                             <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
+                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
                             </td>						 
                         </tr>
                         <tr class="light_table_row">
@@ -185,7 +185,7 @@
                             <td>0-0</td>
                             <td>Live</td>
                             <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
+                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
                             </td>						 
                         </tr>
                         <tr>
@@ -196,7 +196,7 @@
                             <td>0-0</td>
                             <td>Live</td>
                             <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
+                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
                             </td>						 
                         </tr>					
                         <tr class="light_table_row">
@@ -207,7 +207,7 @@
                             <td>0-0</td>
                             <td>Live</td>
                             <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
+                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
                             </td>							
                         </tr>
                         <tr>
@@ -218,7 +218,7 @@
                             <td>0-0</td>
                             <td>Live</td>
                             <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
+                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
                             </td>						 
                         </tr>
                         <tr class="light_table_row">
@@ -229,7 +229,7 @@
                             <td>0-0</td>
                             <td>Live</td>
                             <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
+                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
                             </td>						 
                         </tr>
                     </tbody>
