@@ -3,10 +3,12 @@
 <head>
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
-
+  
+	<script src="js/js_admin.js"></script>
+	
 	<script>
 		"use strict";
-
+		
 		function addPlayerTableRow(i) {
 			console.log("addPlayerTableRow called with value " + i);
 			document.getElementById("player_table");
@@ -144,12 +146,13 @@
 				echo "<tbody>";
 				while($news = $news_list->fetchArray(SQLITE3_ASSOC))
 				{
-					echo "<tr class='clickable-row admin_table_row'>";
 					$news_id = $news['NEWS_ID'];
 					$headline = $news['HEADLINE'];
 					$date = $news['DATE'];
 					$image = $news['IMAGE_URL'];
-							
+					
+					echo "<tr class='clickable-row admin_table_row' id = '$news_id' onclick='edit_news_click(this.id)'>";
+					
 					echo "<td>";
 					echo "<img class='img-responsive admin_logo' src='$image' alt='news image' title='news image'>";
 					echo "</td>";
@@ -174,22 +177,22 @@
 			<form>	  
 				<div class="form-group">
                     <label for="news_heading">Headline</label>
-                    <text class="form-control" rows="1" id="newsheading"></text>
+                    <input type="text" class="form-control" rows="1" id="headline">
                 </div>
 
                 <div class="form-group">
-                    <label for="published_on">Date</label>
-                    <text class="form-control" rows="1" id="published_on"></text>
+                    <label for="published_on">Published On</label>
+                    <input type="text" class="form-control" rows="1" id="date">
                 </div>
 				
 				<div class="form-group">
                     <label for="news_heading">Author</label>
-                    <text class="form-control" rows="1" id="newsheading"></text>
+                    <input type="text" class="form-control" rows="1" id="author">
                 </div>
                 
                 <div class="form-group">
                     <label for="news_heading">Image URL</label>
-                    <text class="form-control" rows="1" id="newsheading"></text>
+                    <input type="text" class="form-control" rows="1" id="image_url">
                 </div>
                 
                 <div class="form-group">
