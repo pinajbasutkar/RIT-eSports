@@ -20,16 +20,19 @@
 	
 	if ($news_list)
 	{	
-		$headline = $news_list->fetchArray(SQLITE3_ASSOC)['HEADLINE'];
-		$author = $news_list->fetchArray(SQLITE3_ASSOC)['AUTHOR'];
-		$date_published = $news_list->fetchArray(SQLITE3_ASSOC)['DATE'];		
-		$image_url = $news_list->fetchArray(SQLITE3_ASSOC)['IMAGE_URL'];	
-		$description = $news_list->fetchArray(SQLITE3_ASSOC)['DESCRIPTION'];
+		while($row = $news_list->fetchArray(SQLITE3_ASSOC))
+		{
+		$headline = $row['HEADLINE'];
+		$author = $row['AUTHOR'];
+		$date_published = $row['DATE'];		
+		$image_url = $row['IMAGE_URL'];	
+		$intro = $row['INTRO'];	
+		$description = $row['DESCRIPTION'];
 		
-		$news = array(  headline => $headline, author => $author, 
-						date_published => $date_published,
-						image_url => $image_url, descrip => $description);
-		
+		$news = array(  'headline' => $headline, 'author' => $author, 
+						'date_published' => $date_published, 'image_url' => $image_url, 
+						'intro' => $intro, 'descrip' => $description);
+		}
 	}
 	
 	else

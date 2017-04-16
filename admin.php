@@ -86,27 +86,32 @@
             <form>	  
                 <div class="form-group">
                     <label for="news_heading">Headline</label>
-                    <text class="form-control" rows="1" id="newsheading"></text>
+                    <text class="form-control" rows="1"></text>
                 </div>
 
                 <div class="form-group">
                     <label for="published_on">Date</label>
-                    <text class="form-control" rows="1" id="published_on"></text>
+                    <text class="form-control" rows="1"></text>
                 </div>
 				
 				<div class="form-group">
                     <label for="news_heading">Author</label>
-                    <text class="form-control" rows="1" id="newsheading"></text>
+                    <text class="form-control" rows="1"></text>
                 </div>
                 
                 <div class="form-group">
                     <label for="news_heading">Image URL</label>
-                    <text class="form-control" rows="1" id="newsheading"></text>
+                    <text class="form-control" rows="1"></text>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Introduction</label>
+                    <textarea class="form-control" rows="5"></textarea>
                 </div>
                 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" rows="8" id="description"></textarea>
+                    <textarea class="form-control" rows="8"></textarea>
                 </div>
 
                 <button type="button" class="btn btn-warning main_action_button">Publish</button>
@@ -196,8 +201,13 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="intro">Introduction</label>
+                    <textarea class="form-control" rows="5" id="intro"> </textarea>
+                </div>
+                
+                <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" rows="8" id="description"></textarea>
+                    <textarea class="form-control" rows="8" id="description"> </textarea>
                 </div>
 			  
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>		
