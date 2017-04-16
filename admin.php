@@ -66,7 +66,7 @@
 	
     <?php include 'includes/navmenu.php';?>
     
-	<main>
+	<main class="content">
     
         <h2 class="page_title">ADMIN FORMS</h2>
 
@@ -77,10 +77,7 @@
           <button class="tablinks" onclick="change(event, 'EditTeam')">Edit Team</button>
           <button class="tablinks" onclick="change(event, 'AddMatch')">Add Match</button>
           <button class="tablinks" onclick="change(event, 'EditMatch')">Edit Match</button>
-
         </div>
-
-        <br>
 
         <div id="AddNews" class="tabcontent">
             <form>	  
@@ -465,8 +462,6 @@
             </form>
         </div>	
 </main>
-
-<br><br><br>
 
     <hr id="footer_line">
     <?php include 'includes/footer.php';?>
