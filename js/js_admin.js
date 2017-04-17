@@ -19,11 +19,7 @@ function change(evt, tab) {
     document.getElementById(tab).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
-function edit_news_click(news_id) {
-    populate_news(news_id);
-}
-		
+	
 function populate_news(news_id) {
 			var url = "get-news-data.php?news_id=" + news_id;
 			

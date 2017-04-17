@@ -217,7 +217,7 @@
 					$date = $news['DATE'];
 					$image = $news['IMAGE_URL'];
 					
-					echo "<tr class='clickable-row admin_table_row' id = '$news_id' onclick='edit_news_click(this.id)'>";
+					echo "<tr class='clickable-row admin_table_row' id = '$news_id' onclick='populate_news(this.id)'>";
 					
 					echo "<td>";
 					echo "<img class='img-responsive admin_logo' src='$image' alt='news image' title='news image'>";
