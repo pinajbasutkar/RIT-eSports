@@ -284,6 +284,8 @@
 				</div>
 
 				<div class="form-group">
+					<label for="game">Game</label>
+					<text class="form-control" rows="1" id="game"></text>
 				</div>
 				
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>	
