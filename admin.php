@@ -9,15 +9,55 @@
 	<script>
 		"use strict";
 		
-		function addPlayerTableRow(i) {
-			console.log("addPlayerTableRow called with value " + i);
-			document.getElementById("player_table");
-			// TODO: add a row
+		function addPlayerTableRow(team, i) {
+			console.log("addPlayerTableRow called with team = " + team.id + "; player_id = " + i);
+
+			var playerNum = "player" + i;
+			
+			var rank = "Player";
+			if (team.players[i].rank == 1) rank = "Captain";
+			else if (team.players[i].rank == 2) rank = "Manager";
+				
+			$(".player_table_body")
+			.append(
+				$("<tr class='clickable-row admin_table_row' id = '" + i + "' onclick='editPlayer(" + team + ",this.id)'>")	<!-- TODO: ?? cannot pass an object -->
+				.append(
+					$("<td>")
+					.append(
+						$("<img class='img-responsive admin_logo' src='" + team.players[i].image_url + "' alt='player image' title='player image'>")
+					)
+				)
+				.append(
+					$("</td>")
+				)
+				.append(
+					$("<td>" + team.players[i].name + "</td>")
+				)
+				.append(
+					$("<td>Rank: " + rank + "</td>")
+				)
+//	??				.append(
+//	??					$("<td>" + team.players[i].bio + "</td>")
+//	??				)
+				.append(
+					$("</tr>")
+				)
+			)
+		}
+
+		function editPlayer(team, player_id) {
+			console.log("editPlayer called with team = " + team.id + "; player_id = " + player_id);
+
+			$("edit_player_form").show();
+			$("edit_player_name").value = team.players[player_id].name;
+			$("edit_player_imagee").value = team.players[player_id].image_url;
+			$("edit_player_rank").value = team.players[player_id].rank;
+			$("edit_player_bio").value = team.players[player_id].bio;
 		}
 		
 		function populateTeamData(team_id) {
 			var url = "get-team-data.php?team_id=" + team_id;
-			
+
 			var xhr = new XMLHttpRequest();
 			xhr.onload = function() {
 				teamDataRetrieved(xhr);
@@ -32,25 +72,49 @@
 
 			document.getElementById("edit_team_name").value = team.name;
 			document.getElementById("edit_logo_url").value = team.logo_url;
+
+			$(".player_list_content").remove();	// remove data appended by previous team click, if any
+			
+			$(".player_list")
+			.append(
+				$("<div class='player_list_content'>")
+				.append(
+					$("<h3 class='admin_input_text'>Players</h3>")
+				)
+				.append(
+					$("<table class='table player_table'>")
+					.append(
+						$("<tbody class='player_table_body'>")
+					)
+				)
+			);
+		
 			for (var i = 0; i < team.players.length; i++)
 			{
-				addPlayerTableRow(i);
-				
-				var player_number = "edit_player_" + i;
-				
-				document.getElementById(player_number + "_name").value = team.players[i].name;
-				document.getElementById(player_number + "_image_url").value = team.players[i].image_url;
-/* TODO: use checkboxes for captain and manager
- 				if (team.players[i].rank == 1)
-					document.getElementById(player_number + "_captain").value = "checked";
-				if (team.players[i].rank == 2)
-					document.getElementById(player_number + "_manager").value = "checked";
-*/
-				document.getElementById(player_number + "_rank").value = team.players[i].rank;
-				document.getElementById(player_number + "_bio").value = team.players[i].bio;
+				addPlayerTableRow(team,i);
 			}
+
+			$(".player_table")
+			.append(
+				$("<tr>")
+				.append(
+					$("<td>")
+					.append(
+						$("<button type='button' class='btn btn-warning add_player_button' id='add_player' onclick='addPlayerTableRow(" + team + "," + team.players.length + ")'>Add Player</button>") <!-- TODO: ?? cannot pass an object -->
+					)
+				)
+				.append(
+					$("</td>")
+				)
+				.append(
+					$("</tr>")
+				)
+			)
+			$(".player_table").append("</tbody>");
+			$(".player_table").append("</table>");			
+			$(".player_list").append("</div>");	
 		}
-						
+
 		// make rows clickable
 		jQuery(document).ready(function($) {
 			var team_id = 1;							// TODO: get team ID from PHP < ?php echo json_encode($team_id); ? >;
@@ -275,130 +339,39 @@
 				</div>
 
 				<div class="player_list">
-					<h3 class="admin_input_text">Players</h3>
-					<div class="form-group">
-						<table class='table'>
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Image URL</th>
-									<th>Rank</th>
-									<th>Bio</th>
-								</tr>
-							</thead>
-							<tbody id="player_table">
-								<!-- ?? build existing rows dynamically -->
-								<tr>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_0_name" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_0_image_url" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_0_rank" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_0_bio" />
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_1_name" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_1_image_url" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_1_rank" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_1_bio" />
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_2_name" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_2_image_url" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_2_rank" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_2_bio" />
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_3_name" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_3_image_url" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_3_rank" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_3_bio" />
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_4_name" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_4_image_url" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_4_rank" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_4_bio" />
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_5_name" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_5_image_url" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_5_rank" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_5_bio" />
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_6_name" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_6_image_url" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_6_rank" />
-									</td>
-									<td>
-										<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_6_bio" />
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<button type="button" class="btn btn-warning add_player_button" id="add_player" onclick="addPlayerTableRow()">Add Player</button> <!-- TODO: pass current highest row number + 1 -->
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>	
+					<!-- dynamically generated -->
 				</div>
 				
 				<button type="button" class="btn btn-warning admin_page_button" id="update_team">Update Team</button> <!-- write function to store data in DB -->
 			</form>
+
+			<form class="edit_player_form">
+				<div class="form-group">
+					<label for="edit_player_name">Player Name</label>
+					<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_name" />
+				</div>
+				
+				<div class="form-group">
+					<label for="edit_player_image">Player Image</label>
+					<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_image" />
+				</div>
+				
+				<div class="form-group">
+					<label for="edit_player_rank">Player Rank</label>
+					<input type="text" class="form-control admin_input_text" rows="1" id="edit_player_rank" />
+				</div>
+
+				<div class="form-group">
+					<label for="edit_player_bio">Player Bio</label>
+					<input type="text" class="form-control admin_input_text" rows="10" id="edit_player_bio" />
+				</div>
+
+				<button type="button" class="btn btn-warning main_action_button" onclick='addPlayerTableRow()'>Save Player</button>	 <!-- TODO: pass team and player ID -->		
+			</form>
         </div>	
+		
+
+		
 
         <div id="AddMatch" class="tabcontent">
 			<form>	  

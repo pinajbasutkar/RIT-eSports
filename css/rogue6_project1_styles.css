@@ -309,6 +309,22 @@ main
     background-color: #f9973b;
 }
 
+.player_table
+{
+	margin-left: 5%;
+}
+
+.player_table td
+{
+	text-align: left;
+}
+
+.edit_player_form
+{
+	display: none;
+}
+
+
 /*  TEAMS PAGE   */
 
 .img-circle {

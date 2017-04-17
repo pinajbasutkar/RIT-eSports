@@ -20,6 +20,7 @@
 	if ($team_result)
 	{
 		$team = new stdClass();
+		$team->id = $team_id;
 		$team->name = $team_result->fetchArray(SQLITE3_ASSOC)['TEAM_NAME'];	
 		$team->logo_url = $team_result->fetchArray(SQLITE3_ASSOC)['LOGO_URL'];	
 		
