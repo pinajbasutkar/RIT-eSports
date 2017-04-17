@@ -282,6 +282,9 @@
 					<label for="team_name">Team Name</label>
 					<text class="form-control" rows="1" id="team_name"></text>
 				</div>
+
+				<div class="form-group">
+				</div>
 				
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>	
 			</form>
