@@ -373,15 +373,22 @@ div.tab_matches {
     background-color: #e8eaed;
     color: #000000;
     border-radius: 3px;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 div.tab_matches a {
     color: #000000;
 }
 
+.matches-container{
+    background-color: #313030;
+    padding: 1px;
+}
+
 div.tab_matches button {
-    background-color: inherit;
+    font-weight: 600;
+    background-color: #1C1B1B;  
+    color: #95989A;
     float: left;
     border: none;
     outline: none;
@@ -390,30 +397,81 @@ div.tab_matches button {
     transition: 0.3s;
     font-size: 17px;
     width: 33.33%;
-    border-right: 1px solid #343435;
+    border-right:0.5px solid #313030;
+    border-bottom:0.5px solid #1C1B1B;
+    border-radius: 0px;
 }
 
 div.tab_matches button:hover {
-    background-color: #cccccc;
+    background-color: #313030;
+    color: #E6E4E4;
+     border-radius: 0px;
 }
 
 div.tab_matches button.active {
-    background-color: #f9973b;
-    color: #ffffff;
+    background-color: #313030;
+    color: #E6E4E4;
+     border-radius: 0px;
 }
 
 div.tab_matches button:last-child{
-    border-right:none;
+   
 }
 
 /* MATCHES TABLE */
-table, th{
+table{
     text-align: center;
+    
 }
 
-.light_table_row{
-    color: #000000;
+th{
+text-align: center;
+    color: #E6E4E4;
+    border-right: 0.1px solid #59595A; 
 }
+
+th:last-child{
+  border-right: none;   
+}
+
+td{
+    color: #95989A;
+}
+
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #1C1B1B;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+
+    border-bottom: 0.2px solid #95989A;
+    vertical-align: middle;
+
+}
+
+.table>tbody>tr>td>img{
+    
+    width: 30px;
+    height: 30px;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    border-radius: 2px;
+    background-color: #E6E4E4;
+    color: #E37000;
+}
+
+
+
+
+
+
 
 /* ADMIN TABS */
 .content{

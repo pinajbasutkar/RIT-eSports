@@ -25,6 +25,8 @@
 	<main>
     
 		<h2 class="page_title">MATCHES</h2>
+        
+        <div class="matches-container">
 
         <div class="tab_matches">
         
@@ -336,7 +338,7 @@
 
         <?php endif; ?>
 
-
+</div>
     </main>
     
     <hr id="footer_line">
