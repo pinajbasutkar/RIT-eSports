@@ -485,7 +485,11 @@ td{
 
 
 
-
+.btn-default:hover {
+    background-color: #E37000;
+    color: #E6E4E4 ;
+    border: none;
+}
 
 
 
