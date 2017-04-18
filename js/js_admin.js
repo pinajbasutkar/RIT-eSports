@@ -44,7 +44,7 @@ function news_retrieved(xhr)
 	document.getElementById("author").value = news.author;
 	document.getElementById("image_url").value = news.image_url;
 	document.getElementById("intro").innerHTML = news.intro;
-	document.getElementById("description").innerHTML = news.descrip;
+	document.getElementById("content").innerHTML = news.content;
 
 }
 						

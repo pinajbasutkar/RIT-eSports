@@ -166,12 +166,12 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="description">Introduction</label>
+                    <label for="intro">Introduction</label>
                     <textarea class="form-control" rows="5"></textarea>
                 </div>
                 
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="content">Description</label>
                     <textarea class="form-control" rows="8"></textarea>
                 </div>
 
@@ -267,8 +267,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea class="form-control" rows="8" id="description"> </textarea>
+                    <label for="content">Description</label>
+                    <textarea class="form-control" rows="8" id="content"> </textarea>
                 </div>
 			  
 				<button type="button" class="btn btn-warning main_action_button">Publish</button>		

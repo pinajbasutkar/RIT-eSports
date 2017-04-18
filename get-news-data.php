@@ -27,11 +27,11 @@
 		$date_published = $row['DATE'];		
 		$image_url = $row['IMAGE_URL'];	
 		$intro = $row['INTRO'];	
-		$description = $row['DESCRIPTION'];
+		$content = $row['CONTENT'];
 		
 		$news = array(  'headline' => $headline, 'author' => $author, 
 						'date_published' => $date_published, 'image_url' => $image_url, 
-						'intro' => $intro, 'descrip' => $description);
+						'intro' => $intro, 'content' => $content);
 		}
 	}
 	
