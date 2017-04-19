@@ -337,6 +337,11 @@
 					<label for="edit_team_name">Team Name</label>
 					<input type="text" class="form-control admin_input_text" rows="1" id="edit_team_name" />
 				</div>
+
+				<div class="form-group">
+					<label for="edit_game">Game</label>
+					<input type="text" class="form-control admin_input_text" rows="1" id="edit_game" />
+				</div>
 				
 				<div class="form-group">
 					<label for="edit_logo_url">Team Logo URL</label>
