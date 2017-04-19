@@ -46,7 +46,7 @@
 				echo '<figure>';
 				$name = $captain['USER_NAME'];
 				$image_url = $captain['IMAGE_URL'];
-				echo "<img class='img-circle img-responsive' src='$image_url' alt='Picture of $name' title='Picture of $name'>";
+				echo "<img class='img-circle img-responsive player_image' src='$image_url' alt='Picture of $name' title='Picture of $name'>";
 				echo '</figure>';
 				echo '</div>';
 				echo '<div class="col-sm-8 col-md-8">';
@@ -64,7 +64,7 @@
 				echo '<figure>';
 				$name = $manager['USER_NAME'];
 				$image_url = $manager['IMAGE_URL'];
-				echo "<img class='img-circle img-responsive' src='$image_url' alt='Picture of $name' title='Picture of $name'>";
+				echo "<img class='img-circle img-responsive player_image' src='$image_url' alt='Picture of $name' title='Picture of $name'>";
 				echo '</figure>';
 				echo '</div>';
 				echo '<div class="col-sm-8 col-md-8">';
@@ -82,7 +82,7 @@
 				echo '<figure>';
 				$name = $player['USER_NAME'];
 				$image_url = $player['IMAGE_URL'];
-				echo "<img class='img-circle img-responsive' src='$image_url' alt='Picture of $name' title='Picture of $name'>";				
+				echo "<img class='img-circle img-responsive player_image' src='$image_url' alt='Picture of $name' title='Picture of $name'>";				
 				echo '</figure>';
 				echo '</div>';
 				echo '<div class="col-sm-8 col-md-8">';

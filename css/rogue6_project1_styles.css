@@ -161,6 +161,11 @@ main
 	margin: 80px auto;
 }
 
+.player_image
+{
+	margin-bottom: 60px;
+}
+
 .category_header
 {
 	text-align: center;
