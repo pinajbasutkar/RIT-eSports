@@ -22,7 +22,7 @@
 					<input type="hidden" name="subject" value="RIT E-Sports Contact" />
 					<input type="hidden" name="derive_fields" value="email=EmailAddr,realname=FullName" />
 					<input type="hidden" name="mail_options" value="Exclude=email;realname" />
-					<input type="hidden" name="good_url" value="confirmation.shtml" />
+					<input type="hidden" name="good_url" value="confirmation.php" />
   
                     <div class="form-group">
                         <label for="full_name">Full Name *</label>
