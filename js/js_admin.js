@@ -51,7 +51,7 @@ function news_retrieved(xhr)
 	console.log(news);
 
 	document.getElementById("headline").value = news.headline;
-	document.getElementById("date").value = news.date_published;
+	document.getElementById("date_published").value = news.date_published;
 	document.getElementById("author").value = news.author;
 	document.getElementById("image_url").value = news.image_url;
 	document.getElementById("content").innerHTML = news.content;
