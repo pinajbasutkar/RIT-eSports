@@ -24,14 +24,12 @@
 		{
 		$headline = $row['HEADLINE'];
 		$author = $row['AUTHOR'];
-		$date_published = $row['DATE'];		
+		$date_published = $row['DATE'];	
+		$content = $row['CONTENT'];	
 		$image_url = $row['IMAGE_URL'];	
-		$intro = $row['INTRO'];	
-		$content = $row['CONTENT'];
 		
 		$news = array(  'headline' => $headline, 'author' => $author, 
-						'date_published' => $date_published, 'image_url' => $image_url, 
-						'intro' => $intro, 'content' => $content);
+						'date_published' => $date_published, 'content' => $content, 'image_url' => $image_url);
 		}
 	}
 	

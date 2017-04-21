@@ -124,6 +124,7 @@
 			});
 		});
 	</script>
+
 	
 </head>
 <body>
@@ -164,12 +165,7 @@
                     <label for="news_heading">Image URL</label>
                     <text class="form-control" rows="1"></text>
                 </div>
-                
-                <div class="form-group">
-                    <label for="intro">Introduction</label>
-                    <textarea class="form-control" rows="5"></textarea>
-                </div>
-                
+                 
                 <div class="form-group">
                     <label for="content">Description</label>
                     <textarea class="form-control" rows="8"></textarea>
@@ -223,11 +219,11 @@
 					echo "<img class='img-responsive admin_logo' src='$image' alt='news image' title='news image'>";
 					echo "</td>";
 								
-					echo "<td class='admin_team_text'>";							
+					echo "<td>";							
 					echo "$date";
 					echo "</td>";
 							
-					echo "<td class='admin_team_text'>";							
+					echo "<td>";							
 					echo "$headline";
 					echo "</td>";
 	
@@ -259,11 +255,6 @@
                 <div class="form-group">
                     <label for="news_heading">Image URL</label>
                     <input type="text" class="form-control" rows="1" id="image_url">
-                </div>
-                
-                <div class="form-group">
-                    <label for="intro">Introduction</label>
-                    <textarea class="form-control" rows="5" id="intro"> </textarea>
                 </div>
                 
                 <div class="form-group">
@@ -416,30 +407,78 @@
     
 
         <div id="EditMatch" class="tabcontent">
+        
+        <div id ="MatchList">
+			
+			Select a match to edit:
+			
+		<?php		   
+			
+				$match_list = $esports_db->query("SELECT * FROM MATCHES");	
+				
+				$index = 0;
+
+				echo "<table class='table'>";
+				echo "<tbody>";
+				while($match = $match_list->fetchArray(SQLITE3_ASSOC))
+				{
+					$match_id = $match['MATCH_ID'];
+					$team1 = $match['RIT_TEAM_ID'];
+					$team2 = $match['OPPONENT'];
+					$score = $match['SCORE'];
+					$date = $match['DATE'];
+					$video = $match['VIDEO_URL'];
+					
+					echo "<tr class='clickable-row admin_table_row' id = '$match_id' onclick='populate_matches(this.id)'>";
+					
+					echo "<td>";							
+					echo "$date";
+					echo "</td>";
+					
+					echo "<td>";							
+					echo "$team1";
+					echo "</td>";
+								
+					echo "<td>";							
+					echo "$team2";
+					echo "</td>";
+							
+					echo "<td>";							
+					echo "$score";
+					echo "</td>";
+					
+					echo "</tr>";							
+							
+					$index++;
+				}
+				echo "</tbody>";
+				echo "</table>";
+		?>
+		
             <form>	  
                 <div class="form-group">
                     <label for="team1">Team 1</label>
-                    <text class="form-control" rows="1" id="team1"></text>
+                    <input type="text" class="form-control" rows="1" id="team1">
                 </div>
 
                 <div class="form-group">
                     <label for="team2">Team 2</label>
-                    <text class="form-control" rows="1" id="team2"></text>
+                    <input type="text" class="form-control" rows="1" id="team2">
                 </div>
 
                 <div class="form-group">
                     <label for="score">Score</label>
-                    <text class="form-control" rows="1" id="score"></text>
+                    <input type="text" class="form-control" rows="1" id="score">
                 </div>
 
                 <div class="form-group">
-                    <label for="time">Time</label>
-                    <text class="form-control" rows="1" id="time"></text>
+                    <label for="date">Date</label>
+                    <input type="text" class="form-control" rows="1" id="date">
                 </div>
 
                 <div class="form-group">
                     <label for="video">Video Link</label>
-                    <text class="form-control" rows="1" id="video"></text>
+                    <input type="text" class="form-control" rows="1" id="video">
                 </div>
                 <button type="button" class="btn btn-warning main_action_button">Publish</button>		
             </form>
