@@ -153,12 +153,12 @@ main
 #single_team_name
 {
 	color: #f9973b;
-    margin-bottom: 80px;
+    margin-bottom: 40px;	
 }
 
 #team_logo
 {
-	margin: 100px auto 40px auto;
+	margin: 80px auto;
 }
 
 .player_image
@@ -209,7 +209,7 @@ main
 
 #load_more_button
 {
-	margin: 40px auto;
+	margin: 40px 40% 30px 40%;
 }
 
 #admin_options
