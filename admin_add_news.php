@@ -36,18 +36,13 @@
                 </div>
 				
 				<div class="form-group">
-                    <label for="news_heading">Author</label>
+                    <label for="author">Author</label>
                     <text class="form-control" rows="1"></text>
                 </div>
                 
                 <div class="form-group">
-                    <label for="news_heading">Image URL</label>
+                    <label for="image">Image URL</label>
                     <text class="form-control" rows="1"></text>
-                </div>
-                
-                <div class="form-group">
-                    <label for="intro">Introduction</label>
-                    <textarea class="form-control" rows="5"></textarea>
                 </div>
                 
                 <div class="form-group">

@@ -90,7 +90,7 @@
 
                 <div class="form-group">
                     <label for="published_on">Published On</label>
-                    <input type="text" class="form-control" rows="1" id="date">
+                    <input type="text" class="form-control" rows="1" id="date_published">
                 </div>
 				
 				<div class="form-group">
@@ -102,12 +102,7 @@
                     <label for="news_heading">Image URL</label>
                     <input type="text" class="form-control" rows="1" id="image_url">
                 </div>
-                
-                <div class="form-group">
-                    <label for="intro">Introduction</label>
-                    <textarea class="form-control" rows="5" id="intro"> </textarea>
-                </div>
-                
+               
                 <div class="form-group">
                     <label for="content">Description</label>
                     <textarea class="form-control" rows="8" id="content"> </textarea>

@@ -44,10 +44,12 @@ function match_retrieved(xhr)
 	
 	console.log(matches);
 
+	document.getElementById("game").value = matches.game;
 	document.getElementById("team1").value = matches.team1;
 	document.getElementById("team2").value = matches.team2;
 	document.getElementById("score").value = matches.score;
 	document.getElementById("date").value = matches.date;
 	document.getElementById("video").value = matches.video;
+	document.getElementById("game_logo").value = matches.game_logo;
 }
 		
