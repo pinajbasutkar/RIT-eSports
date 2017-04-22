@@ -46,8 +46,7 @@
         
         
         <?php if($matchType === 'past'): ?>
-        
-        
+               
             <div id="Past" class="tabcontent">
                 <table class="table table-striped">
                     <thead>
@@ -55,95 +54,61 @@
                             <th>Game</th>
                             <th>Match</th>
                             <th>Results</th>
-                            <th>Time</th>
+                            <th>Date</th>
                             <th>Watch</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                            </td>
-                            <td>RIT vs. Hobart</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>							
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Carnegie Mellon</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Columbia</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr>
-                        <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. UCal Irvine</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>					
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                            </td>
-                            <td>RIT vs. Robert Morris</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>							
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. RPI</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Pikeville</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                    </tbody>
-                </table>
-            </div> <!-- end #past -->
+					
+					<?php 
+						class ESportsDB extends SQLite3
+						{
+							function __construct()
+							{
+								$this->open('db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
+							}
+						}
+						
+						$esports_db = new ESportsDB();
+						
+						if(!$esports_db)
+						{
+							echo $esports_db->lastErrorMsg();
+						}			
+
+						$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
+						$todays_date = date('m/d/y');
+						$today = date_create($todays_date);
+						
+						$match_list = $esports_db->query("SELECT * FROM MATCHES");
+
+                        while($match = $match_list->fetchArray(SQLITE3_ASSOC))	
+                        {				
+                            $match_date = date_create($match['DATE']);	
+							
+						    if($match_date < $today)
+							{
+								$game = $match['GAME'];
+								$game_logo_url = $match['GAME_LOGO_URL'];
+								$rit_team = $match['RIT_TEAM_ID'];
+								$opponent = $match['OPPONENT'];
+								$score = $match['SCORE'];
+								$video_link = $match['VIDEO_URL'];
+								echo "<tr><td>";
+								echo "<img src='$game_logo_url' alt='$game Logo' title='$game Logo'></td>";
+								echo "<td>$rit_team vs. $opponent</td>";
+								echo "<td>$score</td>";
+								$match_date_string = date_format($match_date, 'Y-m-d');
+								echo "<td>$match_date_string</td>";
+								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button'>Video</button></td></tr>";
+							}
+						}
+
+                        echo "</tbody></table></div>";						
+					?>
     
 
         <?php elseif($matchType === 'future'): ?>
-            
             
             <div id="Future" class="tabcontent">
                 <table class="table table-striped">
@@ -152,96 +117,59 @@
                             <th>Game</th>
                             <th>Match</th>
                             <th>Results</th>
-                            <th>Time</th>
+                            <th>Date</th>
                             <th>Watch</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                            </td>
-                            <td>RIT vs. Hobart</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
-                            </td>							
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Carnegie Mellon</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Columbia</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr>
-                        <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. UCal Irvine</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
-                            </td>						 
-                        </tr>					
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                            </td>
-                            <td>RIT vs. Robert Morris</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
-                            </td>							
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. RPI</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Pikeville</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button" disabled>Video</button>	
-                            </td>						 
-                        </tr>
-                    </tbody>
-                </table>
-            </div> <!-- end #future -->
-            
+					
+					<?php 
+						class ESportsDB extends SQLite3
+						{
+							function __construct()
+							{
+								$this->open('db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
+							}
+						}
+						
+						$esports_db = new ESportsDB();
+						
+						if(!$esports_db)
+						{
+							echo $esports_db->lastErrorMsg();
+						}			
+
+						$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
+						$todays_date = date('m/d/y');
+						$today = date_create($todays_date);
+						
+						$match_list = $esports_db->query("SELECT * FROM MATCHES");
+
+                        while($match = $match_list->fetchArray(SQLITE3_ASSOC))	
+                        {				
+                            $match_date = date_create($match['DATE']);	
+							
+						    if($match_date > $today)
+							{
+								$game = $match['GAME'];
+								$game_logo_url = $match['GAME_LOGO_URL'];
+								$rit_team = $match['RIT_TEAM_ID'];
+								$opponent = $match['OPPONENT'];
+								$score = $match['SCORE'];
+								echo "<tr><td>";
+								echo "<img src='$game_logo_url' alt='$game Logo' title='$game Logo'></td>";
+								echo "<td>$rit_team vs. $opponent</td>";
+								echo "<td>$score</td>";
+								$match_date_string = date_format($match_date, 'Y-m-d');
+								echo "<td>$match_date_string</td>";
+								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button'>Video</button></td></tr>";
+							}
+						}
+
+                        echo "</tbody></table></div>";
+                    ?>
             
         <?php else: ?>
-            
-        
             <div id="Current" class="tabcontent">
                 <table class="table table-striped">
                     <thead>
@@ -249,91 +177,57 @@
                             <th>Game</th>
                             <th>Match</th>
                             <th>Results</th>
-                            <th>Time</th>
+                            <th>Date</th>
                             <th>Watch</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                            </td>
-                            <td>RIT vs. Hobart</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>							
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Carnegie Mellon</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Columbia</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr>
-                        <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. UCal Irvine</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>					
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                            </td>
-                            <td>RIT vs. Robert Morris</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>							
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="media/news_events/tournament_mini.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. RPI</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                        <tr class="light_table_row">
-                            <td>
-                                <img src="media/news_events/gaming_background_crop.jpg" alt="RIT eSports Game Logo" title="RIT eSports Game Logo">
-                             </td>
-                            <td>RIT vs. Pikeville</td>
-                            <td>0-0</td>
-                            <td>Live</td>
-                            <td>
-                                <button type="button" class="btn btn-default btn-lg watch_video_button">Video</button>	
-                            </td>						 
-                        </tr>
-                    </tbody>
-                </table>
-            </div> <!-- end #current -->
+					
+					<?php 
+						class ESportsDB extends SQLite3
+						{
+							function __construct()
+							{
+								$this->open('db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
+							}
+						}
+						
+						$esports_db = new ESportsDB();
+						
+						if(!$esports_db)
+						{
+							echo $esports_db->lastErrorMsg();
+						}			
+
+						$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
+						$todays_date = date('m/d/y');
+						$today = date_create($todays_date);
+						
+						$match_list = $esports_db->query("SELECT * FROM MATCHES");
+
+                        while($match = $match_list->fetchArray(SQLITE3_ASSOC))	
+                        {				
+                            $match_date = date_create($match['DATE']);	
+							
+						    if($match_date == $today)
+							{
+								$game = $match['GAME'];
+								$game_logo_url = $match['GAME_LOGO_URL'];
+								$rit_team = $match['RIT_TEAM_ID'];
+								$opponent = $match['OPPONENT'];
+								$score = $match['SCORE'];
+								echo "<tr><td>";
+								echo "<img src='$game_logo_url' alt='$game Logo' title='$game Logo'></td>";
+								echo "<td>$rit_team vs. $opponent</td>";
+								echo "<td>$score</td>";
+								$match_date_string = date_format($match_date, 'Y-m-d');
+								echo "<td>$match_date_string</td>";
+								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button'>Video</button></td></tr>";
+							}
+						}
+
+                        echo "</tbody></table></div>";
+                    ?>
 
 
         <?php endif; ?>
