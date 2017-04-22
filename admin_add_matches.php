@@ -46,7 +46,7 @@
 				</div>
 				
 				<div class="form-group">
-					<label for="date">Date</label>
+					<label for="date">Date (mm/dd/yy)</label>
 					<text class="form-control" rows="1"></text>
 				</div>
 				

@@ -244,7 +244,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="published_on">Published On</label>
+                    <label for="published_on">Published On (mm/dd/yy)</label>
                     <input type="text" class="form-control" rows="1" id="date_published">
                 </div>
 				

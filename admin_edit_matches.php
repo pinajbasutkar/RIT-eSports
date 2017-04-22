@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="date">Date</label>
+                    <label for="date">Date (mm/dd/yy)</label>
                     <input type="text" class="form-control" rows="1" id="date">
                 </div>
 

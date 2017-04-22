@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="published_on">Date</label>
+                    <label for="published_on">Date (mm/dd/yy)</label>
                     <text class="form-control" rows="1"></text>
                 </div>
 				
