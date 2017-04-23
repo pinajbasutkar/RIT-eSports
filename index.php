@@ -72,8 +72,9 @@
                     $date = $news_item['DATE'];
                     echo "<p class='news-item-info'>by $author | $date</p>";
                     echo '<p class="news-item-text">';
-                    $content = $news_item['CONTENT'];
-                    echo "$content</p></div></div>";
+                    $content = trim(substr($news_item['CONTENT'], 0, 200));
+                    echo "$content...</p></div></div>";
+        
                     
                     if($counter === 1){
                         echo '</div>';
