@@ -24,43 +24,43 @@
 		<?php include 'includes/adminmenu.php';?>
 
         <div id="AddMatch" class="tabcontent">
-			<form>	  
+			<form action='insert_matches.php' method='POST'>	  
 				<div class="form-group">
 					<label for="game">Game</label>
-					<text class="form-control" rows="1"></text>
+					<input type="text" class="form-control" rows="1" name="add_game">
 				</div>
 				
 				<div class="form-group">
-					<label for="team1">Team 1</label>
-					<text class="form-control" rows="1"></text>
+					<label for="team1">Team 1*</label>
+					<input type="text" class="form-control" rows="1" name="add_team1" required>
 				</div>
 				
 				<div class="form-group">
-					<label for="team2">Team 2</label>
-					<text class="form-control" rows="1"></text>
+					<label for="team2">Team 2*</label>
+					<input type="text" class="form-control" rows="1" name="add_team2" required>
 				</div>
 
 				<div class="form-group">
 					<label for="score">Score</label>
-					<text class="form-control" rows="1"></text>
+					<input type="text" class="form-control" rows="1" name="add_score">
 				</div>
 				
 				<div class="form-group">
-					<label for="date">Date (mm/dd/yy)</label>
-					<text class="form-control" rows="1"></text>
+					<label for="date">Date* (mm/dd/yy)</label>
+					<input type="text" class="form-control" rows="1" name="add_date" required>
 				</div>
 				
 				<div class="form-group">
 					<label for="video">Video Link</label>
-					<text class="form-control" rows="1"></text>
+					<input type="text" class="form-control" rows="1" name="add_video">
 				</div>
 			    
 			    <div class="form-group">
 					<label for="game_logo">Game Logo</label>
-					<text class="form-control" rows="1"></text>
+					<input type="text" class="form-control" rows="1" name="add_logo">
 				</div>
 				
-				<button type="button" class="btn btn-warning main_action_button">Publish</button>		
+				<input type="submit" class="btn btn-warning main_action_button" value="Publish">		
 			</form>
         </div>		
 

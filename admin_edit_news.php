@@ -82,33 +82,33 @@
 		?>
 		</div>	
 			
-			<form>	  
+			<form action='update_news.php?news_id=' method='POST'>	  
 				<div class="form-group">
                     <label for="news_heading">Headline</label>
-                    <input type="text" class="form-control" rows="1" id="headline">
+                    <input type="text" class="form-control" rows="1" id="headline" name="headline">
                 </div>
 
                 <div class="form-group">
                     <label for="published_on">Published On (mm/dd/yy)</label>
-                    <input type="text" class="form-control" rows="1" id="date_published">
+                    <input type="text" class="form-control" rows="1" id="date_published" name="date_published">
                 </div>
 				
 				<div class="form-group">
                     <label for="news_heading">Author</label>
-                    <input type="text" class="form-control" rows="1" id="author">
+                    <input type="text" class="form-control" rows="1" id="author" name="author">
                 </div>
                 
                 <div class="form-group">
                     <label for="news_heading">Image URL</label>
-                    <input type="text" class="form-control" rows="1" id="image_url">
+                    <input type="text" class="form-control" rows="1" id="image_url" name="image_url">
                 </div>
                
                 <div class="form-group">
                     <label for="content">Description</label>
-                    <textarea class="form-control" rows="8" id="content"> </textarea>
+                    <textarea class="form-control" rows="8" id="content" name="content"> </textarea>
                 </div>
 			  
-				<button type="button" class="btn btn-warning main_action_button">Publish</button>		
+				<input type="button" class="btn btn-warning main_action_button" value="Publish">		
 			</form>
 		</div>
  

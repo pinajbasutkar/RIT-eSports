@@ -24,35 +24,37 @@
 		<?php include 'includes/adminmenu.php';?>
 
         <div id="AddNews" class="tabcontent">
-            <form>	  
+        
+            <form action='insert_news.php' method='POST'>	  
                 <div class="form-group">
-                    <label for="news_heading">Headline</label>
-                    <text class="form-control" rows="1"></text>
+                    <label for="news_heading">Headline*</label>
+                    <input type="text" class="form-control" rows="1" name='add_headline' required>
                 </div>
 
                 <div class="form-group">
                     <label for="published_on">Date (mm/dd/yy)</label>
-                    <text class="form-control" rows="1"></text>
+                    <input type="text" class="form-control" rows="1" name='add_date'>
                 </div>
 				
 				<div class="form-group">
                     <label for="author">Author</label>
-                    <text class="form-control" rows="1"></text>
+                    <input type="text" class="form-control" rows="1" name='add_author'>
                 </div>
                 
                 <div class="form-group">
                     <label for="image">Image URL</label>
-                    <text class="form-control" rows="1"></text>
+                    <input type="text" class="form-control" rows="1" name='add_image''>
                 </div>
                 
                 <div class="form-group">
-                    <label for="content">Description</label>
-                    <textarea class="form-control" rows="8"></textarea>
+                    <label for="content1">Description*</label>
+                    <textarea class="form-control" rows="8" name='add_content' required></textarea>
                 </div>
 
-                <button type="button" class="btn btn-warning main_action_button">Publish</button>
+                <input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>
 
             </form>
+            
         </div>   
     
 </main>
