@@ -51,20 +51,24 @@
 		echo "<h2 class='page_title'>NEWS AND EVENTS</h2>";          
 
 				
-                $counter = 0;
+                $rowCounter = 0;
+                $newsItemCounter = 0;
                 
                 while($news_item = $news_item_list->fetchArray(SQLITE3_ASSOC))
 				{
+                    
+                    $newsItemCounter++;
                 
                     $image_url = $news_item['IMAGE_URL'];
 
-                    if($counter === 1){
+                    if($rowCounter === 1){
                         echo '<div class="row center-div">';
                     }
-
+                        
+                    //thumbnail content
                     echo '<div class="col-md-6 col-lg-6 container">';			
                     echo '<div class="news-item">';
-                    echo "<a href='$image_url'>";
+                    echo '<a data-fancybox data-src="#news-item-'.$newsItemCounter.'" href="javascript:;">';
                     echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div'>";
                     $headline = $news_item['HEADLINE'];
                     echo "<h3 class='news-item-title'>$headline</h3></a>";
@@ -74,13 +78,26 @@
                     echo '<p class="news-item-text">';
                     $content = trim(substr($news_item['CONTENT'], 0, 200));
                     echo "$content...</p></div></div>";
-        
                     
-                    if($counter === 1){
+                    //full content
+                    echo '<div class="news-item-full-container" style="display: none;" id="news-item-'.$newsItemCounter.'">';
+                    echo '<div class="news-item-full">';
+                    echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div'>";
+                    $headline = $news_item['HEADLINE'];
+                    echo "<h3 class='news-item-title'>$headline</h3>";
+                    $author = $news_item['AUTHOR'];
+                    $date = $news_item['DATE'];
+                    echo "<p class='news-item-info'>by $author | $date</p>";
+                    echo '<p class="">';
+                    $content = $news_item['CONTENT'];
+                    echo "$content</p></div></div>";
+                    
+                    
+                    if($rowCounter === 1){
                         echo '</div>';
-                        $counter = 0; //reset counter
+                        $rowCounter = 0; //reset counter
                     }else{
-                        $counter += 1; //increment counter
+                        $rowCounter += 1; //increment counter
                     }
                     
 				}
