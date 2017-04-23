@@ -110,7 +110,7 @@
 				if(array_key_exists('player_id', $_GET)){
 				
 					// player ID has been passed in so load only this player's data from the database, based on the ID
-					$player_id = $_GET['player_id'];					
+					$player_id = intval($_GET['player_id']);					
 					$player_result = $esports_db->query("SELECT * FROM PLAYERS WHERE PLAYER_ID=$player_id");
 					$player = $player_result->fetchArray(SQLITE3_ASSOC);
 					
@@ -153,7 +153,7 @@
 				elseif(array_key_exists('team_id', $_GET)){
 				
 					// team ID has been passed in, so load only this team's data from the database, based on the ID
-					$team_id = $_GET['team_id'];					
+					$team_id = intval($_GET['team_id']);					
 					$team_result = $esports_db->query("SELECT * FROM TEAMS WHERE TEAM_ID=$team_id");
 					$team = $team_result->fetchArray(SQLITE3_ASSOC);
 					
