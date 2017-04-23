@@ -15,6 +15,7 @@
 
 			document.getElementById("addteam").className += " active";
 		  
+			document.querySelector('#add_team').onclick = function(event) {
 				var name = $.trim($('#team_name').val());
 				var game = $.trim($('#game').val());
 				var logo_url = $.trim($('#logo_url').val());
@@ -34,6 +35,7 @@
 					}
 				});
 
+			}; // add_team - onclick
 		});
 
 	</script>
@@ -63,6 +65,7 @@
 				<input class="form-control" id="logo_url" tabindex="1" name="team_name" type="text" />
 			</div>
 			
+			<button type="button" id="add_team" class="btn btn-warning main_action_button">Add Team</button>	
 		</form>
     
 </main>
