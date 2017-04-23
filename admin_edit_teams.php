@@ -3,14 +3,19 @@
 <head>
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
-  
+	
 	<script src="js/js_admin.js"></script>
 
 	<script>
+		"use strict"
+		
+		var UPDATE_URL = "update-team-data.php";
+		var DELETE_URL = "delete-team-data.php";
+		
 		$(document).ready(function(){
 
 			document.getElementById("editteam").className += " active";
-		  
+		
 		});
 
 		$(function () {
@@ -20,6 +25,55 @@
 			});
 
 		});
+		
+		function onUpdateTeam(event) {
+			var name = $.trim($('#edit_team_name').val());
+			var game = $.trim($('#edit_game').val());
+			var logo_url = $.trim($('#edit_logo_url').val());
+			var team_id = $.trim($('#team_id_hidden').val());
+			
+			var urlString =  UPDATE_URL + "?id=" + team_id + "&name=" + name + "&game=" + game + "&logo_url=" + logo_url;
+
+			console.log("url loaded = " + urlString);
+				
+			$.ajax({
+				url: urlString,
+				success: function(data){
+					console.log(data);
+					window.location.href ="admin_edit_teams.php";
+				},
+				error: function(jqxhr,status,error){
+					console.warn(jqxhr.responseText);
+					console.log("status=" + status + "; error=" + error);
+				}
+			});
+
+		}; // update_team - onclick		
+		
+		function onDeleteTeam(event) {
+			var team_id = $.trim($('#team_id_hidden').val());
+			var team_name = $.trim($('#edit_team_name').val());
+			
+			var urlString =  DELETE_URL + "?id=" + team_id;
+
+			console.log("url loaded = " + urlString);
+			
+			var confirmation = confirm("Are you sure you want to delete '" + team_name + "'?  This cannot be undone!");
+			
+			if (confirmation) {
+				$.ajax({
+					url: urlString,
+					success: function(data){
+						window.location.href ="admin_edit_teams.php";
+					},
+					error: function(jqxhr,status,error){
+						console.warn(jqxhr.responseText);
+						console.log("status=" + status + "; error=" + error);
+					}
+				});
+			};
+
+		}; // delete_team - onclick
 	</script>
 	
 </head>
@@ -106,6 +160,7 @@
 					// display the team data in editable form on page, with clickable links to edit players
 					// URLs to edit players are "admin_edit_teams.php?player_id=#"
 
+					echo "<input type='hidden' id='team_id_hidden' value=$team_id />";
 					echo "<form id='edit_team_form'>";	  
 						echo "<div class='form-group'>";
 							echo "<label for='edit_team_name'>Team Name</label>";
@@ -157,8 +212,13 @@
 								echo "</table>";			
 							echo "</div>";	
 						echo "</div>";
-				
-						echo "<button type='button' class='btn btn-warning admin_page_button' id='update_team'>Update Team</button>"; // write function to store data in DB -->
+
+						echo "<button type='button' class='btn btn-warning admin_page_button' id='delete_team'>Delete Team</button>";
+						echo "<script>document.querySelector('#delete_team').onclick = onDeleteTeam;</script>";
+
+						echo "<button type='button' class='btn btn-warning admin_page_button' id='update_team'>Update Team</button>"; 
+						echo "<script>document.querySelector('#update_team').onclick = onUpdateTeam;</script>";
+						
 					echo "</form>";			
 				}
 				
