@@ -102,7 +102,7 @@
                     
 				}
 			
-		echo '<div class="center-all">';
+		echo '<div class="row center-all">';
 		echo '<a href="[TO BE DETERMINED]" class="center-all">';
 		echo '<button type="button" class="btn btn-warning btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
     ?>
