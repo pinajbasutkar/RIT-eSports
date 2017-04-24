@@ -133,7 +133,7 @@
 						echo "</div>";
 
 						echo "<div class='form-group'>";
-							echo "<label for='edit_player_rank'>Rank</label>";
+							echo "<label for='edit_player_rank'>Rank (1=Captain, 2=Manager, 0=Player</label>";
 							echo "<input type='text' class='form-control admin_input_text' rows='1' id='edit_player_rank' value='$player[RANK]' />";
 						echo "</div>";
 
