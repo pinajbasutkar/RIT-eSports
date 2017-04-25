@@ -70,7 +70,14 @@
                     echo '<div class="news-item">';
                     echo '<a data-fancybox data-src="#news-item-'.$newsItemCounter.'" href="javascript:;">';
                     echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div'>";
+                    
                     $headline = $news_item['HEADLINE'];
+                    
+                        if(strlen($headline) > 75){
+                            $headline  = trim(substr($headline, 0, 75)); 
+                            $headline .= "...";
+                        }
+                    
                     echo "<h3 class='news-item-title'>$headline</h3></a>";
                     $author = $news_item['AUTHOR'];
                     $date = $news_item['DATE'];
