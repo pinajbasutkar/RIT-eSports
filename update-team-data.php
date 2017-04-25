@@ -25,8 +25,7 @@
 			$game = $_GET['game'];
 			$logoURL = $_GET['logo_url'];
 
-			// ?? TODO: Not working yet!
-			$queryString =  ("UPDATE TEAMS SET TEAM_NAME=:name, GAME=:game, LOGO_URL=:logoUrl WHERE TEAM_ID=:id");
+			$queryString =  ("UPDATE TEAMS SET TEAM_NAME=:name, GAME=:game, LOGO_URL=:logo_url WHERE TEAM_ID=:id");
 			$statement = $esports_db->prepare($queryString);
 			$statement->bindValue(':id', $id);
 			$statement->bindValue(':name', $name);
