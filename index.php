@@ -44,7 +44,7 @@
 		}
 
 		$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");		
-		$news_item_list = $esports_db->query("SELECT * FROM NEWS_ITEMS");
+		$news_item_list = $esports_db->query("SELECT * FROM NEWS_ITEMS ORDER BY DATE DESC");
 			
 		echo "<section id='news_and_events' class='row container'>";
 		echo "<div class='container center-all'>";
