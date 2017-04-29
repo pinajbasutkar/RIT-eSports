@@ -17,14 +17,14 @@
 	}
 	else
 	{
-		if (array_key_exists('id', $_GET)){
+		if (array_key_exists('team_id', $_GET)){
 			// get id of team to edit
-			$id = $_GET['id'];
+			$team_id = $_GET['team_id'];
 
-			if ($id != null) {
-				$queryString =  ("DELETE FROM TEAMS WHERE TEAM_ID=:id");
+			if ($team_id != null) {
+				$queryString =  ("DELETE FROM TEAMS WHERE TEAM_ID=:team_id");
 				$statement = $esports_db->prepare($queryString);
-				$statement->bindValue(':id', $id);
+				$statement->bindValue(':team_id', $team_id);
 
 				$statement->execute();
 			}

@@ -32,7 +32,7 @@
 			var logo_url = $.trim($('#edit_logo_url').val());
 			var team_id = $.trim($('#team_id_hidden').val());
 			
-			var urlString =  UPDATE_URL + "?id=" + team_id + "&name=" + name + "&game=" + game + "&logo_url=" + logo_url;
+			var urlString =  UPDATE_URL + "?team_id=" + team_id + "&name=" + name + "&game=" + game + "&logo_url=" + logo_url;
 
 			console.log("url loaded = " + urlString);
 				
@@ -47,14 +47,13 @@
 					console.log("status=" + status + "; error=" + error);
 				}
 			});
-
 		}; // update_team - onclick		
 		
 		function onDeleteTeam(event) {
 			var team_id = $.trim($('#team_id_hidden').val());
 			var team_name = $.trim($('#edit_team_name').val());
 			
-			var urlString =  DELETE_URL + "?id=" + team_id;
+			var urlString =  DELETE_URL + "?team_id=" + team_id;
 
 			console.log("url loaded = " + urlString);
 			
@@ -72,8 +71,39 @@
 					}
 				});
 			};
-
 		}; // delete_team - onclick
+		
+		function onUpdatePlayer(event) {
+			var user_name = $.trim($('#edit_user_name').val());
+			var player_name = $.trim($('#edit_player_name').val());
+			var image_url = $.trim($('#edit_player_image').val());
+			var player_rank = $.trim($('#edit_player_rank').val());
+			var player_bio = $.trim($('#edit_player_bio').val());
+			var player_id = $.trim($('#player_id_hidden').val());
+			
+			var urlString =  UPDATE_URL + 	"?player_id=" + player_id + 
+											"&user_name=" + user_name + 
+											"&player_name=" + player_name + 
+											"&image_url=" + image_url +
+											"&player_rank=" + player_rank +
+											"&player_bio=" + player_bio;
+
+			console.log("url loaded = " + urlString);
+				
+			$.ajax({
+				url: urlString,
+				success: function(data){
+					console.log(data);
+					window.location.href ="admin_edit_teams.php";
+				},
+				error: function(jqxhr,status,error){
+					console.warn(jqxhr.responseText);
+					console.log("status=" + status + "; error=" + error);
+				}
+			});
+		}; // update_player - onclick	
+
+
 	</script>
 	
 </head>
@@ -115,7 +145,8 @@
 					$player = $player_result->fetchArray(SQLITE3_ASSOC);
 					
 					// display player's data in editable form on page
-					
+
+					echo "<input type='hidden' id='player_id_hidden' value=$player_id />";	
 					echo "<form id='edit_player_form'>";
 						echo "<div class='form-group'>";
 							echo "<label for='edit_user_name'>User Name</label>";
@@ -133,7 +164,7 @@
 						echo "</div>";
 
 						echo "<div class='form-group'>";
-							echo "<label for='edit_player_rank'>Rank (1=Captain, 2=Manager, 0=Player</label>";
+							echo "<label for='edit_player_rank'>Rank (1=Captain, 2=Manager, 0=Player)</label>";
 							echo "<input type='text' class='form-control admin_input_text' rows='1' id='edit_player_rank' value='$player[RANK]' />";
 						echo "</div>";
 
@@ -142,7 +173,8 @@
 							echo "<textarea class='form-control admin_input_text' rows='8' id='edit_player_bio'>$player[BIO]</textarea>";
 						echo "</div>";
 
-						echo "<button type='button' class='btn btn-warning main_action_button' onclick='addPlayerTableRow()'>Save Player</button>"; // TODO: pass team and player ID		
+						echo "<button type='button' class='btn btn-warning admin_page_button' id='update_player'>Update Player</button>"; 
+						echo "<script>document.querySelector('#update_player').onclick = onUpdatePlayer;</script>";
 					echo "</form>";	
 							
 					// TODO: maybe display link back to team? back to all teams? breadcrumbs? etc.
@@ -177,6 +209,14 @@
 							echo "<input type='text' class='form-control admin_input_text' rows='1' id='edit_logo_url' value='$team[LOGO_URL]' />";
 						echo "</div>";
 
+						echo "<div class='form-group'>";						
+							echo "<button type='button' class='btn btn-warning admin_page_button' id='delete_team'>Delete Team</button>";
+							echo "<script>document.querySelector('#delete_team').onclick = onDeleteTeam;</script>";
+
+							echo "<button type='button' class='btn btn-warning admin_page_button' id='update_team'>Update Team</button>"; 
+							echo "<script>document.querySelector('#update_team').onclick = onUpdateTeam;</script>";
+						echo "</div>";
+						
 						// get all players for this team
 						$team_players_result = $esports_db->query("SELECT * FROM PLAYERS WHERE TEAM_ID=$team_id");
 					
@@ -205,20 +245,15 @@
 										}
 										echo "<tr>";
 											echo "<td>";
-												echo "<button type='button' class='btn btn-warning add_player_button' id='add_player' onclick='??'>Add Player</button>"; // TODO: ??
+												echo "<button type='button' class='btn btn-warning admin_page_button' id='add_player'>Add Player</button>"; 
+												echo "<script>document.querySelector('#add_player').onclick = onAddPlayer;</script>";
 											echo "</td>";
 										echo "</tr>";
 									echo "</tbody>";
 								echo "</table>";			
 							echo "</div>";	
 						echo "</div>";
-
-						echo "<button type='button' class='btn btn-warning admin_page_button' id='delete_team'>Delete Team</button>";
-						echo "<script>document.querySelector('#delete_team').onclick = onDeleteTeam;</script>";
-
-						echo "<button type='button' class='btn btn-warning admin_page_button' id='update_team'>Update Team</button>"; 
-						echo "<script>document.querySelector('#update_team').onclick = onUpdateTeam;</script>";
-						
+		
 					echo "</form>";			
 				}
 				
