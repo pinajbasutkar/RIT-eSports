@@ -117,15 +117,14 @@
 				}
     
         
-          echo "<div id='my-div'></div>";
+          echo "<div id='more-news-loaded'></div>";
     
         
 
 			
 		echo '<div class="center-all col-md-12 col-lg-12 container">';
      //   $record_count = 1; 
-		echo '<button type="button" onclick="loadmore()"
-        class="btn btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
+		echo '<button type="button" onclick="loadmore()" class="btn btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
         echo '<a>';
     ?>
 	
@@ -202,7 +201,7 @@
 
             outerDivNewsItem.appendChild(innerDivNewsItem);
 
-            document.getElementById("my-div").appendChild(outerDivNewsItem); 
+            document.getElementById("more-news-loaded").appendChild(outerDivNewsItem); 
             }
             catch(err){     
                 $('#load_more_button').addClass('disabled');
@@ -213,7 +212,7 @@
        
     
 }
-   }
+   
    
 
 
