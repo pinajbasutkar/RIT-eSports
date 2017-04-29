@@ -88,7 +88,7 @@
                 </div>
                   
 				<div class="form-group">
-                    <label for="news_heading">Headline</label>
+                    <label for="news_heading">Headline*</label>
                     <input type="text" class="form-control" rows="1" id="headline" name="headline">
                 </div>
 
@@ -108,7 +108,7 @@
                 </div>
                
                 <div class="form-group">
-                    <label for="content">Description</label>
+                    <label for="content">Description*</label>
                     <textarea class="form-control" rows="8" id="content" name="content"> </textarea>
                 </div>
 			  
