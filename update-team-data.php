@@ -17,17 +17,18 @@
 	}
 	else
 	{
-		if (array_key_exists('team_id', $_GET)){
+		if (array_key_exists('id', $_GET)){
 			// get id of team to edit
-			$team_id = $_GET['team_id'];
+			$id = $_GET['id'];
 			
 			$name = $_GET['name'];
 			$game = $_GET['game'];
 			$logoURL = $_GET['logo_url'];
 
-			$queryString =  ("UPDATE TEAMS SET TEAM_NAME=:name, GAME=:game, LOGO_URL=:logo_url WHERE TEAM_ID=:team_id");
+			// ?? TODO: Not working yet!
+			$queryString =  ("UPDATE TEAMS SET TEAM_NAME=:name, GAME=:game, LOGO_URL=:logoUrl WHERE TEAM_ID=:id");
 			$statement = $esports_db->prepare($queryString);
-			$statement->bindValue(':team_id', $team_id);
+			$statement->bindValue(':id', $id);
 			$statement->bindValue(':name', $name);
 			$statement->bindValue(':game', $game);
 			$statement->bindValue(':logo_url', $logoURL);
@@ -40,6 +41,7 @@
 				echo_response($array);
 			}
 		}
+
 		// if player_id or player_team_id is passed
 		elseif(array_key_exists('player_id', $_GET) || array_key_exists('player_team_id', $_GET)){
 			// get id of player to edit or team id for new player
