@@ -82,7 +82,11 @@
 		?>
 		</div>	
 			
-			<form action='update_news.php?news_id=' method='POST'>	  
+			<form action='update_news.php' method='POST'>	
+				<div class="form-group">
+                    <input type="hidden" class="form-control" rows="1" id="news_id" name="news_id">
+                </div>
+                  
 				<div class="form-group">
                     <label for="news_heading">Headline</label>
                     <input type="text" class="form-control" rows="1" id="headline" name="headline">
@@ -108,7 +112,7 @@
                     <textarea class="form-control" rows="8" id="content" name="content"> </textarea>
                 </div>
 			  
-				<input type="button" class="btn btn-warning main_action_button" value="Publish">		
+				<input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
 			</form>
 		</div>
  

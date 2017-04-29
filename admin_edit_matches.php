@@ -100,12 +100,20 @@
                 </div>
                  
                 <div class="form-group">
+<<<<<<< Updated upstream
                     <label for="team1">RIT Team</label>
+=======
+                    <label for="team1">RIT Team*</label>
+>>>>>>> Stashed changes
                     <input type="text" class="form-control" rows="1" id="team1">
                 </div>
 
                 <div class="form-group">
+<<<<<<< Updated upstream
                     <label for="team2">Opponent</label>
+=======
+                    <label for="team2">Opponent Team*</label>
+>>>>>>> Stashed changes
                     <input type="text" class="form-control" rows="1" id="team2">
                 </div>
 

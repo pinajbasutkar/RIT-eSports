@@ -1,6 +1,7 @@
 "use strict";
 	
 function populate_news(news_id) {
+
 			var url = "get-news-data.php?news_id=" + news_id;
 			
 			var xhr = new XMLHttpRequest();
@@ -10,6 +11,7 @@ function populate_news(news_id) {
 			};
 			xhr.open("GET", url, true);
 			xhr.send(null);
+
 		}
 
 function populate_matches(match_id) {
@@ -29,7 +31,8 @@ function news_retrieved(xhr)
 	var news = JSON.parse(xhr.responseText);
 	
 	console.log(news);
-
+	
+	document.getElementById("news_id").value = news.news_id;
 	document.getElementById("headline").value = news.headline;
 	document.getElementById("date_published").value = news.date_published;
 	document.getElementById("author").value = news.author;

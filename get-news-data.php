@@ -22,13 +22,14 @@
 	{	
 		while($row = $news_list->fetchArray(SQLITE3_ASSOC))
 		{
+		$news_id = $row['NEWS_ID'];
 		$headline = $row['HEADLINE'];
 		$author = $row['AUTHOR'];
 		$date_published = $row['DATE'];	
 		$content = $row['CONTENT'];	
 		$image_url = $row['IMAGE_URL'];	
 		
-		$news = array(  'headline' => $headline, 'author' => $author, 
+		$news = array(  'news_id' => $news_id, 'headline' => $headline, 'author' => $author, 
 						'date_published' => $date_published, 'content' => $content, 'image_url' => $image_url);
 		}
 	}
