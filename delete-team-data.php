@@ -18,7 +18,7 @@
 	else
 	{
 		if (array_key_exists('team_id', $_GET)){
-			// get id of team to edit
+			// get id of team to delete
 			$team_id = $_GET['team_id'];
 
 			if ($team_id != null) {
@@ -33,8 +33,24 @@
 				echo_response($array);	
 			}
 		}
+		else if (array_key_exists('player_id', $_GET)){
+			// get id of player to delete
+			$player_id = $_GET['player_id'];
+
+			if ($player_id != null) {
+				$queryString =  ("DELETE FROM PLAYERS WHERE PLAYER_ID=:player_id");
+				$statement = $esports_db->prepare($queryString);
+				$statement->bindValue(':player_id', $player_id);
+
+				$statement->execute();
+			}
+			else {
+				$array = array("status"=>"error","description"=>"id parameter value is null");
+				echo_response($array);	
+			}
+		}
 		else {
-			$array = array("status"=>"error","description"=>"id parameter is missing");
+			$array = array("status"=>"error","description"=>"both team_id and player_id parameters are missing");
 			echo_response($array);			
 		}
 	}

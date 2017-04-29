@@ -118,6 +118,30 @@
 			});
 		}; // update_player - onclick	
 
+		function onDeletePlayer(event) {
+			var player_id_hidden = $.trim($('#player_id_hidden').val());
+			var user_name = $.trim($('#edit_user_name').val());
+			
+			var urlString =  DELETE_URL + "?player_id=" + player_id_hidden;
+
+			console.log("url loaded = " + urlString);
+			
+			var confirmation = confirm("Are you sure you want to delete '" + user_name + "'?  This cannot be undone!");
+			
+			if (confirmation) {
+				$.ajax({
+					url: urlString,
+					success: function(data){
+						window.location.href ="admin_edit_teams.php";
+					},
+					error: function(jqxhr,status,error){
+						console.warn(jqxhr.responseText);
+						console.log("status=" + status + "; error=" + error);
+					}
+				});
+			};
+		}; // delete_player - onclick
+		
 	</script>
 	
 </head>
@@ -208,15 +232,19 @@
 							echo "<label for='edit_player_bio'>Bio</label>";
 							echo "<textarea class='form-control admin_input_text' rows='8' id='edit_player_bio'>$player[BIO]</textarea>";
 						echo "</div>";
-
+						
 						if ($player_id != 0)
 						{
+							echo "<button type='button' class='btn btn-warning admin_page_button' id='delete_player'>Delete Player</button>"; 
+							echo "<script>document.querySelector('#delete_player').onclick = onDeletePlayer;</script>";	
+						
 							echo "<button type='button' class='btn btn-warning admin_page_button' id='update_player'>Update Player</button>"; 
 						}else
 						{
 							echo "<button type='button' class='btn btn-warning admin_page_button' id='update_player'>Add Player</button>"; 
 						}
 						echo "<script>document.querySelector('#update_player').onclick = onUpdatePlayer;</script>";	
+
 					echo "</form>";	
 							
 					// TODO: maybe display link back to team? back to all teams? breadcrumbs? etc.
@@ -280,11 +308,8 @@
 													echo "<img class='img-responsive admin_logo' src='$team_players[IMAGE_URL]' alt='player image' title='player image'>";
 												echo "</td>";
 												echo "<td> $team_players[USER_NAME] </td>";
-												echo "<td>Rank: $rank</td>";
-												echo "<td>";
-													echo "<button type='button' class='btn btn-warning delete_player_button' id='delete_player'>Delete Player</button>"; 
-//													echo "<script>document.querySelector('#delete_player').onclick = onDeletePlayer;</script>";
-												echo "</td>";												
+												echo "<td colspan='2'>$rank</td>";
+											
 											echo "</tr>";
 										}
 										echo "<tr class='clickable-row admin_table_row' data-url='admin_edit_teams.php?player_team_id=$team_id'>";
