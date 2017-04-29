@@ -6,9 +6,14 @@ function populate_news(news_id) {
 			
 			var xhr = new XMLHttpRequest();
 
-			xhr.onload = function() {
+			xhr.onload = function() {		
 				news_retrieved(xhr);
+				
+				$('html, body').animate({
+            	scrollTop: $("form").offset().top - 80
+			}, 1000, 'swing');
 			};
+				
 			xhr.open("GET", url, true);
 			xhr.send(null);
 
@@ -20,6 +25,10 @@ function populate_matches(match_id) {
 			var xhr = new XMLHttpRequest();
 
 			xhr.onload = function() {
+				$('html, body').animate({
+            	scrollTop: $("form").offset().top - 80
+				}, 1000, 'swing');
+			
 				match_retrieved(xhr);
 			};
 			xhr.open("GET", url, true);
@@ -38,9 +47,10 @@ function news_retrieved(xhr)
 	document.getElementById("author").value = news.author;
 	document.getElementById("image_url").value = news.image_url;
 	document.getElementById("content").innerHTML = news.content;
+
 }
-						
-						
+
+    						
 function match_retrieved(xhr) 
 {
 	var matches = JSON.parse(xhr.responseText);
