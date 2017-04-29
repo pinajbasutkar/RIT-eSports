@@ -93,43 +93,47 @@
 		?>
 		</div>
 		
-            <form>	 
+            <form action='update_matches.php' method='POST'>		 
+            	<div class="form-group">
+                    <input type="hidden" class="form-control" rows="1" id="match_id" name="match_id">
+                </div>
+                
             	<div class="form-group">
                     <label for="game">Game</label>
-                    <input type="text" class="form-control" rows="1" id="game">
+                    <input type="text" class="form-control" rows="1" id="game" name="game">
                 </div>
                  
                 <div class="form-group">
                     <label for="team1">RIT Team*</label>
-                    <input type="text" class="form-control" rows="1" id="team1">
+                    <input type="text" class="form-control" rows="1" id="team1" name="team1">
                 </div>
 
                 <div class="form-group">
                     <label for="team2">Opponent Team*</label>
-                    <input type="text" class="form-control" rows="1" id="team2">
+                    <input type="text" class="form-control" rows="1" id="team2" name="team2">
                 </div>
 
                 <div class="form-group">
                     <label for="score">Score</label>
-                    <input type="text" class="form-control" rows="1" id="score">
+                    <input type="text" class="form-control" rows="1" id="score" name="score">
                 </div>
 
                 <div class="form-group">
                     <label for="date">Date (mm/dd/yy)</label>
-                    <input type="text" class="form-control" rows="1" id="date">
+                    <input type="text" class="form-control" rows="1" id="date" name="date">
                 </div>
 
                 <div class="form-group">
                     <label for="video">Video Link</label>
-                    <input type="text" class="form-control" rows="1" id="video">
+                    <input type="text" class="form-control" rows="1" id="video" name="video">
                 </div>
                 
                 <div class="form-group">
                     <label for="game_logo">Game Logo</label>
-                    <input type="text" class="form-control" rows="1" id="game_logo">
+                    <input type="text" class="form-control" rows="1" id="game_logo" name="game_logo">
                 </div>
                 
-                <button type="button" class="btn btn-warning main_action_button">Publish</button>		
+                <input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
             </form>
             
         </div>	

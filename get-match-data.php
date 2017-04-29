@@ -22,6 +22,7 @@
 	{	
 		while($match = $match_list->fetchArray(SQLITE3_ASSOC))
 		{
+			$match_id = $match['MATCH_ID'];
 			$game = $match['GAME'];
 			$team1 = $match['RIT_TEAM_ID'];
 			$team2 = $match['OPPONENT'];
@@ -30,7 +31,7 @@
 			$video = $match['VIDEO_URL'];
 			$game_logo = $match['GAME_LOGO_URL'];
 		
-		$matches = array('game' => $game, 'team1' => $team1, 
+		$matches = array('match_id' => $match_id, 'game' => $game, 'team1' => $team1, 
 						'team2' => $team2, 'score' => $score, 
 						'date' => $date, 'game_logo' => $game_logo,
 						'video' => $video);

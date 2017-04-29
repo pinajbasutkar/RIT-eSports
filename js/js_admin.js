@@ -46,7 +46,8 @@ function match_retrieved(xhr)
 	var matches = JSON.parse(xhr.responseText);
 	
 	console.log(matches);
-
+	
+	document.getElementById("match_id").value = matches.match_id;
 	document.getElementById("game").value = matches.game;
 	document.getElementById("team1").value = matches.team1;
 	document.getElementById("team2").value = matches.team2;
