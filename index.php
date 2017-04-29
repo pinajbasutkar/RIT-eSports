@@ -44,7 +44,6 @@
 		}
 
 		$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");		
-<<<<<<< HEAD
         
 		$news_item_list = $esports_db->query("SELECT * FROM NEWS_ITEMS limit 4");
     
@@ -58,9 +57,6 @@
         }
     
         //echo $rows_extra;
-=======
-		$news_item_list = $esports_db->query("SELECT * FROM NEWS_ITEMS ORDER BY DATE DESC");
->>>>>>> origin/master
 			
 		echo "<section id='news_and_events' class='row container'>";
 		echo "<div class='container center-all'>";
@@ -88,14 +84,7 @@
                     echo '<div class="news-item">';
                     echo '<a data-fancybox data-src="#news-item-'.$newsItemCounter.'" href="javascript:;">';
                     echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div'>";
-                    
                     $headline = $news_item['HEADLINE'];
-                    
-                        if(strlen($headline) > 75){
-                            $headline  = trim(substr($headline, 0, 75)); 
-                            $headline .= "...";
-                        }
-                    
                     echo "<h3 class='news-item-title'>$headline</h3></a>";
                     $author = $news_item['AUTHOR'];
                     $date = $news_item['DATE'];
@@ -133,17 +122,11 @@
         
 
 			
-<<<<<<< HEAD
 		echo '<div class="center-all col-md-12 col-lg-12 container">';
      //   $record_count = 1; 
 		echo '<button type="button" onclick="loadmore()"
         class="btn btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
         echo '<a>';
-=======
-		echo '<div class="row center-all">';
-		echo '<a href="[TO BE DETERMINED]" class="center-all">';
-		echo '<button type="button" class="btn btn-warning btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
->>>>>>> origin/master
     ?>
 	
     <hr id="footer_line">	

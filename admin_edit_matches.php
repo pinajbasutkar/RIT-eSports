@@ -100,12 +100,12 @@
                 </div>
                  
                 <div class="form-group">
-                    <label for="team1">RIT Team</label>
+                    <label for="team1">Team 1</label>
                     <input type="text" class="form-control" rows="1" id="team1">
                 </div>
 
                 <div class="form-group">
-                    <label for="team2">Opponent</label>
+                    <label for="team2">Team 2</label>
                     <input type="text" class="form-control" rows="1" id="team2">
                 </div>
 
