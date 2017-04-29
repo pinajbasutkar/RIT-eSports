@@ -31,12 +31,12 @@
 				</div>
 				
 				<div class="form-group">
-					<label for="team1">Team 1*</label>
+					<label for="team1">RIT Team*</label>
 					<input type="text" class="form-control" rows="1" name="add_team1" required>
 				</div>
 				
 				<div class="form-group">
-					<label for="team2">Team 2*</label>
+					<label for="team2">Opponent*</label>
 					<input type="text" class="form-control" rows="1" name="add_team2" required>
 				</div>
 

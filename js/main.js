@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 $(document).ready(function(){
 
 	// from other pages, navigate first to top of page, then smooth scroll to anchor
@@ -29,7 +27,5 @@ $(document).ready(function(){
 	
     // for current page, just call smoothScroll method on links
     $('a').smoothScroll();
-    
-    
   
 });

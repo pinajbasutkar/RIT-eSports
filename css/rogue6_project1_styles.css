@@ -313,10 +313,14 @@ main
 	font-size: 1.1em;
 }
 
-.add_player_button
+.add_player_button, .delete_player_button
 {
+	white-space: normal;
 	float: left;
-    font-size: 1.1em;
+    padding: 10px 10px;
+    margin-left: 10px;
+	margin-top: 10px;	
+    font-size: 1em;
     background-color: #f9973b;
 }
 
@@ -325,13 +329,20 @@ main
 	float: right;
     padding: 10px 20px;
     margin-left: 10px;
+	margin-top: 10px;
     font-size: 1.2em;
     background-color: #f9973b;
 }
 
+.player_list
+{
+	margin-top: 110px;
+}
+
 .player_table
 {
-	margin-left: 5%;
+	table-layout:fixed;
+	width: 100%;
 }
 
 .player_table td
