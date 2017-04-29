@@ -44,19 +44,33 @@
 		}
 
 		$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");		
-		$news_item_list = $esports_db->query("SELECT * FROM NEWS_ITEMS");
+        
+		$news_item_list = $esports_db->query("SELECT * FROM NEWS_ITEMS limit 4");
+    
+    
+        $news_item_list_extra = $esports_db->query("SELECT * FROM NEWS_ITEMS");
+    
+        $rows_extra[] = array();            
+        while($news_item_more = $news_item_list_extra->fetchArray(SQLITE3_ASSOC))
+		{
+            $rows_extra[]=$news_item_more;
+        }
+    
+        //echo $rows_extra;
 			
 		echo "<section id='news_and_events' class='row container'>";
 		echo "<div class='container center-all'>";
-		echo "<h2 class='page_title'>NEWS AND EVENTS</h2>";          
+		echo "<h2 class='page_title' id='title_page_id'>NEWS AND EVENTS</h2>";          
 
-				
+      
+    
                 $rowCounter = 0;
                 $newsItemCounter = 0;
                 
+               $i=0;
                 while($news_item = $news_item_list->fetchArray(SQLITE3_ASSOC))
 				{
-                    
+                    $i++;
                     $newsItemCounter++;
                 
                     $image_url = $news_item['IMAGE_URL'];
@@ -93,7 +107,7 @@
                     echo "$content</p></div></div>";
                     
                     
-                    if($rowCounter === 1){
+                if($rowCounter === 1){
                         echo '</div>';
                         $rowCounter = 0; //reset counter
                     }else{
@@ -101,10 +115,18 @@
                     }
                     
 				}
+    
+        
+          echo "<div id='my-div'></div>";
+    
+        
+
 			
-		echo '<div class="center-all">';
-		echo '<a href="[TO BE DETERMINED]" class="center-all">';
-		echo '<button type="button" class="btn btn-warning btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
+		echo '<div class="center-all col-md-12 col-lg-12 container">';
+     //   $record_count = 1; 
+		echo '<button type="button" onclick="loadmore()"
+        class="btn btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
+        echo '<a>';
     ?>
 	
     <hr id="footer_line">	
@@ -112,5 +134,88 @@
 	<?php
 	    include 'includes/footer.php';
 	?>
+    
+    <script type="text/javascript">
+ 
+   var json_obj = <?php echo json_encode($rows_extra) ?>;
+   var i=<?php echo $i?>;
+   
+   //Loads 4 more elements
+   function loadmore(){
+       
+      
+    var count=4;   
+    
+    while(count!=0){
+        
+    i++;
+    
+    try{
+        
+
+            var headline = json_obj[i].HEADLINE; 
+            var img_url = json_obj[i].IMAGE_URL;
+            var author = json_obj[i].AUTHOR; 
+            var date = json_obj[i].DATE;
+            var content = json_obj[i].CONTENT;
+
+            var length = 200;
+            var trimmedContent = content.substring(0, length);   
+
+
+            var h3=document.createElement("h3");
+            h3.innerHTML=""+headline;
+            h3.setAttribute('class','news-item-title');
+
+            var img=document.createElement("img");
+            img.setAttribute('src',img_url);
+            img.setAttribute('alt','News Item Picture');
+            img.setAttribute('title','News Item Picture');
+            img.setAttribute('class','img-responsive center-div');
+
+            var a=document.createElement("a");
+            a.setAttribute('data-fancybox','');
+            a.setAttribute('data-src','#news-item-1');
+            a.setAttribute('href','javascript:;');
+
+            var innerDivNewsItem=document.createElement("div");
+            innerDivNewsItem.setAttribute('class','news-item');
+
+            var outerDivNewsItem=document.createElement("div");
+            outerDivNewsItem.setAttribute('class','col-md-6 col-lg-6 container');
+
+            var pNewsItemInfo=document.createElement("p");
+            pNewsItemInfo.innerHTML = "By"+author+" "+"|"+" "+date
+            pNewsItemInfo.setAttribute('class','news-item-info');
+
+            var pNewsItemText=document.createElement("p");
+            pNewsItemText.innerHTML = trimmedContent+"...";
+            pNewsItemText.setAttribute('class','news-item-text');
+
+
+            a.appendChild(img);
+            a.appendChild(h3);
+
+            innerDivNewsItem.appendChild(a);
+            innerDivNewsItem.appendChild(pNewsItemInfo);
+            innerDivNewsItem.appendChild(pNewsItemText);
+
+            outerDivNewsItem.appendChild(innerDivNewsItem);
+
+            document.getElementById("my-div").appendChild(outerDivNewsItem); 
+            }
+            catch(err){     
+                $('#load_more_button').addClass('disabled');
+            }
+
+            count--;
+    }
+       
+    
+}
+   
+
+
+   </script>
 </body>
 </html>
