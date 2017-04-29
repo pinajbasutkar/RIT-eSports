@@ -3,8 +3,42 @@
 
 
 $(document).ready(function(){
+    
+    // Back to top button
+    
+        var offset = 250;
 
-	// from other pages, navigate first to top of page, then smooth scroll to anchor
+        var duration = 300;
+
+        jQuery(window).scroll(function() {
+
+        if (jQuery(this).scrollTop() > offset) {
+
+        jQuery('.back-to-top').fadeIn(duration);
+
+        } else {
+
+        jQuery('.back-to-top').fadeOut(duration);
+
+        }
+
+        });
+
+
+
+        jQuery('.back-to-top').click(function(event) {
+
+        event.preventDefault();
+
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+
+        return false;
+
+        })
+        
+        
+        
+        // from other pages, navigate first to top of page, then smooth scroll to anchor
 	// (http://stackoverflow.com/questions/30293784/smooth-scroll-to-anchor-after-loading-new-page)
 	if ( window.location.hash ) scroll(0,0);
 	setTimeout( function() { scroll(0,0); }, 1);
@@ -30,6 +64,14 @@ $(document).ready(function(){
     // for current page, just call smoothScroll method on links
     $('a').smoothScroll();
     
+        
+        
+        
+
+ });
+
+   
+	
     
   
-});
+

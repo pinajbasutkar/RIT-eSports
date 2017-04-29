@@ -127,6 +127,11 @@
 		echo '<button type="button" onclick="loadmore()" class="btn btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
         echo '<a>';
     ?>
+    
+
+    
+ <!--Footer----------------------------------------------------------------------->   
+    
 	
     <hr id="footer_line">	
 	

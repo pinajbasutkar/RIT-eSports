@@ -563,6 +563,57 @@ div.tab_admin button:last-child{
 border-right:none;
 }
 
+
+/* Back to Top button */
+
+.back-to-top {
+ 
+background: none;
+ 
+margin: 0;
+ 
+position: fixed;
+ 
+bottom: 100px;
+ 
+right: 10px;
+ 
+width: 70px;
+ 
+height: 70px;
+ 
+z-index: 100;
+ 
+display: none;
+ 
+text-decoration: none;
+ 
+color: darkorange;
+    
+opacity: 0.6;
+    
+
+ 
+}
+ 
+  
+ 
+.back-to-top i {
+ 
+  font-size: 60px;
+ 
+}
+
+
+.back-to-top:hover {
+ 
+    opacity: 1;
+    color: darkorange;
+}
+
+
+
+
 /* FOOTER */
 #footer_line
 {

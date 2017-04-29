@@ -1,4 +1,14 @@
     <footer>
+ 
+<!--Back to Top button starts----------------------------------------------------------------------->   
+ 
+    <a href="#" class="back-to-top" style="display: inline;">
+ 
+    <i class="fa fa-chevron-circle-up"></i>
+ 
+    </a>
+        
+<!--Back to Top button ends----------------------------------------------------------------------->    
     
         <div class="row center-all" id="social-icons">
         
