@@ -27,6 +27,13 @@
 				$statement->bindValue(':team_id', $team_id);
 
 				$statement->execute();
+				
+				// also delete any players on the team
+				$queryString =  ("DELETE FROM PLAYERS WHERE TEAM_ID=:team_id");
+				$statement = $esports_db->prepare($queryString);
+				$statement->bindValue(':team_id', $team_id);
+
+				$statement->execute();				
 			}
 			else {
 				$array = array("status"=>"error","description"=>"id parameter value is null");

@@ -57,7 +57,7 @@
 
 			console.log("url loaded = " + urlString);
 			
-			var confirmation = confirm("Are you sure you want to delete '" + team_name + "'?  This cannot be undone!");
+			var confirmation = confirm("Are you sure you want to delete '" + team_name + "' and all of its players?  This cannot be undone!");
 			
 			if (confirmation) {
 				$.ajax({
