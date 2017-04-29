@@ -80,13 +80,19 @@
 			var player_rank = $.trim($('#edit_player_rank').val());
 			var player_bio = $.trim($('#edit_player_bio').val());
 			var player_id = $.trim($('#player_id_hidden').val());
-			
+		
 			var urlString =  UPDATE_URL + 	"?player_id=" + player_id + 
 											"&user_name=" + user_name + 
 											"&player_name=" + player_name + 
 											"&image_url=" + image_url +
 											"&player_rank=" + player_rank +
 											"&player_bio=" + player_bio;
+
+			// player_id 0 indicates we are adding a new player	to the selected team										
+			if (player_id == 0)
+			{
+				urlString = urlString += "&player_team_id=" + $.trim($('#player_team_id_hidden').val());
+			}
 
 			console.log("url loaded = " + urlString);
 				
@@ -102,7 +108,6 @@
 				}
 			});
 		}; // update_player - onclick	
-
 
 	</script>
 	
@@ -136,17 +141,31 @@
 					
 				$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
 					
-				//if user is viewing specific player (i.e. admin_edit_teams.php?player_id=#)
-				if(array_key_exists('player_id', $_GET)){
+				// if user is viewing specific player (i.e. admin_edit_teams.php?player_id=#) 
+				// OR
+				// if user is adding a new player (admin_edit_teams.php?player_team_id=#)
+				if(array_key_exists('player_id', $_GET) || array_key_exists('player_team_id', $_GET)){
 				
-					// player ID has been passed in so load only this player's data from the database, based on the ID
-					$player_id = intval($_GET['player_id']);					
+					// get player_id or player_team_id (only one or the other will exist)
+					if(array_key_exists('player_id', $_GET)) 
+					{
+						$player_id = intval($_GET['player_id']);
+						$player_team_id = 0;
+					}
+					else
+					{
+						$player_team_id = intval($_GET['player_team_id']);
+						$player_id = 0;
+					}
+					
+					// load player's data from the DB to edit; if player_id is 0, no data will be loaded, which is correct for adding a new player
 					$player_result = $esports_db->query("SELECT * FROM PLAYERS WHERE PLAYER_ID=$player_id");
 					$player = $player_result->fetchArray(SQLITE3_ASSOC);
 					
 					// display player's data in editable form on page
 
 					echo "<input type='hidden' id='player_id_hidden' value=$player_id />";	
+					echo "<input type='hidden' id='player_team_id_hidden' value=$player_team_id />";
 					echo "<form id='edit_player_form'>";
 						echo "<div class='form-group'>";
 							echo "<label for='edit_user_name'>User Name</label>";
@@ -173,8 +192,14 @@
 							echo "<textarea class='form-control admin_input_text' rows='8' id='edit_player_bio'>$player[BIO]</textarea>";
 						echo "</div>";
 
-						echo "<button type='button' class='btn btn-warning admin_page_button' id='update_player'>Update Player</button>"; 
-						echo "<script>document.querySelector('#update_player').onclick = onUpdatePlayer;</script>";
+						if ($player_id != 0)
+						{
+							echo "<button type='button' class='btn btn-warning admin_page_button' id='update_player'>Update Player</button>"; 
+						}else
+						{
+							echo "<button type='button' class='btn btn-warning admin_page_button' id='update_player'>Add Player</button>"; 
+						}
+						echo "<script>document.querySelector('#update_player').onclick = onUpdatePlayer;</script>";	
 					echo "</form>";	
 							
 					// TODO: maybe display link back to team? back to all teams? breadcrumbs? etc.
@@ -239,15 +264,16 @@
 												echo "<td> $team_players[USER_NAME] </td>";
 												echo "<td>Rank: $team_players[RANK] </td>";
 												echo "<td>";
-													echo "<button type='button' class='btn btn-warning delete_player_button' id='delete_player' onclick='??'>Delete Player</button>"; // TODO: ??
+													echo "<button type='button' class='btn btn-warning delete_player_button' id='delete_player'>Delete Player</button>"; 
+//													echo "<script>document.querySelector('#delete_player').onclick = onDeletePlayer;</script>";
 												echo "</td>";												
 											echo "</tr>";
 										}
-										echo "<tr>";
-											echo "<td>";
-												echo "<button type='button' class='btn btn-warning admin_page_button' id='add_player'>Add Player</button>"; 
-												echo "<script>document.querySelector('#add_player').onclick = onAddPlayer;</script>";
-											echo "</td>";
+										echo "<tr class='clickable-row admin_table_row' data-url='admin_edit_teams.php?player_team_id=$team_id'>";
+												echo "<td>";
+													echo "<img class='img-responsive admin_logo' src='media/esports_assets/tigerhead_nobg_mini.png' alt='default image' title='default image'>";
+												echo "</td>";
+												echo "<td class='admin_input_text' colspan='3'> Add new player </td>";
 										echo "</tr>";
 									echo "</tbody>";
 								echo "</table>";			

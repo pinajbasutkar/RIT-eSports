@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>RIT eSports Admin Page</title>
@@ -52,20 +53,20 @@
 		<form>
 			<div class="form-group">
 				<label for="team_name">Team Name</label>
-				<input class="form-control" id="team_name" tabindex="1" name="team_name" type="text" />
+				<input type="text" class="form-control admin_input_text" rows="1" id="team_name" name="team_name" />
 			</div>
-			
+							
 			<div class="form-group">
 				<label for="game">Game</label>
-				<input class="form-control" id="game" tabindex="1" name="team_name" type="text" />
+				<input type="text" class="form-control admin_input_text" rows="1" id="game" name="game" />
 			</div>
 
 			<div class="form-group">
 				<label for="logo_url">Logo URL</label>
-				<input class="form-control" id="logo_url" tabindex="1" name="team_name" type="text" />
+				<input type="text" class="form-control admin_input_text" rows="1" id="logo_url" name="logo_url" />
 			</div>
 			
-			<button type="button" id="add_team" class="btn btn-warning main_action_button">Add Team</button>	
+			<button type="button" id="add_team" class="btn btn-warning admin_page_button">Add Team</button>	
 		</form>
     
 </main>
