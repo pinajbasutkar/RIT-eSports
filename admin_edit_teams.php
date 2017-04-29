@@ -77,10 +77,19 @@
 			var user_name = $.trim($('#edit_user_name').val());
 			var player_name = $.trim($('#edit_player_name').val());
 			var image_url = $.trim($('#edit_player_image').val());
-			var player_rank = $.trim($('#edit_player_rank').val());
 			var player_bio = $.trim($('#edit_player_bio').val());
 			var player_id = $.trim($('#player_id_hidden').val());
-		
+			var player_rank;
+			if (document.getElementById('rank_captain').checked) {
+				player_rank = 1;
+			}
+			else if (document.getElementById('rank_manager').checked) {
+				player_rank = 2;
+			}
+			else {
+				player_rank = 0;
+			}
+				
 			var urlString =  UPDATE_URL + 	"?player_id=" + player_id + 
 											"&user_name=" + user_name + 
 											"&player_name=" + player_name + 
@@ -162,6 +171,8 @@
 					$player_result = $esports_db->query("SELECT * FROM PLAYERS WHERE PLAYER_ID=$player_id");
 					$player = $player_result->fetchArray(SQLITE3_ASSOC);
 					
+					$rank = $player['RANK'];
+					
 					// display player's data in editable form on page
 
 					echo "<input type='hidden' id='player_id_hidden' value=$player_id />";	
@@ -182,9 +193,15 @@
 							echo "<input type='text' class='form-control admin_input_text' rows='1' id='edit_player_image' value='$player[IMAGE_URL]' />";
 						echo "</div>";
 
-						echo "<div class='form-group'>";
-							echo "<label for='edit_player_rank'>Rank (1=Captain, 2=Manager, 0=Player)</label>";
-							echo "<input type='text' class='form-control admin_input_text' rows='1' id='edit_player_rank' value='$player[RANK]' />";
+						echo "<div class='form-group admin_input_text'>";
+							echo "<label for='edit_player_rank'>Rank</label><br />";
+							echo "<input type='radio' name='edit_player_rank' id='rank_captain' value='1'";
+							if ($rank == '1') { echo "checked='checked'";};
+							echo "/>Captain &nbsp; <input type='radio' name='edit_player_rank' id='rank_manager' value='2'";
+							if ($rank == '2') { echo "checked='checked'";};
+							echo "/>Manager &nbsp; <input type='radio' name='edit_player_rank' id='rank_player' value='0'";
+							if ($rank != '1' && $rank != '2') { echo "checked='checked'";};
+							echo " />Player &nbsp;";
 						echo "</div>";
 
 						echo "<div class='form-group'>";
@@ -244,7 +261,7 @@
 						
 						// get all players for this team
 						$team_players_result = $esports_db->query("SELECT * FROM PLAYERS WHERE TEAM_ID=$team_id");
-					
+
 						echo "<div class='player_list'>";
 							echo "<div class='player_list_content'>";
 								echo "<h3 class='admin_input_text'>Players</h3>";
@@ -253,16 +270,17 @@
 						
 										while($team_players = $team_players_result->fetchArray(SQLITE3_ASSOC))
 										{
-//											var rank = "Player";
-//											if (team.players[i].rank == 1) rank = "Captain";
-//											else if (team.players[i].rank == 2) rank = "Manager";
+											$rank = "Player";
+											$rank_val = $team_players['RANK'];
+											if ($rank_val == 1) { $rank = "Captain"; }
+											else if ($rank_val == 2) { $rank = "Manager"; }
 												
 											echo "<tr class='clickable-row admin_table_row' data-url='admin_edit_teams.php?player_id=$team_players[PLAYER_ID]'>";
 												echo "<td>";
 													echo "<img class='img-responsive admin_logo' src='$team_players[IMAGE_URL]' alt='player image' title='player image'>";
 												echo "</td>";
 												echo "<td> $team_players[USER_NAME] </td>";
-												echo "<td>Rank: $team_players[RANK] </td>";
+												echo "<td>Rank: $rank</td>";
 												echo "<td>";
 													echo "<button type='button' class='btn btn-warning delete_player_button' id='delete_player'>Delete Player</button>"; 
 //													echo "<script>document.querySelector('#delete_player').onclick = onDeletePlayer;</script>";
