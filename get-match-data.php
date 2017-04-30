@@ -15,7 +15,7 @@
 		echo $esports_db->lastErrorMsg();
 	}
 	
-	$match_id = $_GET['match_id'];
+	$match_id = intval($_GET['match_id']);
 	$match_list = $esports_db->query("SELECT * FROM MATCHES WHERE MATCH_ID=" .$match_id);	
 	
 	if ($match_list)

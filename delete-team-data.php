@@ -18,8 +18,9 @@
 	else
 	{
 		if (array_key_exists('team_id', $_GET)){
-			// get id of team to delete
-			$team_id = $_GET['team_id'];
+			
+            // get id of team to delete
+			$team_id = intval($_GET['team_id']);
 
 			if ($team_id != null) {
 				$queryString =  ("DELETE FROM TEAMS WHERE TEAM_ID=:team_id");
@@ -41,8 +42,9 @@
 			}
 		}
 		else if (array_key_exists('player_id', $_GET)){
-			// get id of player to delete
-			$player_id = $_GET['player_id'];
+			
+            // get id of player to delete
+			$player_id = intval($_GET['player_id']);
 
 			if ($player_id != null) {
 				$queryString =  ("DELETE FROM PLAYERS WHERE PLAYER_ID=:player_id");

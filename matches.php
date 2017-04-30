@@ -3,7 +3,7 @@
     //check if url param provided, default to current if not
     if(array_key_exists('type',$_GET)){
     
-        $matchType = $_GET['type'];
+        $matchType = intval($_GET['type']);
         
     }else{
         

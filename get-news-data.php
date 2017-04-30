@@ -15,7 +15,7 @@
 		echo $esports_db->lastErrorMsg();
 	}
 	
-	$news_id = $_GET['news_id'];
+	$news_id = intval($_GET['news_id']);
 	$news_list = $esports_db->query("SELECT * FROM NEWS_ITEMS WHERE NEWS_ID=" .$news_id);	
 	
 	if ($news_list)

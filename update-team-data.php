@@ -18,8 +18,9 @@
 	else
 	{
 		if (array_key_exists('team_id', $_GET)){
-			// get id of team to edit
-			$team_id = $_GET['team_id'];
+			
+            // get id of team to edit
+			$team_id = intval($_GET['team_id']);
 			
 			$name = $_GET['name'];
 			$game = $_GET['game'];
@@ -44,7 +45,7 @@
 		elseif(array_key_exists('player_id', $_GET) || array_key_exists('player_team_id', $_GET)){
 			// get id of player to edit or team id for new player
 			if (array_key_exists('player_id', $_GET)) {
-				$player_id = $_GET['player_id'];	
+				$player_id = intval($_GET['player_id']);	
 			}
 			else
 			{
@@ -52,7 +53,7 @@
 			}
 			
 			if (array_key_exists('player_team_id', $_GET)) {			
-				$player_team_id = $_GET['player_team_id'];
+				$player_team_id = intval($_GET['player_team_id']);
 			}
 			else
 			{

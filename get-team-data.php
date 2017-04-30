@@ -14,7 +14,7 @@
 		echo $esports_db->lastErrorMsg();
 	}
 	
-	$team_id = $_GET['team_id'];	
+	$team_id = intval($_GET['team_id']);	
 	$team_result = $esports_db->query("SELECT * FROM TEAMS WHERE TEAM_ID = " . $team_id);	
 	
 	if ($team_result)
