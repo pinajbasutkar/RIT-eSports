@@ -114,6 +114,15 @@
 			  
 				<input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
 			</form>
+			
+			  <script>
+  var ImageValue = document.getElementById("fileToUpload").value;
+  	var logo_url = "media/news_events/" + ImageValue.replace(/.*[\/\\]/, '');
+	document.getElementById("image_url").value = logo_url;
+  //alert(logo_url);
+  
+  </script>
+			
 		</div>
  
 </main>
