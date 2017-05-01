@@ -43,7 +43,7 @@
                 
                 <div class="form-group">
                     <label for="image">Image URL</label>
-                    <input type="text" class="form-control" rows="1" name='add_image''>
+                    <input type="text" class="form-control" rows="1" name='add_image' id = "textimage"'>
                 </div>
                 
                 <div class="form-group">
@@ -54,6 +54,18 @@
                 <input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>
 
             </form>
+			
+			<script>
+			
+			 var ImageValue = document.getElementById("fileToUpload").value;
+  	var logo_url = "media/news_events/" + ImageValue.replace(/.*[\/\\]/, '');
+	document.getElementById("textimage").value = logo_url;
+  //alert(logo_url);
+			</script>
+			 
+
+  
+  
             
         </div>   
     
