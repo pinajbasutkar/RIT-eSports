@@ -29,7 +29,9 @@
 		function onUpdateTeam(event) {
 			var name = $.trim($('#edit_team_name').val());
 			var game = $.trim($('#edit_game').val());
-			var logo_url = $.trim($('#edit_logo_url').val());
+			//var logo_url = $.trim($('#edit_logo_url').val());
+			var logo_url2 = $.trim($('#fileToUpload').val());
+			var logo_url = "media/esports_assets/" + logo_url2.replace(/.*[\/\\]/, '');
 			var team_id = $.trim($('#team_id_hidden').val());
 			
 			var urlString =  UPDATE_URL + "?team_id=" + team_id + "&name=" + name + "&game=" + game + "&logo_url=" + logo_url;
@@ -76,7 +78,9 @@
 		function onUpdatePlayer(event) {
 			var user_name = $.trim($('#edit_user_name').val());
 			var player_name = $.trim($('#edit_player_name').val());
-			var image_url = $.trim($('#edit_player_image').val());
+			//var image_url = $.trim($('#edit_player_image').val());
+			var image_url2 = $.trim($('#fileToUpload').val());
+			var image_url = "media/esports_assets/" + image_url2.replace(/.*[\/\\]/, '');
 			var player_bio = $.trim($('#edit_player_bio').val());
 			var player_id = $.trim($('#player_id_hidden').val());
 			var player_rank;
@@ -370,6 +374,13 @@
 			?>
 			
         </div>	
+		
+	<!--Upload File Button Below -->					
+	<form action="upload_images.php" method="post" enctype="multipart/form-data"> 
+    <label for ="email">File to Upload:</label>
+    <input type="file" name="fileToUpload" id="fileToUpload"> 
+	<input type="submit" value="Upload Image" name="submit">
+	</form> 
 	
 </main>
 

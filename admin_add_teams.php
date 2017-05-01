@@ -19,8 +19,9 @@
 			document.querySelector('#add_team').onclick = function(event) {
 				var name = $.trim($('#team_name').val());
 				var game = $.trim($('#game').val());
-				var logo_url = $.trim($('#logo_url').val());
-				
+				//var logo_url = $.trim($('#logo_url').val());
+				var logo_url2 = $.trim($('#fileToUpload').val());
+				var logo_url = "media/esports_assets/" + logo_url2.replace(/.*[\/\\]/, '');
 				var urlString =  URL + "?name=" + name + "&game=" + game + "&logo_url=" + logo_url;
 
 				console.log("url loaded = " + urlString);
@@ -68,6 +69,12 @@
 			
 			<button type="button" id="add_team" class="btn btn-warning admin_page_button">Add Team</button>	
 		</form>
+		
+				 <form action="upload_images.php" method="post" enctype="multipart/form-data">
+      <label for ="email">File to Upload:</label>
+     <input type="file" name="fileToUpload" id="fileToUpload"> 
+   <input type="submit" value="Upload Image" name="submit">
+  </form> 
     
 </main>
 
