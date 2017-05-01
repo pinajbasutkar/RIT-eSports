@@ -82,8 +82,52 @@ h2{
 }
 
 .btn-group-lg>.btn, .btn-lg {
-        border-radius: 2px;
-        width: 150px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px;
+    font-size: 16px;
+    background-color: #f9973b;
+    color: white; 
+    border-radius: 2px;
+    border: none;
+    
+}
+
+
+.btn:hover{
+    background-color: #1C1B1B;
+    color: #f9973b; 
+    
+}
+
+    
+.watch_video_icon{
+    display: none;
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    font-size: 18px;
+    background-color: #656565;
+    color: #f9973b; 
+    
+    }
+
+
+.watch_video_button{
+    margin: auto;
+    display: block;
+    width: 100px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 14px;
+    background-color: #656565;
+    color: #f9973b; 
+}
+
+.watch_video_button:hover, .watch_video_icon:hover{
+    background-color: #f9973b;
+    color: white; 
 }
 
 /* News Item Styles */
@@ -117,6 +161,11 @@ h2{
 
 .news-item-title {
     margin-top: 0.4em;
+}
+
+
+.fancybox-close-small:focus{
+   border: none; 
 }
 
 #header_logo
@@ -395,7 +444,7 @@ main
 
 .fa {
     margin: 0.25em;
-    text-shadow: 1px 1px black;
+    text-shadow: none;
 }
 
 .fa-facebook-square {
@@ -503,25 +552,6 @@ td{
     height: 30px;
 }
 
-.btn-group-lg>.btn, .btn-lg {
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    padding: 0px;
-    font-size: 14px;
-    border-radius: 2px;
-    background-color: #E6E4E4;
-    color: #E37000;
-}
-
-
-
-.btn-default:hover {
-    background-color: #E37000;
-    color: #E6E4E4 ;
-    border: none;
-}
-
 
 
 /* ADMIN TABS */
@@ -578,9 +608,9 @@ bottom: 100px;
  
 right: 10px;
  
-width: 70px;
+width: 50px;
  
-height: 70px;
+height: 50px;
  
 z-index: 100;
  
@@ -592,7 +622,7 @@ color: darkorange;
     
 opacity: 0.6;
     
-
+text-shadow: none;
  
 }
  
@@ -600,7 +630,7 @@ opacity: 0.6;
  
 .back-to-top i {
  
-  font-size: 60px;
+  font-size: 50px;
  
 }
 
@@ -609,6 +639,7 @@ opacity: 0.6;
  
     opacity: 1;
     color: darkorange;
+    text-shadow: none;
 }
 
 
@@ -646,15 +677,61 @@ footer
     
 }
 
+.watch_video_button{
+        display: block;
+    }
+    
+.watch_video_icon{
+        display: none;
+    }
+
 
 
 
 
 /* ---------Media Queries --------------------------------------------------------------- */
 
+@media screen and (max-width : 480px) {
+    
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    main{
+        width: 100%;
+        margin: 2px;
+    }
+    
+.matches-container{
+    
+    font-size: 12px;
+    height: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+        
+    } 
+    
+   #match-cell{
+       width: 100px;
+    }
+    
+    
+}
+
+
+
+
+
 @media screen and (max-width : 766px) {
     
+    .watch_video_button{
+        display: none;
+    }
     
+    .watch_video_icon{
+        display: block;
+    }
     
     
 }

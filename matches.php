@@ -96,11 +96,11 @@
 								$video_link = $match['VIDEO_URL'];
 								echo "<tr><td>";
 								echo "<img src='$game_logo_url' alt='$game Logo' title='$game Logo'></td>";
-								echo "<td>$rit_team vs. $opponent</td>";
+								echo "<td id='match-cell'>$rit_team vs. $opponent</td>";
 								echo "<td>$score</td>";
 								$match_date_string = date_format($match_date, 'Y-m-d');
 								echo "<td>$match_date_string</td>";
-								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button'>Video</button></td></tr>";
+								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button'>Video</button><button type='button' class='btn btn-default btn-lg watch_video_icon'><i class='fa fa-video-camera'></i></button></td></tr>";
 							}
 						}
 
@@ -231,10 +231,10 @@
 
 
         <?php endif; ?>
-
+                 
 </div>
     </main>
-    
+                      
     <hr id="footer_line">
     <?php include 'includes/footer.php';?>
     
