@@ -189,7 +189,7 @@
             outerDivNewsItem.setAttribute('class','col-md-6 col-lg-6 container');
 
             var pNewsItemInfo=document.createElement("p");
-            pNewsItemInfo.innerHTML = "By"+author+" "+"|"+" "+date
+            pNewsItemInfo.innerHTML = "By " + author + " | " + date;
             pNewsItemInfo.setAttribute('class','news-item-info');
 
             var pNewsItemText=document.createElement("p");
