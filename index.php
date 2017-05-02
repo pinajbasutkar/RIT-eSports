@@ -85,13 +85,13 @@
                     echo '<a data-fancybox data-src="#news-item-'.$newsItemCounter.'" href="javascript:;">';
                     echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div'>";
                     $headline = $news_item['HEADLINE'];
-                    echo "<h3 class='news-item-title'>$headline</h3></a>";
+                    echo "<h3 class='news-item-title'>$headline</h3>";
                     $author = $news_item['AUTHOR'];
                     $date = $news_item['DATE'];
-                    echo "<p class='news-item-info'>by $author | $date</p>";
+                    echo "<p class='news-item-info'>By&nbsp$author | $date</p>";
                     echo '<p class="news-item-text">';
                     $content = trim(substr($news_item['CONTENT'], 0, 200));
-                    echo "$content...</p></div></div>";
+                    echo "$content...</p></a></div></div>";
                     
                     //full content
                     echo '<div class="news-item-full-container" style="display: none;" id="news-item-'.$newsItemCounter.'">';
