@@ -45,10 +45,8 @@
 
 		$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");		
         
-		$news_item_list = $esports_db->query("SELECT * FROM NEWS_ITEMS limit 4");
-    
-    
-        $news_item_list_extra = $esports_db->query("SELECT * FROM NEWS_ITEMS");
+		$news_item_list = $esports_db->query("SELECT * FROM news_items ORDER BY date DESC LIMIT 4");  
+        $news_item_list_extra = $esports_db->query("SELECT * FROM news_items ORDER BY date DESC");
     
         $rows_extra[] = array();            
         while($news_item_more = $news_item_list_extra->fetchArray(SQLITE3_ASSOC))
@@ -146,17 +144,14 @@
    
    //Loads 4 more elements
    function loadmore(){
-       
-      
+           
     var count=4;   
     
     while(count!=0){
         
     i++;
     
-    try{
-        
-
+    try {
             var headline = json_obj[i].HEADLINE; 
             var img_url = json_obj[i].IMAGE_URL;
             var author = json_obj[i].AUTHOR; 
@@ -165,7 +160,6 @@
 
             var length = 200;
             var trimmedContent = content.substring(0, length);   
-
 
             var h3=document.createElement("h3");
             h3.innerHTML=""+headline;
@@ -196,7 +190,6 @@
             pNewsItemText.innerHTML = trimmedContent+"...";
             pNewsItemText.setAttribute('class','news-item-text');
 
-
             a.appendChild(img);
             a.appendChild(h3);
 
@@ -207,12 +200,12 @@
             outerDivNewsItem.appendChild(innerDivNewsItem);
 
             document.getElementById("more-news-loaded").appendChild(outerDivNewsItem); 
-            }
-            catch(err){     
-                $('#load_more_button').addClass('disabled');
-            }
+		}
+		catch(err){     
+			$('#load_more_button').addClass('disabled');
+		}
 
-            count--;
+		count--;
     }
        
     
