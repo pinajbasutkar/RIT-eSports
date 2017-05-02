@@ -41,7 +41,7 @@
 		
     </main>	
     
-    <hr id="footer_line">	
+   	
 	<?php include 'includes/footer.php';?>
     
 </body>
