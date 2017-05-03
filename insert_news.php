@@ -33,6 +33,6 @@
 // 			echo "<script>alert('Try again')</script>"; 
 // 		}
 		
-		header('Location: /admin_add_news.php');
+		header('Location: admin_add_news.php');
 
 ?>

@@ -26,6 +26,6 @@
 		$insert_row = $esports_db->exec("UPDATE NEWS_ITEMS SET HEADLINE='$headline', DATE='$date', 
 		AUTHOR='$author', IMAGE_URL='$image' WHERE NEWS_ID='$news_id'");
 				
-		header('Location: /admin_edit_news.php');
+		header('Location: admin_edit_news.php');
 
 ?>

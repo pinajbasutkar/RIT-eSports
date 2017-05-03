@@ -35,6 +35,6 @@
 // 			echo "<script>alert('Try again')</script>"; 
 // 		}
 		
-		header('Location: /admin_add_matches.php');
+		header('Location: admin_add_matches.php');
 
 ?>

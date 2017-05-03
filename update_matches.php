@@ -28,6 +28,6 @@
 		$insert_row = $esports_db->exec("UPDATE MATCHES SET GAME='$game', RIT_TEAM_ID='$team1', 
 		OPPONENT='$team2', SCORE='$score', DATE='$date', VIDEO_URL='$video', GAME_LOGO_URL='$game_logo' WHERE MATCH_ID='$match_id'");
 				
-		header('Location: /admin_edit_matches.php');
+		header('Location: admin_edit_matches.php');
 
 ?>
