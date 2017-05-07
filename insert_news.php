@@ -21,7 +21,7 @@
 		$author = $_POST["add_author"];
 		$date = $_POST["add_date"];
 		$image = $_POST["add_image"];
-		$content = $_POST["add_content"];
+		$content = filter_var($_POST["add_content"], FILTER_SANITIZE_SPECIAL_CHARS);
 
 		$insert_row = $esports_db->exec("INSERT INTO NEWS_ITEMS (NEWS_ID, HEADLINE, DATE, AUTHOR, IMAGE_URL, CONTENT) 
 					VALUES (NULL,'$headline','$date','$author','$image','$content')");	
