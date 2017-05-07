@@ -1,14 +1,14 @@
 <?php
-//$target_dir = "uploads/";
-$target_dir = "/media/team_player_images/";
+$target_dir = "media/team_player_images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
+$previous = $_SERVER['HTTP_REFERER'];
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+        //echo "File is an image - " . $check["mime"] . ".";
 		$uploadOk = 1;
 		
     } else {
@@ -17,7 +17,7 @@ if(isset($_POST["submit"])) {
     }
 
 	}
-// Check if file already exists
+// Check if file already exists, do we need this??
 if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
@@ -45,6 +45,8 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+	
+
 
 ?>
 

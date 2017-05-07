@@ -5,13 +5,35 @@
   <?php include 'includes/head.php';?>
   
 	<script src="js/js_admin.js"></script>
+	<script src="js/jquery.form.js"></script> 
 
 	<script>
 		$(document).ready(function(){
-
+			
+			document.getElementById("addmatch").className += " active";
 			document.getElementById("editmatch").className += " active";
+			
+			  //function below loads the image but does not refresh the page
+		   $(".upload-image").click(function(){
+            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
+				alert("Image Loaded");
+				return false;
+            });
 		  
 		});
+		
+			//function below puts the location of the image in the text field	
+		
+			function uploadOnChange(e) {
+    var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
+    if (lastIndex >= 0) {
+        filename = filename.substring(lastIndex +1);
+		filename = "media/news_events/" + filename;
+    }
+	
+    document.getElementById('game_logo').value = filename;
+}
+		
 	</script>
 	
 </head>
@@ -135,6 +157,14 @@
                 
                 <input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
             </form>
+			
+	  </form>
+		<form action="upload_images_news.php" enctype="multipart/form-data" class="form-horizontal" method="post">
+      <label for ="email">File to Upload:</label>
+	  <div class="preview"></div>
+     <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
+   <button class="btn btn-primary upload-image">Upload</button>
+  </form> 
             
         </div>	
 </main>

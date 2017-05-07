@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
   
 	<script src="js/js_admin.js"></script>
+    <script src="js/jquery.form.js"></script> 
 
 	<script>
 		"use strict"
@@ -12,15 +14,24 @@
 		var URL = "update-team-data.php";
 		
 		$(document).ready(function(){
+			
+		 //Function below uploads the image to Banjo
+			
+		   $(".upload-image").click(function(){
+            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
+				alert("Image Loaded");
+				return false;
+            });
 
 			document.getElementById("addteam").className += " active";
 		  
 			document.querySelector('#add_team').onclick = function(event) {
 				var name = $.trim($('#team_name').val());
 				var game = $.trim($('#game').val());
-				//var logo_url = $.trim($('#logo_url').val());
-				var logo_url2 = $.trim($('#fileToUpload').val());
-				var logo_url = "media/esports_assets/" + logo_url2.replace(/.*[\/\\]/, '');
+				var logo_url = $.trim($('#logo_url').val());
+				//var logo_url2 = $.trim($('#fileToUpload').val());
+				//console.log(logo_url2);
+				//var logo_url = "media/team_player_images/" + logo_url2.replace(/.*[\/\\]/, '');
 				var urlString =  URL + "?name=" + name + "&game=" + game + "&logo_url=" + logo_url;
 
 				console.log("url loaded = " + urlString);
@@ -38,6 +49,18 @@
 
 			}; // add_team - onclick
 		});
+		
+	//populate the location of the url image
+		
+	function uploadOnChange(e) {
+    var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
+    if (lastIndex >= 0) {
+        filename = filename.substring(lastIndex +1);
+		filename = "media/team_player_images/" + filename;
+    }
+	
+    document.getElementById('logo_url').value = filename;
+} // end function for uploadOnChange
 
 	</script>
 	
@@ -63,17 +86,19 @@
 
 			<div class="form-group">
 				<label for="logo_url">Logo URL</label>
-				<input type="text" class="form-control admin_input_text" rows="1" id="logo_url" name="logo_url" />
-			</div>
+			<input type="text" class="form-control admin_input_text" rows="1" name="logo_url" id="logo_url"/> 
 			
 			<button type="button" id="add_team" class="btn btn-warning admin_page_button">Add Team</button>	
-		</form>
+
+		</form>	
 		
-				 <form action="upload_images.php" method="post" enctype="multipart/form-data">
+	<form action="upload_images_teams.php" enctype="multipart/form-data" class="form-horizontal" method="post">
       <label for ="email">File to Upload:</label>
-     <input type="file" name="fileToUpload" id="fileToUpload"> 
-   <input type="submit" value="Upload Image" name="submit">
+	  <div class="preview"></div>
+     <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
+   <button class="btn btn-primary upload-image">Upload</button>
   </form> 
+		
     
 </main>
 

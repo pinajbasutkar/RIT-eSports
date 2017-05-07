@@ -5,13 +5,33 @@
   <?php include 'includes/head.php';?>
   
 	<script src="js/js_admin.js"></script>
+	<script src="js/jquery.form.js"></script> 
 
 	<script>
 		$(document).ready(function(){
+			
+			 //Function below uploads the image to Banjo
+			
+		   $(".upload-image").click(function(){
+            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
+				alert("Image Loaded");
+				return false;
+            });
 
 			document.getElementById("editnews").className += " active";
 		  
 		});
+		
+				function uploadOnChange(e) {
+    var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
+    if (lastIndex >= 0) {
+        filename = filename.substring(lastIndex +1);
+		filename = "media/news_events/" + filename;
+    }
+	
+    document.getElementById('image_url').value = filename;
+}
+		
 	</script>
 	
 </head>
@@ -115,19 +135,19 @@
 				<input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
 			</form>
 			
-			  <script>
-  var ImageValue = document.getElementById("fileToUpload").value;
-  	var logo_url = "media/news_events/" + ImageValue.replace(/.*[\/\\]/, '');
-	document.getElementById("image_url").value = logo_url;
-  //alert(logo_url);
-  
-  </script>
 			
+          </form>
+			<form action="upload_images_news.php" enctype="multipart/form-data" class="form-horizontal" method="post">
+      <label for ="email">File to Upload:</label>
+	  <div class="preview"></div>
+     <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
+   <button class="btn btn-primary upload-image">Upload</button>
+  </form> 			
 		</div>
  
 </main>
 
-   
+    <hr id="footer_line">
     <?php include 'includes/footer.php';?>
     
 </body>

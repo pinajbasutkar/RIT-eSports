@@ -5,6 +5,7 @@
   <?php include 'includes/head.php';?>
 	
 	<script src="js/js_admin.js"></script>
+	<script src="js/jquery.form.js"></script>
 
 	<script>
 		"use strict"
@@ -13,10 +14,31 @@
 		var DELETE_URL = "delete-team-data.php";
 		
 		$(document).ready(function(){
+			
+			//Function below uploads the image to Banjo
+			
+		   $(".upload-image").click(function(){
+            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
+				alert("Image Loaded");
+				return false;
+            });
 
 			document.getElementById("editteam").className += " active";
 		
 		});
+		
+		
+	//populate the location of the url image
+		
+	function uploadOnChange(e) {
+    var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
+    if (lastIndex >= 0) {
+        filename = filename.substring(lastIndex +1);
+		filename = "media/team_player_images/" + filename;
+    }
+	
+    document.getElementById('edit_logo_url').value = filename;
+} // end function for uploadOnChange
 
 		$(function () {
 
@@ -29,9 +51,9 @@
 		function onUpdateTeam(event) {
 			var name = $.trim($('#edit_team_name').val());
 			var game = $.trim($('#edit_game').val());
-			//var logo_url = $.trim($('#edit_logo_url').val());
-			var logo_url2 = $.trim($('#fileToUpload').val());
-			var logo_url = "media/esports_assets/" + logo_url2.replace(/.*[\/\\]/, '');
+			var logo_url = $.trim($('#edit_logo_url').val());
+			//var logo_url2 = $.trim($('#fileToUpload').val());
+			//var logo_url = "media/esports_assets/" + logo_url2.replace(/.*[\/\\]/, '');
 			var team_id = $.trim($('#team_id_hidden').val());
 			
 			var urlString =  UPDATE_URL + "?team_id=" + team_id + "&name=" + name + "&game=" + game + "&logo_url=" + logo_url;
@@ -78,9 +100,9 @@
 		function onUpdatePlayer(event) {
 			var user_name = $.trim($('#edit_user_name').val());
 			var player_name = $.trim($('#edit_player_name').val());
-			//var image_url = $.trim($('#edit_player_image').val());
-			var image_url2 = $.trim($('#fileToUpload').val());
-			var image_url = "media/esports_assets/" + image_url2.replace(/.*[\/\\]/, '');
+			var image_url = $.trim($('#edit_player_image').val());
+			//var image_url2 = $.trim($('#fileToUpload').val());
+			//var image_url = "media/esports_assets/" + image_url2.replace(/.*[\/\\]/, '');
 			var player_bio = $.trim($('#edit_player_bio').val());
 			var player_id = $.trim($('#player_id_hidden').val());
 			var player_rank;
@@ -376,11 +398,12 @@
         </div>	
 		
 	<!--Upload File Button Below -->					
-	<form action="upload_images.php" method="post" enctype="multipart/form-data"> 
-    <label for ="email">File to Upload:</label>
-    <input type="file" name="fileToUpload" id="fileToUpload"> 
-	<input type="submit" value="Upload Image" name="submit">
-	</form> 
+	<form action="upload_images_teams.php" enctype="multipart/form-data" class="form-horizontal" method="post">
+      <label for ="email">File to Upload:</label>
+	  <div class="preview"></div>
+     <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
+   <button class="btn btn-primary upload-image">Upload</button>
+  </form> 
 	
 </main>
 
