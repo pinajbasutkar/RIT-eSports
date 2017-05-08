@@ -5,7 +5,7 @@
 	{
 		function __construct()
 		{
-			$this->open('db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
+			$this->open('../db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
 		}
 	}
 	
