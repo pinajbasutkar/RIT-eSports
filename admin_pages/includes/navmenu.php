@@ -1,8 +1,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-left" href="index.php">
-			    <img id="header_logo" src="media/esports_assets/Logo1.png" alt="RIT eSports Logo" title="RIT eSports Logo">
+            <a class="navbar-left" href="../index.php">
+			    <img id="header_logo" src="../media/esports_assets/Logo1.png" alt="RIT eSports Logo" title="RIT eSports Logo">
 			</a>		
 		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#esports_navbar">
 			    <span class="icon-bar"></span>
@@ -13,21 +13,21 @@
 		<div class="collapse navbar-collapse" id="esports_navbar">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="index.php#news_and_events">NEWS</a>
+					<a href="../index.php#news_and_events">NEWS</a>
 				</li>
 				<li class="active dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">MATCHES<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="matches.php?type=past">Past</a></li>
-						<li><a href="matches.php?type=current">Current</a></li>
-						<li><a href="matches.php?type=future">Future</a></li>
+						<li><a href="../matches.php?type=past">Past</a></li>
+						<li><a href="../matches.php?type=current">Current</a></li>
+						<li><a href="../matches.php?type=future">Future</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="teams.php">TEAMS</a>	  
+					<a href="../teams.php">TEAMS</a>	  
 				</li>
 				<li>
-					<a href="contact.php">CONTACT</a>
+					<a href="../contact.php">CONTACT</a>
 				</li>
 			</ul>
 		</div>
