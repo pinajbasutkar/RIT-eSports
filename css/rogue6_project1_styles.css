@@ -231,8 +231,17 @@ main
 
 #single_team_name
 {
-	color: #f9973b;
+	color: #BFBFBF;
     margin-bottom: 80px;
+    font-size: 24px;
+}
+
+#single_team_name:hover{
+   text-decoration: none; 
+}
+
+figure>a:hover{
+    text-decoration: none; 
 }
 
 #team_logo
@@ -435,17 +444,20 @@ main
     
 }
 
+#team-thumbnails:hover figcaption { color: #F7931E; }
+
+#team-thumbnails:hover .img-circle{ opacity: .5; -webkit-box-shadow:inset 0px 0px 0px 2px #F7931E; -moz-box-shadow:inset 0px 0px 0px 2px #F7931E; box-shadow:inset 0px 0px 0px 2px #F7931E; }
 
 .img-circle{
 	background: #625E5E;
 }
 
-.img-circle:hover {
+/*.img-circle:hover {
 	opacity: .5;
      -webkit-box-shadow:inset 0px 0px 0px 2px #F7931E;
     -moz-box-shadow:inset 0px 0px 0px 2px #F7931E;
     box-shadow:inset 0px 0px 0px 2px #F7931E;
-}
+}*/
 
 
 

@@ -34,7 +34,7 @@
 					while($team = $team_list_result->fetchArray(SQLITE3_ASSOC))
 					{	
 						echo '<div class="col-sm-4 col-md-4">';
-						echo "<figure>";
+						echo "<figure id='team-thumbnails'>";
 						$team_id = $team['TEAM_ID'];
 						echo "<a href='team.php?team_id=$team_id'>";
 						$team_name = $team['TEAM_NAME'];
