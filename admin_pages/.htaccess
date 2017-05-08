@@ -2,4 +2,4 @@ AuthType shibboleth
 AuthName "RIT"
 ShibRequireSession On
 SSLRequireSSL
-require user amf5707 bjm4054 bb3266 nst2785 mmr4431 cb3741
+require user amf5707 bjm4054 pb3266 nst2785 mmr4431 cb3741
