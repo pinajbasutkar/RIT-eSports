@@ -16,7 +16,7 @@
 			  //function below loads the image but does not refresh the page
 		   $(".upload-image").click(function(){
             	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				alert("Image Loaded");
+				//alert("Image Loaded");
 				return false;
             });
 		  

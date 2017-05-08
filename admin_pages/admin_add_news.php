@@ -16,7 +16,7 @@
 		   $(".upload-image").click(function(){
             	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
 				return false
-			alert("Image Loaded");
+			//alert("Image Loaded");
             });
 		  
 		});
