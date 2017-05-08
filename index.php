@@ -60,12 +60,10 @@
 		echo "<div class='container center-all'>";
 		echo "<h2 class='page_title' id='title_page_id'>NEWS AND EVENTS</h2>";          
 
-      
-    
                 $rowCounter = 0;
                 $newsItemCounter = 0;
+                $i=0;
                 
-               $i=0;
                 while($news_item = $news_item_list->fetchArray(SQLITE3_ASSOC))
 				{
                     $i++;
@@ -73,7 +71,7 @@
                 
                     $image_url = $news_item['IMAGE_URL'];
 
-                    if($rowCounter === 1){
+                    if($rowCounter === 0){
                         echo '<div class="row center-div">';
                     }
                         
