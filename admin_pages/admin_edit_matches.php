@@ -10,7 +10,6 @@
 	<script>
 		$(document).ready(function(){
 			
-			document.getElementById("addmatch").className += " active";
 			document.getElementById("editmatch").className += " active";
 			
 			  //function below loads the image but does not refresh the page
