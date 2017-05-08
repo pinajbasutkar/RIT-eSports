@@ -121,7 +121,7 @@
                 </div>
                 
             	<div class="form-group">
-                    <label for="game">Game</label>
+                    <label for="game">Game*</label>
                     <input type="text" class="form-control" rows="1" id="game" name="game">
                 </div>
                  
@@ -131,7 +131,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="team2">Opponent Team*</label>
+                    <label for="team2">Opponent*</label>
                     <input type="text" class="form-control" rows="1" id="team2" name="team2">
                 </div>
 

@@ -49,7 +49,7 @@
         <div id="AddMatch" class="tabcontent">
 			<form action='insert_matches.php' method='POST'>	  
 				<div class="form-group">
-					<label for="game">Game</label>
+					<label for="game">Game*</label>
 					<input type="text" class="form-control" rows="1" name="add_game">
 				</div>
 				
@@ -59,7 +59,7 @@
 				</div>
 				
 				<div class="form-group">
-					<label for="team2">Opponent Team*</label>
+					<label for="team2">Opponent*</label>
 					<input type="text" class="form-control" rows="1" name="add_team2" required>
 				</div>
 
