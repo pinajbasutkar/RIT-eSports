@@ -15,8 +15,8 @@
 		  
 		   $(".upload-image").click(function(){
             	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				alert("Image Loaded");
-				return false;
+				return false
+			alert("Image Loaded");
             });
 		  
 		});
@@ -26,10 +26,10 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "media/news_events/" + filename;
+		filename = "../media/news_events/" + filename;
     }
 	
-	alert(filename);
+	//alert(filename);
     document.getElementById('textimage').value = filename;
 }
 		

@@ -26,7 +26,7 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "media/news_events/" + filename;
+		filename = "../media/news_events/" + filename;
     }
 	
     document.getElementById('image_url').value = filename;

@@ -34,7 +34,7 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "media/team_player_images/" + filename;
+		filename = "../media/team_player_images/" + filename;
     }
 	
     document.getElementById('edit_logo_url').value = filename;
