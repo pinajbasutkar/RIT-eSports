@@ -31,7 +31,7 @@
         
         <div class="row">
         
-            <a href="../admin_pages/admin_add_news.php">
+            <a href="admin_pages/admin_add_news.php">
                 <button type="button" class="btn btn-default" id="admin_login_button">Admin Login</button>
             </a> 
         
