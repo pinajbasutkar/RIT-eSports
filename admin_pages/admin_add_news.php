@@ -4,8 +4,8 @@
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
   
-	<script src="js/js_admin.js"></script>
-    <script src="js/jquery.form.js"></script> 
+	<script src="../js/js_admin.js"></script>
+    <script src="../js/jquery.form.js"></script> 
 	
 	
 	<script>

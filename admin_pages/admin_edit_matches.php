@@ -4,8 +4,8 @@
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
   
-	<script src="js/js_admin.js"></script>
-	<script src="js/jquery.form.js"></script> 
+	<script src="../js/js_admin.js"></script>
+	<script src="../js/jquery.form.js"></script> 
 
 	<script>
 		$(document).ready(function(){
@@ -56,7 +56,7 @@
 				{
 					function __construct()
 					{
-						$this->open('db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
+						$this->open('../db/sqlite/sqlite-tools-win32-x86-3180000/ESports.db');
 					}
 				}
 						
