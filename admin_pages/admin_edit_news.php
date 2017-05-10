@@ -10,23 +10,15 @@
 	<script>
 		$(document).ready(function(){
 			
-			 //Function below uploads the image to Banjo
-			
-		   $(".upload-image").click(function(){
-            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				alert("Image Loaded");
-				return false;
-            });
-
 			document.getElementById("editnews").className += " active";
 		  
 		});
 		
-				function uploadOnChange(e) {
+	function uploadOnChange(e) {
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "media/news_events/" + filename;
+		filename = "../media/news_events/" + filename;
     }
 	
     document.getElementById('image_url').value = filename;
@@ -102,7 +94,7 @@
 		?>
 		</div>	
 			
-			<form action='update_news.php' method='POST'>	
+			<form action='update_news.php' method='POST' enctype="multipart/form-data">	
 				<div class="form-group">
                     <input type="hidden" class="form-control" rows="1" id="news_id" name="news_id">
                 </div>
@@ -122,6 +114,11 @@
                     <input type="text" class="form-control" rows="1" id="author" name="author">
                 </div>
                 
+                   <div class="form-group">
+                    <label for ="upload">File to Upload:</label>
+     				<input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
+     				</div>
+     			
                 <div class="form-group">
                     <label for="news_heading">Image URL</label>
                     <input type="text" class="form-control" rows="1" id="image_url" name="image_url">
@@ -134,15 +131,9 @@
 			  
 				<input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
 			</form>
-			
-			
+				
           </form>
-			<form action="upload_images_news.php" enctype="multipart/form-data" class="form-horizontal" method="post">
-      <label for ="email">File to Upload:</label>
-	  <div class="preview"></div>
-     <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
-   <button class="btn btn-primary upload-image">Upload</button>
-  </form> 			
+			
 		</div>
  
 </main>

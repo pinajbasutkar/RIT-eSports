@@ -27,7 +27,7 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "media/news_events/" + filename;
+		filename = "../media/match_logo/" + filename;
     }
 	
     document.getElementById('game_logo').value = filename;
@@ -114,7 +114,7 @@
 		?>
 		</div>
 		
-            <form action='update_matches.php' method='POST'>		 
+            <form action='update_matches.php' method='POST' enctype="multipart/form-data">		 
             	<div class="form-group">
                     <input type="hidden" class="form-control" rows="1" id="match_id" name="match_id">
                 </div>
@@ -150,7 +150,12 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="game_logo">Game Logo</label>
+                    <label for ="upload">Upload Game Logo</label>
+     				<input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
+     			</div>
+     				
+                <div class="form-group">
+                    <label for="game_logo">Game Logo URL</label>
                     <input type="text" class="form-control" rows="1" id="game_logo" name="game_logo">
                 </div>
                 
@@ -158,14 +163,7 @@
             </form>
 			
 	  </form>
-		<form action="upload_images_news.php" enctype="multipart/form-data" class="form-horizontal" method="post">
-      <label for ="email">File to Upload:</label>
-	  <div class="preview"></div>
-     <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
-   <button class="btn btn-primary upload-image">Upload</button>
-  </form> 
-            
-        </div>	
+		</div>	
 </main>
 
   
