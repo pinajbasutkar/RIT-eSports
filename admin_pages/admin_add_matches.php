@@ -12,17 +12,6 @@
 
 			document.getElementById("addmatch").className += " active";
 			
-<<<<<<< HEAD
-=======
-			//function below loads the image but does not refresh the page
-		  
-		   $(".upload-image").click(function(){
-            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				//alert("Image Loaded");
-				return false;
-            });
-		  
->>>>>>> origin/master
 		});
 		
 	//function below puts the location of the image in the text field	
@@ -31,11 +20,8 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-<<<<<<< HEAD
+
 		filename = "../media/match_logo/" + filename;
-=======
-		filename = "../media/news_events/" + filename;
->>>>>>> origin/master
     }
 	
     document.getElementById('textimage').value = filename;

@@ -30,11 +30,8 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-<<<<<<< HEAD
+
 		filename = "../media/match_logo/" + filename;
-=======
-		filename = "../media/news_events/" + filename;
->>>>>>> origin/master
     }
 	
     document.getElementById('game_logo').value = filename;

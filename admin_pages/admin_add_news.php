@@ -13,15 +13,7 @@
 
 			document.getElementById("addnews").className += " active";
 		  
-<<<<<<< HEAD
-=======
-		   $(".upload-image").click(function(){
-            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				return false
-			//alert("Image Loaded");
-            });
-		  
->>>>>>> origin/master
+
 		});
 		
 		

@@ -13,17 +13,7 @@
 		
 		$(document).ready(function(){
 			
-<<<<<<< HEAD
-=======
-			 //Function below uploads the image to Banjo
-			
-		   $(".upload-image").click(function(){
-            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				//alert("Image Loaded");
-				return false;
-            });
 
->>>>>>> origin/master
 			document.getElementById("editnews").className += " active";
 		  
 		});
