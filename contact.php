@@ -17,7 +17,7 @@
                 <h2 class="page_title">CONTACT</h2>
 				<form method="post" action="formmail.php" name="esportscontactform">
 					<input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
-					<input type="hidden" name="recipients" value="cb3741@g.rit.edu" />
+					<input type="hidden" name="recipients" value="exh7928@rit.edu" />
 					<input type="hidden" name="required" value="EmailAddr:Your email address,FullName:Your name" />
 					<input type="hidden" name="subject" value="RIT E-Sports Contact" />
 					<input type="hidden" name="derive_fields" value="email=EmailAddr,realname=FullName" />
