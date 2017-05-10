@@ -8,7 +8,7 @@
 	
     <?php include 'includes/navmenu.php';?>
     
-	<main>
+	<main id="confirmation-content">
        
         <div class="row">
         
@@ -24,7 +24,9 @@
         
     </main>			
     
-    <?php include 'includes/footer.php';?>
+    <div style="margin-top:1em;">
+        <?php include 'includes/footer.php';?>
+    </div>
     
 </body>
 </html>				

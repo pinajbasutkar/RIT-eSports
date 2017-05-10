@@ -735,7 +735,14 @@ footer
         display: none;
     }
 
+/* Confirmation Page */
+#confirmation-content{
+    min-height: 550px;
+}
 
+#confirmation-content .row{
+    margin-top: 3em;
+}
 
 
 
