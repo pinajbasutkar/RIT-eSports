@@ -5,8 +5,8 @@
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
   
-	<script src="js/js_admin.js"></script>
-    <script src="js/jquery.form.js"></script> 
+	<script src="../js/js_admin.js"></script>
+    <script src="../js/jquery.form.js"></script> 
 
 	<script>
 		"use strict"
@@ -19,7 +19,7 @@
 			
 		   $(".upload-image").click(function(){
             	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				alert("Image Loaded");
+				//alert("Image Loaded");
 				return false;
             });
 
@@ -56,7 +56,7 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "media/team_player_images/" + filename;
+		filename = "../media/team_player_images/" + filename;
     }
 	
     document.getElementById('logo_url').value = filename;

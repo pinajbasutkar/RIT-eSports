@@ -8,8 +8,22 @@
 	<script src="../js/jquery.form.js"></script> 
 
 	<script>
+	
+		var DELETE_URL = "delete_news.php";
+		
 		$(document).ready(function(){
 			
+<<<<<<< HEAD
+=======
+			 //Function below uploads the image to Banjo
+			
+		   $(".upload-image").click(function(){
+            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
+				//alert("Image Loaded");
+				return false;
+            });
+
+>>>>>>> origin/master
 			document.getElementById("editnews").className += " active";
 		  
 		});
@@ -23,6 +37,30 @@
 	
     document.getElementById('image_url').value = filename;
 }
+	
+		function onDeleteNewsItem(event) {
+			var news_id = $.trim($('#news_id').val());
+			var headline = $.trim($('#headline').val());
+			
+			var urlString =  DELETE_URL + "?news_id=" + news_id;
+
+			console.log("url loaded = " + urlString);
+			
+			var confirmation = confirm("Are you sure you want to delete the news item '" + headline + "'?  This cannot be undone!");
+			
+			if (confirmation) {
+				$.ajax({
+					url: urlString,
+					success: function(data){
+						window.location.href ="admin_edit_news.php";
+					},
+					error: function(jqxhr,status,error){
+						console.warn(jqxhr.responseText);
+						console.log("status=" + status + "; error=" + error);
+					}
+				});
+			};
+		}; // delete_news_item - onclick
 		
 	</script>
 	
@@ -128,8 +166,11 @@
                     <label for="content">Description*</label>
                     <textarea class="form-control" rows="8" id="content" name="content"> </textarea>
                 </div>
-			  
-				<input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
+
+				<button type="button" class="btn btn-warning admin_page_button" id="delete_news_item">Delete News Item</button>
+				<script>document.querySelector('#delete_news_item').onclick = onDeleteNewsItem;</script>
+				
+				<input type="submit" name='submit' class="btn btn-warning admin_page_button" value='Update News Item'>
 			</form>
 				
           </form>

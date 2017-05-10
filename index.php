@@ -143,12 +143,14 @@
    //Loads 4 more elements
    function loadmore(){
            
-    var count=4;   
+    var count=4; 
+       
+    var rowCounter = 0;
     
     while(count!=0){
         
     i++;
-    
+                        
     try {
             var headline = json_obj[i].HEADLINE; 
             var img_url = json_obj[i].IMAGE_URL;
@@ -176,7 +178,12 @@
 
             var innerDivNewsItem=document.createElement("div");
             innerDivNewsItem.setAttribute('class','news-item');
-
+        
+            
+        
+            
+        
+           
             var outerDivNewsItem=document.createElement("div");
             outerDivNewsItem.setAttribute('class','col-md-6 col-lg-6 container');
 
@@ -196,8 +203,26 @@
             innerDivNewsItem.appendChild(pNewsItemText);
 
             outerDivNewsItem.appendChild(innerDivNewsItem);
+           
 
-            document.getElementById("more-news-loaded").appendChild(outerDivNewsItem); 
+            if(rowCounter==0){
+                 var outerDivNewsItemRow=document.createElement("div");
+                 outerDivNewsItemRow.setAttribute('class','row center-div');
+                 outerDivNewsItemRow.appendChild(outerDivNewsItem); 
+                 document.getElementById("more-news-loaded").appendChild(outerDivNewsItemRow); 
+                 rowCounter++;
+                
+            }
+        
+            else{
+                 outerDivNewsItemRow.appendChild(outerDivNewsItem);
+                 rowCounter=0;
+            }
+        
+        
+        
+        
+        
 		}
 		catch(err){     
 			$('#load_more_button').addClass('disabled');

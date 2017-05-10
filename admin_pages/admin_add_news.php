@@ -13,6 +13,15 @@
 
 			document.getElementById("addnews").className += " active";
 		  
+<<<<<<< HEAD
+=======
+		   $(".upload-image").click(function(){
+            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
+				return false
+			//alert("Image Loaded");
+            });
+		  
+>>>>>>> origin/master
 		});
 		
 		
@@ -23,7 +32,7 @@
 		filename = "../media/news_events/" + filename;
     }
 	
-	alert(filename);
+	//alert(filename);
     document.getElementById('textimage').value = filename;
 }
 		

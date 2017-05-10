@@ -8,6 +8,9 @@
 	<script src="../js/jquery.form.js"></script> 
 
 	<script>
+		
+		var DELETE_URL = "delete_matches.php";
+		
 		$(document).ready(function(){
 			
 			document.getElementById("editmatch").className += " active";
@@ -15,7 +18,7 @@
 			  //function below loads the image but does not refresh the page
 		   $(".upload-image").click(function(){
             	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				alert("Image Loaded");
+				//alert("Image Loaded");
 				return false;
             });
 		  
@@ -27,11 +30,40 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
+<<<<<<< HEAD
 		filename = "../media/match_logo/" + filename;
+=======
+		filename = "../media/news_events/" + filename;
+>>>>>>> origin/master
     }
 	
     document.getElementById('game_logo').value = filename;
 }
+
+		function onDeleteMatch(event) {
+			var match_id = $.trim($('#match_id').val());
+			var team1 = $.trim($('#team1').val());
+			var team2 = $.trim($('#team2').val());
+			
+			var urlString =  DELETE_URL + "?match_id=" + match_id;
+
+			console.log("url loaded = " + urlString);
+			
+			var confirmation = confirm("Are you sure you want to delete the '" + team1 + " vs. " + team2 + "' match?  This cannot be undone!");
+			
+			if (confirmation) {
+				$.ajax({
+					url: urlString,
+					success: function(data){
+						window.location.href ="admin_edit_matches.php";
+					},
+					error: function(jqxhr,status,error){
+						console.warn(jqxhr.responseText);
+						console.log("status=" + status + "; error=" + error);
+					}
+				});
+			};
+		}; // delete_match - onclick
 		
 	</script>
 	
@@ -158,8 +190,11 @@
                     <label for="game_logo">Game Logo URL</label>
                     <input type="text" class="form-control" rows="1" id="game_logo" name="game_logo">
                 </div>
-                
-                <input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>		
+ 
+				<button type="button" class="btn btn-warning admin_page_button" id="delete_match">Delete Match</button>
+				<script>document.querySelector('#delete_match').onclick = onDeleteMatch;</script>
+				
+                <input type="submit" name='submit' class="btn btn-warning admin_page_button" value='Update Match'>		
             </form>
 			
 	  </form>
