@@ -18,42 +18,6 @@
 	else
 	{
 		
-$target_dir = "../media/team_player_images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$previous = $_SERVER['HTTP_REFERER'];
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        //echo "File is an image - " . $check["mime"] . ".";
-		$uploadOk = 1;
-		
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-
-// Check if file already exists, do we need this??
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-
-
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-		chmod($target_file, 0755);
-	} else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-}
-			
 		if (array_key_exists('team_id', $_GET)){
 			
             // get id of team to edit
@@ -144,6 +108,37 @@ if ($uploadOk == 0) {
 			$game = $_GET['game'];
 			$logoURL = $_GET['logo_url'];
 			
+			//$target_dir = "uploads/";
+$target_dir = "../media/team_player_images/";
+$target_file = $target_dir . ($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        //echo "File is an image - " . $check["mime"] . ".";
+		$uploadOk = 1;
+		
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+		chmod($target_file, 0755);
+       // echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+	} else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+			
+			
 			$queryString =  ("INSERT INTO TEAMS (TEAM_ID, TEAM_NAME, GAME, LOGO_URL) VALUES (NULL, :name, :game, :logo_url)");
 			$statement = $esports_db->prepare($queryString);
 			$statement->bindValue(':name', $name);
@@ -162,7 +157,8 @@ if ($uploadOk == 0) {
 				$array = array("status"=>"error","description"=>"insert failed - problem with \$statement");
 				echo_response($array);
 			}
-		}	
+		}
+			
 	}
 
 	function echo_response($array){

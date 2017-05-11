@@ -369,12 +369,13 @@
 						{
 							$team_id = $team['TEAM_ID'];
 							$team_name = $team['TEAM_NAME'];
+							$team_logo = $team['LOGO_URL'];
 
 							$team_captain_result = $esports_db->query("SELECT USER_NAME FROM PLAYERS WHERE TEAM_ID=$team_id AND RANK=1");
 							
 							echo "<tr class='clickable-row admin_table_row' data-url='admin_edit_teams.php?team_id=$team_id' data-href='#team_form'>";
 								echo "<td>";
-									echo "<img class='img-responsive admin_team_logo' src='media/esports_assets/tigerhead_nobg_mini.png' alt='team logo' title='team logo'>";
+									echo "<img class='img-responsive admin_team_logo' src='$team_logo' alt='team logo' title='team logo'>";
 								echo "</td>";
 								
 								echo "<td class='admin_team_text'>";							

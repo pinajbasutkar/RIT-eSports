@@ -18,6 +18,10 @@
 			document.getElementById("addteam").className += " active";
 		  
 			document.querySelector('#add_team').onclick = function(event) {
+				var myFormData = new FormData();
+				
+				myFormData.append('fileToUpload', fileToUpload.files[0]);
+				
 				var name = $.trim($('#team_name').val());
 				var game = $.trim($('#game').val());
 				var logo_url = $.trim($('#logo_url').val());
@@ -30,6 +34,11 @@
 					
 				$.ajax({
 					url: urlString,
+					type: 'POST',
+  					processData: false, // important
+  					contentType: false,
+  					dataType : 'json',
+  					data: myFormData,
 					success: function(data){
 						window.location.href ="admin_edit_teams.php";
 					},
@@ -79,8 +88,10 @@
 			<div class="form-group">
 				<label for="logo_url">Logo URL</label>
 			<input type="text" class="form-control admin_input_text" rows="1" name="logo_url" id="logo_url"/>
-			   <label for ="email">File to Upload:</label>
+			   
+			<label for ="email">File to Upload:</label>
 			<input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 	
+			</div>
 			
 			<button type="button" id="add_team" class="btn btn-warning admin_page_button">Add Team</button>	
 

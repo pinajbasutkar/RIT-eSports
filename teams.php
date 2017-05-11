@@ -36,10 +36,12 @@
 						echo '<div class="col-sm-4 col-md-4">';
 						echo "<figure id='team-thumbnails'>";
 						$team_id = $team['TEAM_ID'];
+						$team_logo = $team['LOGO_URL'];
+						
 						echo "<a href='team.php?team_id=$team_id'>";
 						$team_name = $team['TEAM_NAME'];
 						$link = "'Link to $team_name team page'";
-						echo "<img class='img-circle img-responsive center-all' src='media/esports_assets/tigerhead_small.png' alt=$link title=$link>";
+						echo "<img class='img-circle img-responsive center-all' src='$team_logo' alt=$link title=$link>";
                         echo "<figcaption id='single_team_name' class='figure-caption text-center team_name'>$team_name</figcaption>";
                         echo "</a>";						
                         echo "</figure>";
