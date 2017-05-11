@@ -79,7 +79,7 @@
                     echo '<div class="col-md-6 col-lg-6 container">';			
                     echo '<div class="news-item">';
                     echo '<a data-fancybox data-src="#news-item-'.$newsItemCounter.'" href="javascript:;">';
-                    echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div'>";
+                    echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div news-item-pic'>";
                     $headline = $news_item['HEADLINE'];
                     echo "<h3 class='news-item-title'>$headline</h3>";
                     $author = $news_item['AUTHOR'];
@@ -92,7 +92,7 @@
                     //full content
                     echo '<div class="news-item-full-container" style="display: none;" id="news-item-'.$newsItemCounter.'">';
                     echo '<div class="news-item-full">';
-                    echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div'>";
+                    echo "<img src='$image_url' alt='News Item Picture' title='News Item Picture' class='img-responsive center-div full-news-item-pic'>";
                     $headline = $news_item['HEADLINE'];
                     echo "<h3 class='news-item-title'>$headline</h3>";
                     $author = $news_item['AUTHOR'];
@@ -169,7 +169,7 @@
             img.setAttribute('src',img_url);
             img.setAttribute('alt','News Item Picture');
             img.setAttribute('title','News Item Picture');
-            img.setAttribute('class','img-responsive center-div');
+            img.setAttribute('class','img-responsive center-div news-item-pic');
 
             var a=document.createElement("a");
             a.setAttribute('data-fancybox','');

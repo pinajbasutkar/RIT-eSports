@@ -744,6 +744,16 @@ footer
     margin-top: 3em;
 }
 
+/* News Item Pic */
+.news-item-pic {
+    height: 200px;
+    width: 100%;
+}
+
+.full-news-item-pic {
+    max-height: 400px;
+    max-width: 100%;
+}
 
 
 /* ---------Media Queries --------------------------------------------------------------- */
