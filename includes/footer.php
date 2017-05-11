@@ -29,7 +29,7 @@
         
         </div> 
         
-        <div class="row">
+        <div class="row admin-button">
         
             <a href="admin_pages/admin_add_news.php">
                 <button type="button" class="btn btn-default" id="admin_login_button">Admin Login</button>

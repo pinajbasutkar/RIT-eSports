@@ -69,6 +69,7 @@ color: #777777;
 
 h2{
     font-family: heading-font;
+    color:#f9973b;
 }
 
 @font-face {
@@ -231,13 +232,17 @@ main
 
 #single_team_name
 {
-	color: #BFBFBF;
+	
     margin-bottom: 80px;
     font-size: 24px;
 }
 
 #single_team_name:hover{
    text-decoration: none; 
+}
+
+.figure-caption>.team_name{
+    font-family: heading-font;
 }
 
 figure>a:hover{
@@ -361,6 +366,7 @@ figure>a:hover{
     float: right;
 	clear: none;
 	margin-right: 20px;
+    margin-bottom: 20px;
     border-radius: 2px;
     border: 0.5px solid gray;
 }
@@ -369,6 +375,12 @@ figure>a:hover{
     color: #f9973b;
     border: 0.5px solid #f9973b;
 }
+
+.admin-button{
+    background-color: #080808;
+    
+}
+
 
 /* TEAM ADMIN */
 

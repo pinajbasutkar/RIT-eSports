@@ -33,7 +33,9 @@
 			
 			echo "<figure>";
 			echo "<img id='team_logo' class='img-circle img-responsive center-all' src='media/esports_assets/tigerhead_small.png' alt='Link to " . $team_name . " Team_page'>";
+            echo "<h2>";
 			echo "<figcaption id='single_team_name' class='figure-caption team_name center-all'>" . $team_name . "</figcaption>";
+             echo "</h2>";
 			echo "</figure>";			
 
 			echo '<p class="category_header">Captain</p>';		
