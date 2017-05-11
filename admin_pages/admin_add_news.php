@@ -68,7 +68,7 @@
      			
      			<div class="form-group">
                     <label for="image">Image URL</label>
-                    <input type="text" class="form-control" rows="1" name='add_image' id = "textimage"'>     				
+                    <input type="text" class="form-control" rows="1" name='add_image' id = "textimage" hidden>     				
                 </div>
                 
                 <div class="form-group">

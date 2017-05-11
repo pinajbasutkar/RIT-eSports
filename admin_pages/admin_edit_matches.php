@@ -14,14 +14,7 @@
 		$(document).ready(function(){
 			
 			document.getElementById("editmatch").className += " active";
-			
-			  //function below loads the image but does not refresh the page
-		   $(".upload-image").click(function(){
-            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				//alert("Image Loaded");
-				return false;
-            });
-		  
+					  
 		});
 		
 			//function below puts the location of the image in the text field	
@@ -185,7 +178,7 @@
      				
                 <div class="form-group">
                     <label for="game_logo">Game Logo URL</label>
-                    <input type="text" class="form-control" rows="1" id="game_logo" name="game_logo">
+                    <input type="text" class="form-control" rows="1" id="game_logo" name="game_logo" hidden>
                 </div>
  
 				<button type="button" class="btn btn-warning admin_page_button" id="delete_match">Delete Match</button>

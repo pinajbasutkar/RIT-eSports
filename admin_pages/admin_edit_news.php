@@ -149,7 +149,7 @@
      			
                 <div class="form-group">
                     <label for="news_heading">Image URL</label>
-                    <input type="text" class="form-control" rows="1" id="image_url" name="image_url">
+                    <input type="text" class="form-control" rows="1" id="image_url" name="image_url" hidden>
                 </div>
                
                 <div class="form-group">

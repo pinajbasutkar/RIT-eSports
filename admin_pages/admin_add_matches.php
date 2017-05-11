@@ -78,7 +78,7 @@
      				
      			<div class="form-group">
 					<label for="game_logo">Game Logo URL</label>
-					<input type="text" class="form-control" rows="1" name="add_logo" id = "textimage">
+					<input type="text" class="form-control" rows="1" name="add_logo" id = "textimage" hidden>
 				</div>
 				
 				<input type="submit" class="btn btn-warning main_action_button" value="Publish">		
