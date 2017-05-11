@@ -15,14 +15,6 @@
 		
 		$(document).ready(function(){
 			
-		 //Function below uploads the image to Banjo
-			
-		   $(".upload-image").click(function(){
-            	$(".form-horizontal").ajaxForm({target: '.preview'}).submit();
-				//alert("Image Loaded");
-				return false;
-            });
-
 			document.getElementById("addteam").className += " active";
 		  
 			document.querySelector('#add_team').onclick = function(event) {
@@ -73,7 +65,7 @@
     
 		<?php include 'includes/adminmenu.php';?>
 
-		<form>
+		<form enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="team_name">Team Name</label>
 				<input type="text" class="form-control admin_input_text" rows="1" id="team_name" name="team_name" />
@@ -86,18 +78,20 @@
 
 			<div class="form-group">
 				<label for="logo_url">Logo URL</label>
-			<input type="text" class="form-control admin_input_text" rows="1" name="logo_url" id="logo_url"/> 
+			<input type="text" class="form-control admin_input_text" rows="1" name="logo_url" id="logo_url"/>
+			   <label for ="email">File to Upload:</label>
+			<input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 	
 			
 			<button type="button" id="add_team" class="btn btn-warning admin_page_button">Add Team</button>	
 
 		</form>	
 		
-	<form action="upload_images_teams.php" enctype="multipart/form-data" class="form-horizontal" method="post">
+	<!--<form action="upload_images_teams.php" enctype="multipart/form-data" class="form-horizontal" method="post">
       <label for ="email">File to Upload:</label>
 	  <div class="preview"></div>
      <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
    <button class="btn btn-primary upload-image">Upload</button>
-  </form> 
+  </form> -->
 		
     
 </main>
