@@ -36,9 +36,11 @@
             echo "<h2>";
 			echo "<figcaption id='single_team_name' class='figure-caption team_name center-all'>" . $team_name . "</figcaption>";
              echo "</h2>";
-			echo "</figure>";			
+			echo "</figure>";	
+        
+        //<p class="subtitle fancy"><span>A fancy subtitle</span></p>
 
-			echo '<p class="category_header">Captain</p>';		
+			echo '<p class="subtitle category_header"><span>Captain</span></p>';		
 		    echo '<div class="container-fluid">';
 			
 			while($captain = $captains->fetchArray(SQLITE3_ASSOC))

@@ -453,6 +453,8 @@ figure>a:hover{
 
 .img-circle {
     background-color: #625E5E;
+    width: 200px;
+    height: 200px;
     
 }
 
