@@ -17,15 +17,45 @@
 	}
 	else
 	{
-		
+		// if image provided, upload it
+		if (array_key_exists('fileToUpload', $_FILES)) {
+			$target_dir = "../media/team_player_images/";
+			$target_file = $target_dir . ($_FILES["fileToUpload"]["name"]);
+			$uploadOk = 1;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+			$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+			if($check !== false) {
+				//echo "File is an image - " . $check["mime"] . ".";
+				$uploadOk = 1;
+				
+			} else {
+				echo "File is not an image.";
+				$uploadOk = 0;
+			}
+
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+				echo "Sorry, your file was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+				if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+					chmod($target_file, 0755);
+				   // echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+				} else {
+					echo "Sorry, there was an error uploading your file.";
+				}
+			}
+		}
+			
 		if (array_key_exists('team_id', $_GET)){
 			
             // get id of team to edit
 			$team_id = intval($_GET['team_id']);
-			
-			$name = $_GET['name'];
-			$game = $_GET['game'];
-			$logoURL = $_GET['logo_url'];
+
+			$name = filter_var($_GET['name'], FILTER_SANITIZE_SPECIAL_CHARS);			
+			$game = filter_var($_GET['game'], FILTER_SANITIZE_SPECIAL_CHARS);
+			$logoURL = filter_var($_GET['logo_url'], FILTER_SANITIZE_SPECIAL_CHARS);
 
 			$queryString =  ("UPDATE TEAMS SET TEAM_NAME=:name, GAME=:game, LOGO_URL=:logo_url WHERE TEAM_ID=:team_id");
 			$statement = $esports_db->prepare($queryString);
@@ -61,11 +91,11 @@
 				$player_team_id = 0;
 			}
 			
-			$user_name = $_GET['user_name'];
-			$player_name = $_GET['player_name'];
-			$image_url = $_GET['image_url'];
-			$player_rank = $_GET['player_rank'];
-			$player_bio = $_GET['player_bio'];
+			$user_name = filter_var($_GET['user_name'], FILTER_SANITIZE_SPECIAL_CHARS);
+			$player_name = filter_var($_GET['player_name'], FILTER_SANITIZE_SPECIAL_CHARS);
+			$image_url = filter_var($_GET['image_url'], FILTER_SANITIZE_SPECIAL_CHARS);
+			$player_rank = filter_var($_GET['player_rank'], FILTER_SANITIZE_SPECIAL_CHARS);
+			$player_bio = filter_var($_GET['player_bio'], FILTER_SANITIZE_SPECIAL_CHARS);
 
 			if ($player_id != 0)
 			{
@@ -104,40 +134,9 @@
 		}
 		else // no parameters, so add team
 		{
-			$name = $_GET['name'];
-			$game = $_GET['game'];
-			$logoURL = $_GET['logo_url'];
-			
-			//$target_dir = "uploads/";
-$target_dir = "../media/team_player_images/";
-$target_file = $target_dir . ($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        //echo "File is an image - " . $check["mime"] . ".";
-		$uploadOk = 1;
-		
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-		chmod($target_file, 0755);
-       // echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-	} else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-}
-			
+			$name = filter_var($_GET['name'], FILTER_SANITIZE_SPECIAL_CHARS);
+			$game = filter_var($_GET['game'], FILTER_SANITIZE_SPECIAL_CHARS);
+			$logoURL = filter_var($_GET['logo_url'], FILTER_SANITIZE_SPECIAL_CHARS);
 			
 			$queryString =  ("INSERT INTO TEAMS (TEAM_ID, TEAM_NAME, GAME, LOGO_URL) VALUES (NULL, :name, :game, :logo_url)");
 			$statement = $esports_db->prepare($queryString);

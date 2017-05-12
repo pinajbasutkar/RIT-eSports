@@ -27,19 +27,26 @@
 		
 		});
 		
-		
-	//populate the location of the url image
-		
-	function uploadOnChange(e) {
-    var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
-    if (lastIndex >= 0) {
-        filename = filename.substring(lastIndex +1);
-		filename = "../media/team_player_images/" + filename;
-    }
-	
-    document.getElementById('edit_logo_url').value = filename;
-} // end function for uploadOnChange
+		function uploadTeamImage(e) {
+			var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
+			if (lastIndex >= 0) {
+				filename = filename.substring(lastIndex +1);
+				filename = "media/team_player_images/" + filename;
+			}
+			
+			document.getElementById('edit_logo_url').value = filename;
+		}
 
+		function uploadPlayerImage(e) {
+			var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
+			if (lastIndex >= 0) {
+				filename = filename.substring(lastIndex +1);
+				filename = "media/team_player_images/" + filename;
+			}
+			
+			document.getElementById('edit_player_image').value = filename;
+		}
+		
 		$(function () {
 
 			$(".table").on("click", "tr[data-url]", function () {
@@ -49,11 +56,12 @@
 		});
 		
 		function onUpdateTeam(event) {
-			var name = $.trim($('#edit_team_name').val());
-			var game = $.trim($('#edit_game').val());
-			var logo_url = $.trim($('#edit_logo_url').val());
-			//var logo_url2 = $.trim($('#fileToUpload').val());
-			//var logo_url = "media/esports_assets/" + logo_url2.replace(/.*[\/\\]/, '');
+			var myFormData = new FormData();
+			myFormData.append('fileToUpload', fileToUpload.files[0]);
+				
+			var name = encodeURIComponent($.trim($('#edit_team_name').val()));
+			var game = encodeURIComponent($.trim($('#edit_game').val()));
+			var logo_url = encodeURIComponent($.trim($('#edit_logo_url').val()));
 			var team_id = $.trim($('#team_id_hidden').val());
 			
 			var urlString =  UPDATE_URL + "?team_id=" + team_id + "&name=" + name + "&game=" + game + "&logo_url=" + logo_url;
@@ -62,6 +70,11 @@
 				
 			$.ajax({
 				url: urlString,
+				type: 'POST',
+				processData: false, // important
+				contentType: false,
+				dataType : 'json',
+				data: myFormData,
 				success: function(data){
 					console.log(data);
 					window.location.href ="admin_edit_teams.php";
@@ -75,7 +88,7 @@
 		
 		function onDeleteTeam(event) {
 			var team_id = $.trim($('#team_id_hidden').val());
-			var team_name = $.trim($('#edit_team_name').val());
+			var team_name = encodeURIComponent($.trim($('#edit_team_name').val()));
 			
 			var urlString =  DELETE_URL + "?team_id=" + team_id;
 
@@ -98,12 +111,13 @@
 		}; // delete_team - onclick
 		
 		function onUpdatePlayer(event) {
-			var user_name = $.trim($('#edit_user_name').val());
-			var player_name = $.trim($('#edit_player_name').val());
-			var image_url = $.trim($('#edit_player_image').val());
-			//var image_url2 = $.trim($('#fileToUpload').val());
-			//var image_url = "media/esports_assets/" + image_url2.replace(/.*[\/\\]/, '');
-			var player_bio = $.trim($('#edit_player_bio').val());
+			var myFormData = new FormData();
+			myFormData.append('fileToUpload', fileToUpload.files[0]);
+			
+			var user_name = encodeURIComponent($.trim($('#edit_user_name').val()));
+			var player_name = encodeURIComponent($.trim($('#edit_player_name').val()));
+			var image_url = encodeURIComponent($.trim($('#edit_player_image').val()));
+			var player_bio = encodeURIComponent($.trim($('#edit_player_bio').val()));
 			var player_id = $.trim($('#player_id_hidden').val());
 			var player_rank;
 			if (document.getElementById('rank_captain').checked) {
@@ -133,6 +147,11 @@
 				
 			$.ajax({
 				url: urlString,
+				type: 'POST',
+				processData: false, // important
+				contentType: false,
+				dataType : 'json',
+				data: myFormData,
 				success: function(data){
 					console.log(data);
 					window.location.href ="admin_edit_teams.php";
@@ -146,7 +165,7 @@
 
 		function onDeletePlayer(event) {
 			var player_id_hidden = $.trim($('#player_id_hidden').val());
-			var user_name = $.trim($('#edit_user_name').val());
+			var user_name = encodeURIComponent($.trim($('#edit_user_name').val()));
 			
 			var urlString =  DELETE_URL + "?player_id=" + player_id_hidden;
 
@@ -239,8 +258,9 @@
 						echo "</div>";
 						
 						echo "<div class='form-group'>";
-							echo "<label for='edit_player_image'>Image URL</label>";
-							echo "<input type='text' class='form-control admin_input_text' rows='1' id='edit_player_image' value='$player[IMAGE_URL]' />";
+							echo "<input type='hidden' class='form-control admin_input_text' rows='1' id='edit_player_image' value='$player[IMAGE_URL]' />";
+							echo "<label for ='fileToUpload'>Player Image File</label>";
+							echo "<input type='file' name='fileToUpload' id='fileToUpload' onChange='uploadPlayerImage(this)'>"; 
 						echo "</div>";
 
 						echo "<div class='form-group admin_input_text'>";
@@ -301,8 +321,9 @@
 						echo "</div>";
 
 						echo "<div class='form-group'>";
-							echo "<label for='edit_logo_url'>Team Logo URL</label>";
-							echo "<input type='text' class='form-control admin_input_text' rows='1' id='edit_logo_url' value='$team[LOGO_URL]' />";
+							echo "<input type='hidden' class='form-control admin_input_text' rows='1' id='edit_logo_url' value='$team[LOGO_URL]' />";
+							echo "<label for ='fileToUpload'>Team Logo Image File</label>";
+							echo "<input type='file' name='fileToUpload' id='fileToUpload' onChange='uploadTeamImage(this)'>"; 
 						echo "</div>";
 
 						echo "<div class='form-group'>";						
@@ -331,7 +352,7 @@
 												
 											echo "<tr class='clickable-row admin_table_row' data-url='admin_edit_teams.php?player_id=$team_players[PLAYER_ID]'>";
 												echo "<td>";
-													echo "<img class='img-responsive admin_logo' src='$team_players[IMAGE_URL]' alt='player image' title='player image'>";
+													echo "<img class='img-responsive admin_logo' src='../$team_players[IMAGE_URL]' alt='player image' title='player image'>";
 												echo "</td>";
 												echo "<td> $team_players[USER_NAME] </td>";
 												echo "<td colspan='2'>$rank</td>";
@@ -340,7 +361,7 @@
 										}
 										echo "<tr class='clickable-row admin_table_row' data-url='admin_edit_teams.php?player_team_id=$team_id'>";
 												echo "<td>";
-													echo "<img class='img-responsive admin_logo' src='media/esports_assets/tigerhead_nobg_mini.png' alt='default image' title='default image'>";
+													echo "<img class='img-responsive admin_logo' src='../media/esports_assets/tigerhead_nobg_mini.png' alt='default image' title='default image'>";
 												echo "</td>";
 												echo "<td class='admin_input_text' colspan='3'> Add new player </td>";
 										echo "</tr>";
@@ -375,7 +396,7 @@
 							
 							echo "<tr class='clickable-row admin_table_row' data-url='admin_edit_teams.php?team_id=$team_id' data-href='#team_form'>";
 								echo "<td>";
-									echo "<img class='img-responsive admin_team_logo' src='$team_logo' alt='team logo' title='team logo'>";
+									echo "<img class='img-responsive admin_team_logo' src='../$team_logo' alt='team logo' title='team logo'>";
 								echo "</td>";
 								
 								echo "<td class='admin_team_text'>";							
@@ -397,14 +418,6 @@
 			?>
 			
         </div>	
-		
-	<!--Upload File Button Below -->					
-	<form action="upload_images_teams.php" enctype="multipart/form-data" class="form-horizontal" method="post">
-      <label for ="email">File to Upload:</label>
-	  <div class="preview"></div>
-     <input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
-   <button class="btn btn-primary upload-image">Upload</button>
-  </form> 
 	
 </main>
 
