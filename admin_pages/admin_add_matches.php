@@ -80,7 +80,7 @@
 					<input type="hidden" class="form-control" rows="1" name="add_logo" id = "textimage" hidden>
 				</div>
 				
-				<input type="submit" class="btn btn-warning main_action_button" value="Publish">		
+				<input type="submit" class="btn btn-warning main_action_button" value="Add Match">		
 			</form>
 			
 			    </form>
