@@ -60,6 +60,8 @@
 		}; // delete_match - onclick
 		
 		
+		//Function below to pull up date picker
+		
 		 $( function() {
     $( "#date" ).datepicker();
   } );

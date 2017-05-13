@@ -31,6 +31,8 @@
     document.getElementById('textimage').value = filename;
 }
 
+//Function below to pull up the Date picker
+
  $( function() {
     $( "#datepicker" ).datepicker();
   } );
