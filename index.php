@@ -10,20 +10,6 @@
 		<img class="img-responsive center-all" id="bg-gif" src="media/home-bg.gif"/>
 		<img class="img-responsive center-all" id="bg-overlay" src="media/home-bg-overlay.png"/>
     </div>
-	
-    <main class="center-div">
-        
-        <h2 class="page_title">ABOUT</h2>	
-        <p>
-           RIT eSports is a student-run organization within the Rochester Institute of Technology, with the goal of facilitating the development and growth of gaming talent on campus. 
-		   We are one of the fastest growing organizations at RIT, with over 70 players currently active in games such as League of Legends, Overwatch, Heroes of the Storm, 
-		   Counter Strike, Starcraft, Rocket League, and Dota, with even more on the way soon. Win or lose, we are constantly striving for self-improvement, 
-		   be it as players, students, or local citizens. We pride ourselves on teamwork, leadership, and determination, modeling ourselves after both professional eSport teams 
-		   and traditional collegiate athletics. Due to our traditional inspiration and unique campus composition, we believe that in the next few years, RIT can become the #1 college 
-		   in the world for competitive gaming.
-        </p>  
-            
-	</main>
 
 	<?php
 	    include 'includes/navmenu.php';
@@ -44,6 +30,19 @@
 		}
 
 		$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");		
+		
+		echo "<main class='center-div'>";
+		echo "<h2 class='page_title'>ABOUT</h2>";
+		
+		$about_text_array = $esports_db->query("SELECT CONTENT FROM ABOUT");
+		
+		while($about_text = $about_text_array->fetchArray(SQLITE3_ASSOC))
+		{
+			$about_text_content = $about_text['CONTENT'];
+            echo "<p>" . $about_text_content . "</p>";			
+		}
+		
+        echo "</main>";
         
 		$news_item_list = $esports_db->query("SELECT * FROM news_items ORDER BY date DESC LIMIT 4");  
         $news_item_list_extra = $esports_db->query("SELECT * FROM news_items ORDER BY date DESC");
@@ -53,8 +52,6 @@
 		{
             $rows_extra[]=$news_item_more;
         }
-    
-        //echo $rows_extra;
 			
 		echo "<section id='news_and_events' class='row container'>";
 		echo "<div class='container center-all'>";
@@ -70,7 +67,7 @@
                     $newsItemCounter++;
                 
                     $image_url = $news_item['IMAGE_URL'];
-
+ 
                     if($rowCounter === 0){
                         echo '<div class="row center-div">';
                     }
@@ -114,12 +111,9 @@
     
         
           echo "<div id='more-news-loaded'></div>";
-    
-        
-
-			
+    			
 		echo '<div class="center-all col-md-12 col-lg-12 container">';
-     //   $record_count = 1; 
+
 		echo '<button type="button" onclick="loadmore()" class="btn btn-lg" id="load_more_button">Load More</button></a></div></div></section>';
        
     ?>
