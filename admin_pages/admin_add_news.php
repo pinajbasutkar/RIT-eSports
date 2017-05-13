@@ -62,13 +62,12 @@
                 </div>
                 
                     <div class="form-group">
-                    <label for ="upload">Upload Image:</label>
+                    <label for ="upload">Upload News Image</label>
      				<input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
      				</div>
      			
      			<div class="form-group">
-                    <label for="image">Image URL</label>
-                    <input type="text" class="form-control" rows="1" name='add_image' id = "textimage" hidden>     				
+                    <input type="hidden" class="form-control" rows="1" name='add_image' id = "textimage">     				
                 </div>
                 
                 <div class="form-group">

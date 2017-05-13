@@ -177,8 +177,7 @@
      			</div>
      				
                 <div class="form-group">
-                    <label for="game_logo">Game Logo URL</label>
-                    <input type="text" class="form-control" rows="1" id="game_logo" name="game_logo" hidden>
+                    <input type="hidden" class="form-control" rows="1" id="game_logo" name="game_logo" hidden>
                 </div>
  
 				<button type="button" class="btn btn-warning admin_page_button" id="delete_match">Delete Match</button>

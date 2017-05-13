@@ -143,13 +143,12 @@
                 </div>
                 
                    <div class="form-group">
-                    <label for ="upload">File to Upload:</label>
+                    <label for ="upload">Upload News Image</label>
      				<input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
      				</div>
      			
                 <div class="form-group">
-                    <label for="news_heading">Image URL</label>
-                    <input type="text" class="form-control" rows="1" id="image_url" name="image_url" hidden>
+                    <input type="hidden" class="form-control" rows="1" id="image_url" name="image_url" hidden>
                 </div>
                
                 <div class="form-group">
