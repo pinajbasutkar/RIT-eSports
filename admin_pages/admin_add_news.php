@@ -4,8 +4,13 @@
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
   
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	 	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="../js/js_admin.js"></script>
     <script src="../js/jquery.form.js"></script> 
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	
 	
 	<script>
@@ -27,7 +32,12 @@
 	//alert(filename);
     document.getElementById('textimage').value = filename;
 }
-		
+
+//Function below to pull up the Date picker
+
+ $( function() {
+    $( "#datepicker" ).datepicker();
+  } );		
 		
 		
 	</script>
@@ -52,8 +62,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="published_on">Date (mm/dd/yy)</label>
-                    <input type="text" class="form-control" rows="1" name='add_date'>
+                    <label for="published_on">Date (mm/dd/yyyy)</label>
+                    <input type="text" class="form-control" rows="1" name='add_date' id = "datepicker">
                 </div>
 				
 				<div class="form-group">

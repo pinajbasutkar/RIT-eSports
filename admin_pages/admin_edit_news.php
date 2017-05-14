@@ -4,8 +4,14 @@
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
   
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+  
 	<script src="../js/js_admin.js"></script>
 	<script src="../js/jquery.form.js"></script> 
+		 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 	<script>
 	
@@ -51,6 +57,12 @@
 				});
 			};
 		}; // delete_news_item - onclick
+		
+		//Function below to pull up the Date picker
+
+ $( function() {
+    $( "#date_published" ).datepicker();
+  } );	
 		
 	</script>
 	
@@ -133,7 +145,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="published_on">Published On (mm/dd/yy)</label>
+                    <label for="published_on">Published On (mm/dd/yyyy)</label>
                     <input type="text" class="form-control" rows="1" id="date_published" name="date_published">
                 </div>
 				
