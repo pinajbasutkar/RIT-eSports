@@ -74,9 +74,10 @@
                     <label for="content1">Description*</label>
                     <textarea class="form-control" rows="8" name='add_content' required></textarea>
                 </div>
-
-                <input type="submit" name='submit' class="btn btn-warning main_action_button" value='Publish'>
-
+                <div>
+				    <input type="submit" name='edit_about' id="edit_about_button" class="btn btn-warning" value="Edit About">
+                    <input type="submit" name='submit' class="btn btn-warning main_action_button" value='Add News'>
+                </div>
             </form>
 			
             
