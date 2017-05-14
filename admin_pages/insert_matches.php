@@ -17,13 +17,13 @@
 		$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");	   
 
 
-		$game = $_POST["add_game"];
-		$team1 = $_POST["add_team1"];
-		$team2 = $_POST["add_team2"];
-		$score = $_POST["add_score"];
-		$date = $_POST["add_date"];
-		$video = $_POST["add_video"];
-		$logo = $_POST["add_logo"];
+		$game = filter_var($_POST["add_game"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$team1 = filter_var($_POST["add_team1"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$team2 = filter_var($_POST["add_team2"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$score = filter_var($_POST["add_score"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$date = filter_var($_POST["add_date"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$video = filter_var($_POST["add_video"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$logo = filter_var($_POST["add_logo"], FILTER_SANITIZE_SPECIAL_CHARS);
 		
 				//$target_dir = "uploads/";
 $target_dir = "../media/match_logo/";

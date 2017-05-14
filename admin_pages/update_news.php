@@ -16,11 +16,11 @@
 
 		$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");	   
 		
-		$news_id = $_POST["news_id"];
-		$headline = $_POST["headline"];
-		$author = $_POST["author"];
-		$date = $_POST["date_published"];
-		$image = $_POST["image_url"];
+		$news_id = filter_var($_POST["news_id"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$headline = filter_var($_POST["headline"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$author = filter_var($_POST["author"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$date = filter_var($_POST["date_published"], FILTER_SANITIZE_SPECIAL_CHARS);
+		$image = filter_var($_POST["image_url"], FILTER_SANITIZE_SPECIAL_CHARS);
 		$content = filter_var($_POST["content"], FILTER_SANITIZE_SPECIAL_CHARS);
 		
 		
