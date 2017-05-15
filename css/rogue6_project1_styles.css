@@ -381,6 +381,7 @@ figure>a:hover{
    border: 1px solid #6B6C6E;
    background-color: #1C1B1B;
    border-radius: 2px;
+   color:#afafae;
 }
 
 .form-control:focus{
