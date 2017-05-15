@@ -72,6 +72,18 @@ h2{
     color:#f9973b;
 }
 
+h3{
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 0.5px solid #605d5d;
+}
+
+h4{
+    font-weight: 700;
+    color:#c2c2c2;
+    font-size: 20px;
+}
+
 @font-face {
     font-family: body-font;
     src: url("../fonts/HelveticaNeueLt.ttf");
@@ -389,19 +401,6 @@ figure>a:hover{
     background-color: #080808;
     
 }
-
-.form-control {
-    
-    border: 1px solid #95989A;
-    background-color:#1C1B1B;
-    color: #afafae;
-    
-}
-
-.form-control:focus{
-    border: 1px solid #95989A;
-}
-
 
 
 /* TEAM ADMIN */

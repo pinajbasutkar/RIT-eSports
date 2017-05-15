@@ -40,7 +40,7 @@
         
         //<p class="subtitle fancy"><span>A fancy subtitle</span></p>
 
-			echo '<p class="subtitle category_header"><span>Captain</span></p>';		
+			echo '<h3 class="subtitle category_header"><span>Captain</span></h3>';		
 		    echo '<div class="container-fluid">';
 			
 			while($captain = $captains->fetchArray(SQLITE3_ASSOC))
@@ -54,12 +54,15 @@
 				echo '</figure>';
 				echo '</div>';
 				echo '<div class="col-sm-8 col-md-8">';
+                echo '<h4>';
+                echo $captain['USER_NAME'].' ('.$captain['REAL_NAME'].') ';
+                echo '</h4>';
 				echo '<p class="player_bio">';
 				echo $captain['BIO'];
 				echo '</p></div></div>';
 			}
 			
-			echo '<p class="category_header">Manager</p>';
+			echo '<h3 class="category_header">Manager</h3>';
 			
 			while($manager = $managers->fetchArray(SQLITE3_ASSOC))
 			{
@@ -67,17 +70,21 @@
 				echo '<div class="col-sm-4 col-md-4">';
 				echo '<figure>';
 				$name = $manager['USER_NAME'];
+                $real_name = $manager['REAL_NAME'];
 				$image_url = $manager['IMAGE_URL'];
 				echo "<img class='img-circle img-responsive player_image' src='$image_url' alt='Picture of $name' title='Picture of $name'>";
 				echo '</figure>';
 				echo '</div>';
 				echo '<div class="col-sm-8 col-md-8">';
+                echo '<h4>';
+                echo $manager['USER_NAME'].' ('.$manager['REAL_NAME'].') ';
+                echo '</h4>';
 				echo '<p class="player_bio">';
 				echo $manager['BIO'];
 				echo '</p></div></div>';
 			}
 
-			echo '<p class="category_header">Roster</p>';
+			echo '<h3 class="category_header">Roster</h3>';
 			
 			while($player = $regular_players->fetchArray(SQLITE3_ASSOC))
 			{
@@ -90,6 +97,9 @@
 				echo '</figure>';
 				echo '</div>';
 				echo '<div class="col-sm-8 col-md-8">';
+                echo '<h4>';
+                echo $player['USER_NAME'].' ('.$player['REAL_NAME'].') ';
+                echo '</h4>';
 				echo '<p class="player_bio">';
 				echo $player['BIO'];
 				echo '</p></div></div>';
