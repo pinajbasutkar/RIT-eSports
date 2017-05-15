@@ -1,4 +1,6 @@
 <?php		
+
+
 		class ESportsDB extends SQLite3
 		{
 			function __construct()
@@ -29,7 +31,19 @@
 		
 //$target_dir = "uploads/";
 $target_dir = "../media/news_events/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+$filename = basename($_FILES["fileToUpload"]["name"]);
+//if (empty($_FILES['cover_image']['name']))
+
+print_r($filename);
+if(empty($filename)){
+	
+$filename = "gaming_background.jpg";
+	
+} 
+
+//$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . $filename;
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image

@@ -25,7 +25,7 @@
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
 
-		filename = "../media/match_logo/" + filename;
+		filename = "media/match_logo/" + filename;
     }
 	
     document.getElementById('textimage').value = filename;

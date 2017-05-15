@@ -28,7 +28,7 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "../media/news_events/" + filename;
+		filename = "media/news_events/" + filename;
     }
 	
     document.getElementById('image_url').value = filename;
@@ -114,7 +114,7 @@
 					echo "<tr class='clickable-row admin_table_row' id = '$news_id' onclick='populate_news(this.id)'>";
 					
 					echo "<td>";
-					echo "<img class='img-responsive admin_logo' src='$image' alt='news image' title='news image'>";
+					echo "<img class='img-responsive admin_logo' src='../$image' alt='news image' title='news image'>";
 					echo "</td>";
 								
 					echo "<td class='admin_team_text'>";							
