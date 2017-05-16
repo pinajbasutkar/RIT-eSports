@@ -72,7 +72,6 @@
                 </div>
                 
                     <div class="form-group">
-                     <input type="hidden" class="form-control" rows="1" name="image" value="../media/news_events/gaming_background.jpg">
                     <label for ="upload">Upload News Image</label>
      				<input type="file" name="fileToUpload" id="fileToUpload" onChange="uploadOnChange(this)"> 
      				</div>
