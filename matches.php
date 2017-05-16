@@ -162,7 +162,7 @@
 								echo "<td>$score</td>";
 								$match_date_string = date_format($match_date, 'Y-m-d');
 								echo "<td>$match_date_string</td>";
-								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button' disabled>Video</button></td></tr>";
+								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button' disabled>Video</button><button disabled type='button' class='btn btn-default btn-lg watch_video_icon'><i class='fa fa-video-camera '></i></button></td></tr>";
 							}
 						}
 
@@ -222,7 +222,7 @@
 								echo "<td>$score</td>";
 								$match_date_string = date_format($match_date, 'Y-m-d');
 								echo "<td>$match_date_string</td>";
-								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button'>Video</button></td></tr>";
+								echo "<td><button type='button' class='btn btn-default btn-lg watch_video_button'>Video</button><button type='button' class='btn btn-default btn-lg watch_video_icon'><i class='fa fa-video-camera'></i></button></td></tr>";
 							}
 						}
 
