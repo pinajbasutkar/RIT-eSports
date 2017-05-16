@@ -30,9 +30,16 @@
 					
 					$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
 					$team_list_result = $esports_db->query("SELECT * FROM TEAMS");
+                    
+                    $rowCounter = 0;
 					
 					while($team = $team_list_result->fetchArray(SQLITE3_ASSOC))
 					{	
+                    
+                        if($rowCounter === 0){
+                            echo '<div class="row center-div">';
+                        }
+                    
 						echo '<div class="col-sm-4 col-md-4">';
 						echo "<figure id='team-thumbnails'>";
 						$team_id = $team['TEAM_ID'];
@@ -46,6 +53,14 @@
                         echo "</a>";						
                         echo "</figure>";
 						echo "</div>";
+                        
+                        if($rowCounter === 2){
+                            echo '</div>';
+                            $rowCounter = 0; //reset counter
+                        }else{
+                            $rowCounter += 1; //increment counter
+                        }
+                        
 					}			
 				?>	
 			</div>				
