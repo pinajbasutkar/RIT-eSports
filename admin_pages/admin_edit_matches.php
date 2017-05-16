@@ -103,7 +103,7 @@
 				$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");	   
 			
 				
-				$match_list = $esports_db->query("SELECT * FROM MATCHES");	
+				$match_list = $esports_db->query("SELECT * FROM MATCHES ORDER BY DATE DESC");	
 				
 				$index = 0;
 

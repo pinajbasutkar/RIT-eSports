@@ -98,7 +98,7 @@
 					
 				$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
 				
-				$news_list = $esports_db->query("SELECT * FROM NEWS_ITEMS");	
+				$news_list = $esports_db->query("SELECT * FROM NEWS_ITEMS ORDER BY DATE DESC");	
 				
 				$index = 0;
 
