@@ -80,7 +80,7 @@
 						$todays_date = date('m/d/y');
 						$today = date_create($todays_date);
 						
-						$match_list = $esports_db->query("SELECT * FROM MATCHES");
+						$match_list = $esports_db->query("SELECT * FROM MATCHES ORDER BY DATE DESC");
 
                         while($match = $match_list->fetchArray(SQLITE3_ASSOC))	
                         {				
@@ -143,7 +143,7 @@
 						$todays_date = date('m/d/y');
 						$today = date_create($todays_date);
 						
-						$match_list = $esports_db->query("SELECT * FROM MATCHES");
+						$match_list = $esports_db->query("SELECT * FROM MATCHES ORDER BY DATE");
 
                         while($match = $match_list->fetchArray(SQLITE3_ASSOC))	
                         {				
