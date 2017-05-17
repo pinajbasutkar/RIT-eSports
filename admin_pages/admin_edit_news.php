@@ -4,8 +4,14 @@
   <title>RIT eSports Admin Page</title>
   <?php include 'includes/head.php';?>
   
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="/resources/demos/style.css">
+  
 	<script src="../js/js_admin.js"></script>
 	<script src="../js/jquery.form.js"></script> 
+		 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 	<script>
 	
@@ -22,7 +28,7 @@
     var filename = e.value;var lastIndex = filename.lastIndexOf("\\");
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
-		filename = "../media/news_events/" + filename;
+		filename = "media/news_events/" + filename;
     }
 	
     document.getElementById('image_url').value = filename;
@@ -51,6 +57,12 @@
 				});
 			};
 		}; // delete_news_item - onclick
+		
+		//Function below to pull up the Date picker
+
+ $( function() {
+    $( "#date_published" ).datepicker();
+  } );	
 		
 	</script>
 	
@@ -86,7 +98,7 @@
 					
 				$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");
 				
-				$news_list = $esports_db->query("SELECT * FROM NEWS_ITEMS");	
+				$news_list = $esports_db->query("SELECT * FROM NEWS_ITEMS ORDER BY DATE DESC");	
 				
 				$index = 0;
 
@@ -102,7 +114,7 @@
 					echo "<tr class='clickable-row admin_table_row' id = '$news_id' onclick='populate_news(this.id)'>";
 					
 					echo "<td>";
-					echo "<img class='img-responsive admin_logo' src='$image' alt='news image' title='news image'>";
+					echo "<img class='img-responsive admin_logo' src='../$image' alt='news image' title='news image'>";
 					echo "</td>";
 								
 					echo "<td class='admin_team_text'>";							
@@ -133,7 +145,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="published_on">Published On (mm/dd/yy)</label>
+                    <label for="published_on">Published On (mm/dd/yyyy)</label>
                     <input type="text" class="form-control" rows="1" id="date_published" name="date_published">
                 </div>
 				

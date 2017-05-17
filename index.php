@@ -134,16 +134,21 @@
    var json_obj = <?php echo json_encode($rows_extra) ?>;
    var i=<?php echo $i?>;
    
+   var newsItemCounter = 4;
+   
    //Loads 4 more elements
    function loadmore(){
            
     var count=4; 
        
     var rowCounter = 0;
+       
+    
     
     while(count!=0){
         
     i++;
+    newsItemCounter++;
                         
     try {
             var headline = json_obj[i].HEADLINE; 
@@ -153,7 +158,9 @@
             var content = json_obj[i].CONTENT;
 
             var length = 200;
-            var trimmedContent = content.substring(0, length);   
+            var trimmedContent = content.substring(0, length);  
+        
+        //Thumbnail content
 
             var h3=document.createElement("h3");
             h3.innerHTML=""+headline;
@@ -167,17 +174,12 @@
 
             var a=document.createElement("a");
             a.setAttribute('data-fancybox','');
-            a.setAttribute('data-src','#news-item-1');
+            a.setAttribute('data-src','#news-item-'+newsItemCounter);
             a.setAttribute('href','javascript:;');
 
             var innerDivNewsItem=document.createElement("div");
             innerDivNewsItem.setAttribute('class','news-item');
         
-            
-        
-            
-        
-           
             var outerDivNewsItem=document.createElement("div");
             outerDivNewsItem.setAttribute('class','col-md-6 col-lg-6 container');
 
@@ -197,7 +199,49 @@
             innerDivNewsItem.appendChild(pNewsItemText);
 
             outerDivNewsItem.appendChild(innerDivNewsItem);
-           
+        
+        
+        //Full content
+        
+    
+         var imgF=document.createElement("img");
+            imgF.setAttribute('src',img_url);
+            imgF.setAttribute('alt','News Item Picture');
+            imgF.setAttribute('title','News Item Picture');
+            imgF.setAttribute('class','img-responsive center-div full-news-item-pic');
+        
+        var h3F=document.createElement("h3");
+            h3F.innerHTML=""+headline;
+            h3F.setAttribute('class','news-item-title');
+        
+        
+        var pNewsItemInfoF=document.createElement("p");
+            pNewsItemInfoF.innerHTML = "By " + author + " | " + date;
+            pNewsItemInfoF.setAttribute('class','news-item-info');
+        
+        var pNewsItemTextF=document.createElement("p");
+            pNewsItemTextF.innerHTML = trimmedContent+"...";
+            pNewsItemTextF.setAttribute('class','');
+        
+        var innerDivNewsItemF=document.createElement("div");
+            innerDivNewsItemF.setAttribute('class','news-item-full');
+        
+            var outerDivNewsItemF=document.createElement("div");
+            outerDivNewsItemF.setAttribute('class','news-item-full-container');
+            outerDivNewsItemF.setAttribute('style','display:none;');
+            outerDivNewsItemF.setAttribute('id','news-item-'+newsItemCounter);
+        
+        
+            innerDivNewsItemF.appendChild(imgF);
+            innerDivNewsItemF.appendChild(h3F);
+            innerDivNewsItemF.appendChild(pNewsItemInfoF);
+            innerDivNewsItemF.appendChild(pNewsItemTextF);
+
+            outerDivNewsItemF.appendChild(innerDivNewsItemF);
+        
+            document.getElementById("more-news-loaded").appendChild(outerDivNewsItemF); 
+        
+
 
             if(rowCounter==0){
                  var outerDivNewsItemRow=document.createElement("div");

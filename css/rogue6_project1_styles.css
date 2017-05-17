@@ -72,6 +72,18 @@ h2{
     color:#f9973b;
 }
 
+.category_header{
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 0.5px solid #605d5d;
+}
+
+h4{
+    font-weight: 700;
+    color:#c2c2c2;
+    font-size: 20px;
+}
+
 @font-face {
     font-family: body-font;
     src: url("../fonts/HelveticaNeueLt.ttf");
@@ -336,29 +348,68 @@ figure>a:hover{
 
 #edit_about_button
 {
+    margin-top: 2em;
     float: left;
-	padding: 10px 30px;
-    margin-top: 20px;
-    font-size: 1.6em;
-    background-color: #f9973b;
-}
-
-.main_action_button
-{
-    float: right;
-    padding: 10px 30px;
-    margin-top: 20px;
-    font-size: 1.6em;
-    background-color: #f9973b;
-}
-
-.contact_page_button
-{
-	float: right;
-    padding: 10px 20px;
+    padding: auto;
     margin-left: 10px;
     font-size: 1.2em;
     background-color: #f9973b;
+    font-size: 16px;
+    height: 40px;
+    width: 120px;
+}
+
+ #edit_about_button:hover{
+     background-color: #1C1B1B;
+    color: #f9973b;
+}
+
+.main_action_button
+{   
+     margin-top: 2em;
+    float: right;
+    padding: auto;
+    margin-left: 10px;
+    font-size: 1.2em;
+    background-color: #f9973b;
+    font-size: 16px;
+    height: 40px;
+    width: 120px;
+}
+
+.form-control {
+   border: 1px solid #6B6C6E;
+   background-color: #1C1B1B;
+   border-radius: 2px;
+   color:#afafae;
+}
+
+.form-control:focus{
+    border: 1px solid #6B6C6E;
+   border-radius: 2px;
+}
+
+
+.main_action_button:hover{
+     background-color: #1C1B1B;
+    color: #f9973b;
+}
+
+.btn:focus{
+ outline: 0px;   
+}
+
+.contact_page_button {
+     margin-top: 2em;
+    float: right;
+    padding: auto;
+    margin-left: 10px;
+    font-size: 1.2em;
+    background-color: #f9973b;
+    font-size: 16px;
+    height: 40px;
+    width: 120px;
+
 }
 
 .admin_logo {
@@ -417,23 +468,31 @@ figure>a:hover{
 
 .add_player_button, .delete_player_button
 {
-	white-space: normal;
-	float: left;
-    padding: 10px 10px;
+	margin-top: 2em;
+    float: left;
+    padding: auto;
     margin-left: 10px;
-	margin-top: 10px;	
-    font-size: 1em;
+    font-size: 1.2em;
     background-color: #f9973b;
+    font-size: 16px;
+    height: 40px;
+    width: 120px;
+
 }
 
 .admin_page_button
 {
-	float: right;
-    padding: 10px 20px;
+	 margin-top: 2em;
+    float: right;
+    padding: auto;
     margin-left: 10px;
-	margin-top: 10px;
     font-size: 1.2em;
     background-color: #f9973b;
+    font-size: 16px;
+    height: 40px;
+    width: 150px;
+
+    
 }
 
 .player_list

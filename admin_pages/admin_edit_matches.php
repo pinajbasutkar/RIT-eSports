@@ -28,7 +28,7 @@
     if (lastIndex >= 0) {
         filename = filename.substring(lastIndex +1);
 
-		filename = "../media/match_logo/" + filename;
+		filename = "media/match_logo/" + filename;
     }
 	
     document.getElementById('game_logo').value = filename;
@@ -103,7 +103,7 @@
 				$esports_db->exec("ATTACH DATABASE 'ESports.db' AS 'esports'");	   
 			
 				
-				$match_list = $esports_db->query("SELECT * FROM MATCHES");	
+				$match_list = $esports_db->query("SELECT * FROM MATCHES ORDER BY DATE DESC");	
 				
 				$index = 0;
 
@@ -120,7 +120,7 @@
 					echo "<tr class='clickable-row admin_table_row' id = '$match_id' onclick='populate_matches(this.id)'>";
 					
 					echo "<td>";							
-					echo "<img class='img-responsive admin_logo' src='$game_logo' alt='news image' title='news image'>";
+					echo "<img class='img-responsive admin_logo' src='../$game_logo' alt='news image' title='news image'>";
 					echo "</td>";
 					
 					echo "<td>";							
